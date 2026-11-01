@@ -1,0 +1,16 @@
+x,xend,y,yend,arrow,lt,row
+17,17,12,17,TRUE,solid,1
+17,62,14.5,14.5,FALSE,solid,2
+62,62,14.5,17,TRUE,solid,3
+5,5,23,55,FALSE,solid,4
+5,9.4,35,35,TRUE,solid,5
+5,9.4,55,55,TRUE,solid,6
+77.5,77.5,52,58,FALSE,13,7
+133,133,12,17,TRUE,solid,8
+133,133,23,28,TRUE,solid,9
+133,133,34,39,TRUE,solid,10
+113,110.5,20,20,FALSE,solid,11
+110.5,110.5,20,68.25,FALSE,solid,12
+110.5,115.4,52.25,52.25,TRUE,solid,13
+110.5,115.4,59.75,59.75,TRUE,solid,14
+110.5,115.4,68.25,68.25,TRUE,solid,15

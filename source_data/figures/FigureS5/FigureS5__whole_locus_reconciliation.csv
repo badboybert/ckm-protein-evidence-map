@@ -1,0 +1,3 @@
+quantity,prior,plotted_value_ledger_L051,earlier_grid_value_not_plotted,difference,note
+ARG1-T2D whole-locus PP.H4,default p12 = 1e-5,0.9253,0.932343006423234,0.00704300642323397,different analyses of the same pair; the Results print the L051 values; this panel plots them
+ARG1-T2D whole-locus PP.H4,conservative p12 = 1e-6,0.55320057600461,0.579486299086867,0.026285723082257,different analyses of the same pair; the Results print the L051 values; this panel plots them

@@ -1,0 +1,187 @@
+{
+  "panels": [],
+  "ledger": [
+    {
+      "text": "1,948",
+      "id": "L001",
+      "anchor": "^{} proteins with a cis-pQTL instrument$"
+    },
+    {
+      "text": "8",
+      "id": "L002",
+      "anchor": "^{} UK Biobank-free outcome GWAS$"
+    },
+    {
+      "text": "15,584",
+      "id": "L003",
+      "anchor": "^{} protein–outcome combinations$"
+    },
+    {
+      "text": "1,948",
+      "id": "L001",
+      "anchor": "^{} proteins × [0-9]+ outcomes"
+    },
+    {
+      "text": "8",
+      "id": "L002",
+      "anchor": "proteins × {} outcomes: the multiple-testing family$"
+    },
+    {
+      "text": "14,521",
+      "id": "L004",
+      "anchor": "^{} testable$"
+    },
+    {
+      "text": "1,701",
+      "id": "L006",
+      "anchor": "^{} nominal associations"
+    },
+    {
+      "text": "0.05",
+      "id": "L238",
+      "anchor": "nominal associations \\(p < {}\\)$"
+    },
+    {
+      "text": "94",
+      "id": "L007",
+      "anchor": "^{} study-wide \\(Bonferroni\\); "
+    },
+    {
+      "text": "292",
+      "id": "L008",
+      "anchor": "\\(Bonferroni\\); {} at "
+    },
+    {
+      "text": "5%",
+      "id": "L239",
+      "anchor": "\\(Bonferroni\\); [0-9]+ at {} FDR$",
+      "pct": true
+    },
+    {
+      "text": "0.80",
+      "id": "L236",
+      "anchor": "^PP.H4 ≥ {} and PP.H4/PP.H3"
+    },
+    {
+      "text": "5",
+      "id": "L237",
+      "anchor": "and PP.H4/PP.H3 ≥ {}$"
+    },
+    {
+      "text": "16",
+      "id": "L222",
+      "idx": 1,
+      "anchor": "^{} multi-signal candidates$"
+    },
+    {
+      "text": "0.80",
+      "id": "L236",
+      "anchor": "coloc.abf but reached PP.H4 ≥ {}$"
+    },
+    {
+      "text": "81",
+      "id": "L010",
+      "anchor": "^outside the {} graded pairs$"
+    },
+    {
+      "text": "81",
+      "id": "L010",
+      "anchor": "^Dashed: outside the {} graded pairs$"
+    },
+    {
+      "text": "81",
+      "id": "L010",
+      "anchor": "^{} colocalization-supported pairs over"
+    },
+    {
+      "text": "62",
+      "id": "L011",
+      "anchor": "colocalization-supported pairs over {} proteins$"
+    },
+    {
+      "text": "41",
+      "id": "L959",
+      "idx": 1,
+      "anchor": "^{} study-wide; "
+    },
+    {
+      "text": "80",
+      "id": "L959",
+      "idx": 5,
+      "anchor": "study-wide; {} at "
+    },
+    {
+      "text": "5%",
+      "id": "L239",
+      "anchor": "study-wide; [0-9]+ at {} FDR \\(all but",
+      "pct": true
+    },
+    {
+      "text": "3",
+      "id": "L014",
+      "idx": "Convergent",
+      "anchor": "^{} Convergent$"
+    },
+    {
+      "text": "45",
+      "id": "L014",
+      "idx": "Supported",
+      "anchor": "^{} Supported$"
+    },
+    {
+      "text": "33",
+      "id": "L014",
+      "idx": "Flagged",
+      "anchor": "^{} Flagged$"
+    },
+    {
+      "text": "81",
+      "id": "L010",
+      "anchor": "^Asian analysis; outside the {};$"
+    },
+    {
+      "text": "3",
+      "id": "L985",
+      "idx": "n",
+      "anchor": "^{} pairs corroborated under"
+    },
+    {
+      "text": "11",
+      "id": "L225",
+      "idx": 1,
+      "anchor": "^{} of the [0-9]+ multi-signal candidates"
+    },
+    {
+      "text": "16",
+      "id": "L222",
+      "idx": 1,
+      "anchor": "^[0-9]+ of the {} multi-signal candidates are"
+    },
+    {
+      "text": "45",
+      "id": "L224",
+      "idx": 1,
+      "anchor": "^{} of [0-9]+ evaluable pairs kept"
+    },
+    {
+      "text": "52",
+      "id": "L224",
+      "idx": 2,
+      "anchor": "^[0-9]+ of {} evaluable pairs kept"
+    },
+    {
+      "text": "7",
+      "id": "L082",
+      "idx": 3,
+      "anchor": "^{} of [0-9]+ testable pairs colocalized"
+    },
+    {
+      "text": "47",
+      "id": "L082",
+      "idx": 2,
+      "anchor": "^[0-9]+ of {} testable pairs colocalized"
+    }
+  ],
+  "derived": [],
+  "literals": []
+}

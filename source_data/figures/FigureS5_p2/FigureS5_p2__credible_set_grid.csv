@@ -1,0 +1,20 @@
+set_signal,method,panel,lkey,set_size,state,inc,inc2
+A,1_T2D,503,m1_T2D_503,26,inadmissible,"rs2246012, rs2781668","includes rs2246012, rs2781668"
+B,1_T2D,503,m1_T2D_503,0,inadmissible,"","no credible set returned;
+not evidence of no association"
+A,1_protein,503,m1_protein_503,2,inadmissible,"rs2246012, rs2781668","includes rs2246012, rs2781668"
+B,1_protein,503,m1_protein_503,1,inadmissible,rs17788484,includes rs17788484
+A,2,UKB-PPP in-sample LD,m2_insample,2,admissible,"rs2246012, rs2781668","includes rs2246012, rs2781668"
+B,2,UKB-PPP in-sample LD,m2_insample,1,admissible,rs17788484,includes rs17788484
+A,3,489,m3_489,2,not robust,"rs2246012, rs2781668","includes rs2246012, rs2781668"
+B,3,489,m3_489,1,robust,rs17788484,includes rs17788484
+A,3,503,m3_503,4,not robust,"",none of the three named variants
+B,3,503,m3_503,1,robust,rs17788484,includes rs17788484
+A,4,489,m4_489,26,not robust,"rs2246012, rs2781668","includes rs2246012, rs2781668"
+B,4,489,m4_489,240,not robust,"",none of the three named variants
+A,4,503,m4_503,25,not robust,"rs2246012, rs2781668","includes rs2246012, rs2781668"
+B,4,503,m4_503,204,not robust,"",none of the three named variants
+A,5,489,m5_489,2,not robust,"rs2246012, rs2781668","includes rs2246012, rs2781668"
+B,5,489,m5_489,1,robust,rs17788484,includes rs17788484
+A,5,503,m5_503,5,not robust,"",none of the three named variants
+B,5,503,m5_503,1,robust,rs17788484,includes rs17788484

@@ -1,0 +1,11 @@
+estimand,row,label,kind,est,lo,hi,p,ref_ld_sensitive,ledger_p,printed_p
+i,1,"Arginine, marginal",primary,1.013505,0.6905376,1.535194,0.9456049,FALSE,L797,p 0.95
+vi,1,"Ornithine, marginal",nocoloc,-0.5564132,-0.83307975609369,-0.279746643906311,8.088989e-05,FALSE,L807,p 8.1 × 10−5
+ii,1,"FinnGen, conditional, primary",primary,-0.1790984,-0.3469647,-0.01123211,0.03651846,TRUE,L814,p 0.037
+ii,2,"FinnGen, marginal, sensitivity",sens,-0.1546862,-0.3089516,-0.0004207932,0.04937834,TRUE,L776,p 0.049
+ii,3,"DIAMANTE, marginal, primary",primary,-0.1532843,-0.2880561,-0.01851247,0.02580141,FALSE,L808,p 0.026
+ii,4,"DIAMANTE, conditional, sensitivity",sens,-0.1675358,-0.3151092,-0.01996234,0.02607524,FALSE,L765,p 0.026
+iii,1,"FinnGen, conditional",primary,0.2466265,0.00419012690710727,0.489062873092893,0.04616972,TRUE,L818,p 0.046
+iii,2,"FinnGen, marginal",primary,0.2125375,-0.0106747623469301,0.43574976234693,0.06200886,FALSE,L819,p 0.062
+iii,3,"DIAMANTE, marginal, beside",primary,0.2120158,0.0208718803789189,0.403159719621081,0.02970651,FALSE,L788,p 0.030
+iii,4,"DIAMANTE, conditional, beside",primary,0.231837,0.0226384801425313,0.441035519857469,0.02985094,FALSE,L787,p 0.030

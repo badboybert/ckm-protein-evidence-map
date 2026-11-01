@@ -1,0 +1,26 @@
+md5 noneGFR_draws  fecc974e747b427b14acd37c7e8923b9  v3.2/_engine_root/results/v4_local/coloc_null/null_draws.csv
+md5 noneGFR_obs    3c2c126069dfecd8ed449d3c5a72570f  v3.2/_engine_root/results/v4_local/coloc_null/null_observed.csv
+md5 eGFR_draws     4b1b9d43f5ec749528bea8691dec1842  v3.2/_engine_root/results/repro_phase1_hg38/coloc_null/null_draws_egfr.csv
+md5 eGFR_obs       e89536d4a7aae115970751d469e593ae  v3.2/_engine_root/results/repro_phase1_hg38/coloc_null/null_observed_egfr.csv
+md5 ckd_draws      132589272b09a19aea53414774598482  V4_local/source_data/coloc_null/ckd_stratum_draws.csv
+md5 ckd_annot      b7479af2c41dba0ad318bea820c586e3  R1_stage1/S1R1_03_decoy_method/S1R1_F2_draws_annotated_from_skeptic1.csv
+non-eGFR outcomes: FinnGen_R10_I9_AF, FinnGen_R10_I9_CHD, FinnGen_R10_I9_HEARTFAIL, FinnGen_R10_NAFLD, FinnGen_R10_T2D, MEGASTROKE_EUR_GCST006906, Wuttke2019_CKD_EA
+CKD instrument absent from the target capture whatever the draw: 360 draws; removed BY TRUNCATION (k < n_t, instrument index > k): 2031 (12.5%)
+CKD idx (instrument row index) NA in 500 draws; inst_kept FALSE with idx <= k: 0
+CKD annotated draws: 16200; pass column agrees with recomputed rule in 16200 of 16200 rows
+CKD draws that truncate the target vector: 8160 (50.4%); that cut a LOCATED instrument row (idx > k): 1891 (11.7%); targets whose instrument is located in their capture: 157 of 162
+CKD selection-matched draws come from 154 targets (of 157 with a located instrument)
+CKD decoy passes with the located instrument row cut away: 16 of 50 passes
+== pass rates (%) with 95% bootstrap intervals (target-cluster; two-way target x donor), B = 2000
+  non-eGFR (seven outcomes, CKD included)                        133200 draws  501 passes  0.376% [target 0.336-0.421; two-way 0.302-0.455]  observed 64 of 1332
+  eGFR                                                            32100 draws  262 passes  0.816% [target 0.692-0.947; two-way 0.614-1.054]  observed 16 of 321
+  FinnGen_R10_I9_AF                                               23100 draws  100 passes  0.433% [target 0.333-0.532; two-way 0.262-0.638]  observed 14 of 231
+  FinnGen_R10_I9_CHD                                              23800 draws  104 passes  0.437% [target 0.340-0.546; two-way 0.274-0.632]  observed 12 of 238
+  FinnGen_R10_I9_HEARTFAIL                                        16300 draws   31 passes  0.190% [target 0.110-0.282; two-way 0.057-0.391]  observed 7 of 163
+  FinnGen_R10_NAFLD                                               10700 draws    5 passes  0.047% [target 0.000-0.112; two-way 0.000-0.170]  observed 1 of 107
+  FinnGen_R10_T2D                                                 30600 draws  180 passes  0.588% [target 0.490-0.693; two-way 0.420-0.786]  observed 16 of 306
+  MEGASTROKE_EUR_GCST006906                                       12500 draws   31 passes  0.248% [target 0.136-0.376; two-way 0.080-0.487]  observed 7 of 125
+  Wuttke2019_CKD_EA                                               16200 draws   50 passes  0.309% [target 0.210-0.420; two-way 0.137-0.556]  observed 7 of 162
+  CKD (all decoy draws)                                           16200 draws   50 passes  0.309% [target 0.204-0.414; two-way 0.131-0.549]  observed 7 of 162
+  CKD, selection-matched, p < 0.05 at the located instrument (sel_p; 154 contributing targets)   1535 draws   28 passes  1.824% [target 1.085-2.675; two-way 0.616-3.540]  observed 7 of 162
+  CKD, selection-matched at the instrument rsID only (|z| >= 1.96; same 154 targets)   1535 draws   28 passes  1.824% [target 1.059-2.705; two-way 0.660-3.499]  observed 7 of 162

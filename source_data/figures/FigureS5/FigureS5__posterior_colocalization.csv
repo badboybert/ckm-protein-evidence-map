@@ -1,0 +1,17 @@
+trait,row,prior,pp,src
+Arginine,whole,Default prior,0.996,ledger L052 (as the Results)
+Arginine,whole,Conservative prior,0.960522965679394,S1R1_arg1_coloc.tsv (no ledger row for the conservative prior)
+Arginine,A,Default prior,0.980998585467642,S1R1_arg1_coloc.tsv (signal-specific grid)
+Arginine,A,Conservative prior,0.837735201055221,S1R1_arg1_coloc.tsv (signal-specific grid)
+Arginine,B,Default prior,0.999990739363105,S1R1_arg1_coloc.tsv (signal-specific grid)
+Arginine,B,Conservative prior,0.999907401348756,S1R1_arg1_coloc.tsv (signal-specific grid)
+T2D,whole,Default prior,0.9253,ledger L051 (as the Results)
+T2D,whole,Conservative prior,0.55320057600461,ledger L051 (as the Results)
+T2D,A,Default prior,0.953945185786737,S1R1_arg1_coloc.tsv (signal-specific grid)
+T2D,A,Conservative prior,0.67440769564469,S1R1_arg1_coloc.tsv (signal-specific grid)
+T2D,B,Default prior,0.00900961253652052,S1R1_arg1_coloc.tsv (signal-specific grid)
+T2D,B,Conservative prior,0.000908326556953371,S1R1_arg1_coloc.tsv (signal-specific grid)
+T2D,eas,Default prior,0.0087618768556603,results_census.tsv
+T2D,eas,Conservative prior,0.000883151947312501,results_census.tsv
+T2D,ekf,Default prior,0.0472446006873197,results_ckbfree.tsv
+T2D,ekf,Conservative prior,0.00493426574192825,results_ckbfree.tsv

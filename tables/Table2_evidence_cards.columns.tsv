@@ -1,0 +1,81 @@
+file	column	definition
+Table2_evidence_cards.tsv	pair_key	Pair as keyed in the ledger and the outcome-check file (hyphen; '(EAS)' marks the East Asian pair)
+Table2_evidence_cards.tsv	gene	Protein gene symbol
+Table2_evidence_cards.tsv	outcome	Outcome: CAD, T2D or eGFR
+Table2_evidence_cards.tsv	row_group	pre-selected external-check pair; East Asian, not graded; multi-signal candidate, not graded
+Table2_evidence_cards.tsv	table_row_label	First cell of the Table 2 row, ledger tags and bold markers removed
+Table2_evidence_cards.tsv	evidence_tier	Evidence tier from the ledger word row; empty for the three ungraded rows
+Table2_evidence_cards.tsv	deCODE_arm	Exposure-side corroboration in deCODE (ledger word row); FGFR4: 'exposure-side not tested'; kidney loci: not reported
+Table2_evidence_cards.tsv	ARIC_arm	Exposure-side corroboration in ARIC (ledger word row); FGFR4: 'exposure-side not tested'; kidney loci: not reported
+Table2_evidence_cards.tsv	EAS_state	East Asian outcome-side state of the European instrument (graded pairs) or East Asian testing state (kidney loci), from the ledger word row; not the ancestry-matched colocalization of the eas_* columns
+Table2_evidence_cards.tsv	card_note	Ledger word statements that no other column holds: the FGFR4 instrument note and TPMI note (the TPMI note reads withheld_pending_terms when the TPMI switch is 'withheld'); not reported for the other rows
+Table2_evidence_cards.tsv	discovery_basis	Ledger claim of the row that feeds discovery_wald (names the scale and the resource)
+Table2_evidence_cards.tsv	discovery_wald	Discovery Wald ratio, log-odds per SD of protein; kidney loci on the eGFR* scale (-ln eGFR, positive = lower eGFR); FGFR4: East Asian (CKB instrument), as pp_h4_default and pp_h4_conservative are
+Table2_evidence_cards.tsv	discovery_p	Discovery Mendelian-randomization p for the same estimate
+Table2_evidence_cards.tsv	pp_h4_default	PP.H4 of the pair's discovery colocalization at the default prior p12 = 1e-5 (the map colocalization; FGFR4: the East Asian colocalization of its CKB instrument with AGEN, because its discovery is East Asian); not reported where the ledger holds no pair-level value at that prior (kidney loci: see candidate_*)
+Table2_evidence_cards.tsv	pp_h4_conservative	PP.H4 at the conservative prior p12 = 1e-6 (same scope as pp_h4_default)
+Table2_evidence_cards.tsv	ext_resource	External outcome resource of the pre-selected check
+Table2_evidence_cards.tsv	ext_or	Odds ratio per SD of protein from the first-order Wald ratio in the external resource (ledger L223)
+Table2_evidence_cards.tsv	ext_ci_lo	Lower 95% limit of ext_or
+Table2_evidence_cards.tsv	ext_ci_hi	Upper 95% limit of ext_or
+Table2_evidence_cards.tsv	ext_p	The external resource's own reported p (ledger L960); the first-order Wald p of the same estimate is ext_wald_p
+Table2_evidence_cards.tsv	ext_wald	First-order Wald ratio in the external resource, log-odds per SD of protein (numeric leaf 0 of the pair's external-check ledger row). The same row stores the discovery estimate it is set beside (leaf 3, asserted equal to discovery_wald at the printed precision); no comparison sentence is written here
+Table2_evidence_cards.tsv	ext_wald_se	Standard error of ext_wald (leaf 1 of the same ledger row)
+Table2_evidence_cards.tsv	ext_wald_p	First-order Wald p of ext_wald (leaf 2 of the same ledger row)
+Table2_evidence_cards.tsv	ext_class	Classification of the external check (ledger word of the pair's external-check row)
+Table2_evidence_cards.tsv	ext_bonferroni_6	true/false: p below 0.05/6 (Bonferroni over the six pre-selected pairs), from the outcome-check file, asserted against Table 2 and the ledger
+Table2_evidence_cards.tsv	reg_pp_h4_default	Regional colocalization of the protein with the external outcome data (primary row): PP.H4 at p12 = 1e-5
+Table2_evidence_cards.tsv	reg_pp_h4_conservative	Regional colocalization (primary row): PP.H4 at p12 = 1e-6
+Table2_evidence_cards.tsv	reg_pp_h3_default	Regional colocalization (primary row): PP.H3 at p12 = 1e-5; not reported where the ledger stores no primary row at that prior
+Table2_evidence_cards.tsv	reg_pp_h3	Regional colocalization (primary row): PP.H3 at the conservative prior p12 = 1e-6; not reported where the ledger stores no primary row at that prior
+Table2_evidence_cards.tsv	eas_basis	Verbatim ledger claims of the rows that feed the eas_* columns and eur_p
+Table2_evidence_cards.tsv	eas_beta	East Asian log-odds per SD (TGFB1; CKB instrument)
+Table2_evidence_cards.tsv	eas_pp_h1	Ancestry-matched East Asian colocalization PP.H1 (resource named in eas_basis); European-discovery pairs only
+Table2_evidence_cards.tsv	eas_pp_h3	Ancestry-matched East Asian colocalization PP.H3 (resource named in eas_basis); European-discovery pairs only
+Table2_evidence_cards.tsv	eas_pp_h4	Ancestry-matched East Asian colocalization PP.H4, prior not stated in the ledger row (ARG1, AGEN); European-discovery pairs only
+Table2_evidence_cards.tsv	eas_pp_h4_default	Ancestry-matched East Asian PP.H4 at p12 = 1e-5; European-discovery pairs only (FGFR4 is East Asian-discovered: its AGEN colocalization is pp_h4_default)
+Table2_evidence_cards.tsv	eas_pp_h4_conservative	Ancestry-matched East Asian PP.H4 at p12 = 1e-6; European-discovery pairs only (FGFR4: see pp_h4_conservative)
+Table2_evidence_cards.tsv	eas_ckbfree_pp_h1	East Asian CKB-free (Biobank Japan) PP.H1
+Table2_evidence_cards.tsv	eas_ckbfree_pp_h3	East Asian CKB-free (Biobank Japan) PP.H3
+Table2_evidence_cards.tsv	eas_ckbfree_pp_h4	East Asian CKB-free (Biobank Japan) PP.H4
+Table2_evidence_cards.tsv	eur_p	European p (FGFR4 only)
+Table2_evidence_cards.tsv	candidate_susie_pp_h4	Multi-signal candidates (the two kidney loci): SuSiE multi-signal PP.H4 (purity 0.5); the ledger row does not state a prior, so it fills no prior-specific column
+Table2_evidence_cards.tsv	candidate_coloc_abf_pp_h4	Multi-signal candidates (the two kidney loci): coloc.abf single-variant PP.H4; the ledger row does not state a prior
+Table2_evidence_cards.tsv	development_stage	Open Targets development stage (single-protein rule of the ledger builder): 'tractable' is an Open Targets tractability class and ships; 'approved' and 'in clinical development' are set by a drug record (ChEMBL-derived) and read withheld_pending_terms in the shipped file
+Table2_evidence_cards.tsv	development_agents	Single-protein agents with their highest stage (ChEMBL-derived drug records); 'none' ships, a list of agents reads withheld_pending_terms in the shipped file
+Table2_evidence_cards.tsv	genetic_direction_agreement	Whether the agent's effect agrees with the genetic direction (ledger word row); the verdict ships when it names no drug, and reads withheld_pending_terms when it does
+Table2_evidence_cards.tsv	development_statement	The ledger word statement of stage, agents and direction, verbatim (stage_dir element of the L370-L377 row), including staging notes such as an enzyme that does not set the stage; ships for a row with no clinical candidate whose statement names no drug, otherwise reads withheld_pending_terms in the shipped file
+Table2_evidence_cards.tsv	ot_data_version	Open Targets Platform data version of the snapshot
+Table2_evidence_cards.tsv	ot_query_date	Date the snapshot was queried
+Table2_evidence_cards.tsv	literature_status	Table 2's own wording of the prior-evidence status: the sentence of the row's established_role_reported_before cell that begins 'Reported before' (a literal substring of it, asserted). The literature search log's status_in_table column predates the Stage 5 step 1d wording and can read stronger than Table 2; it is not repeated here
+Table2_evidence_cards.tsv	literature_pmids	PMIDs of the references cited in the row's prose cells (reference tables); a key with no PMID is listed in cited_keys only; keys with no PMID in the reference tables at this build (Stage 6 reference check): old:14, old:3
+Table2_evidence_cards.tsv	search_date	Date(s) of the searches in the log
+Table2_evidence_cards.tsv	search_scope	Database, query, hits and screened count of each log row of the pair
+Table2_evidence_cards.tsv	cited_keys	[@key] reference keys cited in the row's prose cells, in order of first use
+Table2_evidence_cards.tsv	established_role_reported_before	Table 2 column 'Established role; reported before', ledger tags removed, [@key] citations kept inline; identical to the manuscript's Table 2 and to the withheld full card (S2-D30(3))
+Table2_evidence_cards.tsv	adds	Table 2 cell, ledger tags removed, [@key] citations kept inline; identical to the manuscript's Table 2 and to the withheld full card (S2-D30(3))
+Table2_evidence_cards.tsv	main_uncertainty	Table 2 cell, ledger tags removed, [@key] citations kept inline; identical to the manuscript's Table 2 and to the withheld full card (S2-D30(3))
+Table2_evidence_cards.tsv	next_biological_question	Table 2 column 'Next biological question', ledger tags removed, [@key] citations kept inline; identical to the manuscript's Table 2 and to the withheld full card (S2-D30(3))
+Table2_evidence_cards.tsv	full_established_role_reported_before	the full card's cell in Additional file 2, section {SM:cards} (supplement/P31R_SM_cards.md), ledger tags removed, [@key] citations kept inline; Table 2 prints a summary of it (S2-D51)
+Table2_evidence_cards.tsv	full_adds	the full card's cell in Additional file 2, section {SM:cards} (supplement/P31R_SM_cards.md), ledger tags removed, [@key] citations kept inline; Table 2 prints a summary of it (S2-D51)
+Table2_evidence_cards.tsv	full_main_uncertainty	the full card's cell in Additional file 2, section {SM:cards} (supplement/P31R_SM_cards.md), ledger tags removed, [@key] citations kept inline; Table 2 prints a summary of it (S2-D51)
+Table2_evidence_cards.tsv	full_next_biological_question	the full card's cell in Additional file 2, section {SM:cards} (supplement/P31R_SM_cards.md), ledger tags removed, [@key] citations kept inline; Table 2 prints a summary of it (S2-D51)
+Table2_evidence_cards.tsv	numeric_cell_sources	For every numeric cell, the ledger row and stored leaf it reads (Lxxx#leaf, Lxxx[pair].element, Lxxx@element)
+Table2_evidence_cards.tsv	not_reported_reasons	Every numeric column of the row that reads 'not reported', grouped by reason code (code: columns): no_check = the pair had no pre-selected external outcome check (only the six pairs of Table 2 rows 1-6 had one), so the external-check and regional-colocalization blocks do not exist for it; not_run = the analysis was not run for the pair (ledger word row: not tested); no_row = no ledger row stores this quantity for the pair; the build checks every ledger row whose key or claim names the pair (NOT_CARRIED lists the rows that exist but are not card columns); not_applicable = the quantity is defined for other pairs only (European p of the East Asian-discovered pair; multi-signal PP.H4 of the two kidney loci) or sits in another column for this pair (an East Asian-discovered pair keeps its East Asian colocalization in pp_h4_*; the kidney loci lie outside the 81 map pairs and keep theirs in candidate_*); not_printed = a ledger leaf stores this quantity for the pair, but the manuscript's current Table 2 does not print it, so the shipped card does not carry it (RC1b: the conservative-prior allowance names only values that Table 2 prints)
+Table2_evidence_cards.tsv	ledger_rows_not_carried	Ledger rows whose key or claim names the pair (gene and outcome) that no card column uses, grouped by reason code (code: ledger ids): regional_variant = alternative handling of a carried regional-colocalization cell (outcome SNPs with a printed frequency of 0 or 1 dropped, marked descriptive; or beta/SE input, marked sensitivity); Table 3 and the supplement; duplicate = same stored value as a carried leaf (ext_wald_p); asserted equal at build; signal_level = signal-level or multi-signal test or estimate (conditional ratios, heterogeneity, GLS Q, Holm-adjusted p, credible-set size, attribution grid); Results and Table 3, not a per-pair card quantity; ea_outcome_side = East Asian outcome-side estimate of the European instrument; the card holds its state in EAS_state and the ancestry-matched colocalization in the eas_* columns; screen_level = screen- or post hoc-level statistic about the pair (screen counts, East Asian q and heterogeneity p, tied-variant floor, boundary-frequency heterogeneity p); literature_record = literature record; the card holds Table 2's wording (literature_status) and the PMIDs; analysis_inputs = input counts (sample sizes, variants) of the signal analysis; protocol_count = protocol constant or cross-pair count that names the pair among others
+Table2_evidence_cards.tsv	ledger_row_ids	All ledger rows the card uses: the row's tags in Table 2, the cell sources and the word row
+Table2_evidence_cards.tsv	licence_class	own_derived plus a third_party_derived:<provider> class for each provider the row's values derive from (declared rules; the tokens contain no space)
+Table2_evidence_cards.tsv	source_md5	md5 of the input files the row was generated from
+Table1_data_sources.tsv	role	Table 1 column of the same name, ledger tags and bold markers removed, [@key] citations kept inline (verbatim mirror of the manuscript's Table 1)
+Table1_data_sources.tsv	resource	Table 1 column of the same name, ledger tags and bold markers removed, [@key] citations kept inline (verbatim mirror of the manuscript's Table 1)
+Table1_data_sources.tsv	ancestry	Table 1 column of the same name, ledger tags and bold markers removed, [@key] citations kept inline (verbatim mirror of the manuscript's Table 1)
+Table1_data_sources.tsv	trait_and_scale	Table 1 column of the same name, ledger tags and bold markers removed, [@key] citations kept inline (verbatim mirror of the manuscript's Table 1)
+Table1_data_sources.tsv	cases_controls_or_n	Table 1 column of the same name, ledger tags and bold markers removed, [@key] citations kept inline (verbatim mirror of the manuscript's Table 1)
+Table1_data_sources.tsv	overlap_with_ukb	Table 1 column of the same name, ledger tags and bold markers removed, [@key] citations kept inline (verbatim mirror of the manuscript's Table 1)
+Table1_data_sources.tsv	overlap_with_finngen	Table 1 column of the same name, ledger tags and bold markers removed, [@key] citations kept inline (verbatim mirror of the manuscript's Table 1)
+Table1_data_sources.tsv	ldsc_noise_correlation_with_finngen_outcomes	Table 1 column of the same name, ledger tags and bold markers removed, [@key] citations kept inline (verbatim mirror of the manuscript's Table 1)
+Table1_data_sources.tsv	provider	Provider of the row's resource (declared resource-to-provider rules; a token without a space)
+Table1_data_sources.tsv	licence_class	third_party_derived:<provider> of the row's resource. Rule: every Table 1 row is a third-party resource, so the class names its provider. This file mirrors the manuscript's Table 1 verbatim and is not masked: a TPMI-derived value that Table 1 prints (the TPMI row's case and control counts) ships under third_party_derived:TPMI because the manuscript prints it (S2-D30(3)); the derived TPMI estimates of the external check ship in Table2_evidence_cards.tsv when the TPMI switch is 'ship' (S2-D34(1))
+Table1_data_sources.tsv	cited_keys	[@key] reference keys cited in the row, in order of first use
+Table1_data_sources.tsv	cited_pmids	PMIDs of the cited references (reference tables); a key with no PMID is listed in cited_keys only; keys with no PMID in the reference tables at this build (Stage 6 reference check): old:14, old:3
+Table1_data_sources.tsv	ledger_row_ids	Ledger rows tagged in the row

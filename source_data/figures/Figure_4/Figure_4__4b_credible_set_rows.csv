@@ -1,0 +1,7 @@
+plot_row,method_key,method,ld_panel,status,n_members,printed_text
+6,2,"SuSiE (in-sample), protein",UKB-PPP in-sample LD,admissible,2,2 variants; admissible; spans two genes
+5,1_protein,"SuSiE-RSS, protein",503,inadmissible,2,2 variants; inadmissible fit
+4,1_T2D,"SuSiE-RSS, T2D",503,inadmissible,26,26 variants; inadmissible fit
+3,3,ABF shared (FinnGen),503,notrobust,4,4 variants; not robust to the reference LD
+2,4,ABF T2D (FinnGen),503,notrobust,25,25 variants; not robust to the reference LD
+1,5,ABF shared (DIAMANTE),503,notrobust,5,5 variants; not robust to the reference LD

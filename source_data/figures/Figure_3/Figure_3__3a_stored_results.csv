@@ -1,0 +1,13 @@
+item,ledger_id,value,source,panel_state
+Q,L876,3.706284121,R1_stage1/S1R1_R2_06b_renal_d_umod/results.tsv,"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"
+df,L877,4,R1_stage1/S1R1_R2_06b_renal_d_umod/results.tsv,"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"
+p,L878,0.4472125938,R1_stage1/S1R1_R2_06b_renal_d_umod/results.tsv,"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"
+p without palindromic signal,L965,0.364359763303209,R1_stage1/S1R1_R2_1b_verify/S6/adjudication/A_third/a3_umod_q.tsv (ledger L965 only; file not opened),"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"
+"PP.H4 signal A, 503 panel",L888,0.971287346,R1_stage1/S1R1_R2_06b_renal_d_umod/results.tsv,"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"
+"PP.H4 signal B, 503 panel",L890,1,R1_stage1/S1R1_R2_06b_renal_d_umod/results.tsv,"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"
+"PP.H4 signal A, 489 panel",L887,0.9714425313,R1_stage1/S1R1_R2_06b_renal_d_umod/results.tsv,"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"
+"PP.H4 signal B, 489 panel",L889,1,R1_stage1/S1R1_R2_06b_renal_d_umod/results.tsv,"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"
+diagnostic max s (fine-mapping fit),L869,0.2971914534,R1_stage1/S1R1_R2_06b_renal_d_umod/results.tsv,"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"
+admissibility limit,L923,0.1,ledger L923,"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"
+"conditioning s, 503 panel",L867,0.2796163032,ledger L867,"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"
+"conditioning s, 489 panel",L868,0.2849772718,ledger L868,"values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"

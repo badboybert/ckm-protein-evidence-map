@@ -1,0 +1,27 @@
+Gene,Endpoint,MR direction,coloc.abf PP.H4,coloc.abf PP.H3,SuSiE PP.H4 (naive),SuSiE PP.H4 (purity 0.5),SuSiE converged (no warning),FDR q<0.05,Status,Reason
+APOBR,HF,protective,0.5944,0.2227,0.8119,0.8119,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+APOE,CAD,protective,1.007e-12,1,0.9894,0.9894,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+CELSR2,eGFR,risk,0.05902,0.941,0.9903,0.9903,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+DPEP1,eGFR,risk,6.387e-07,1,0.9541,0.9541,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+GSTA1,eGFR,risk,0.7617,0.2381,0.8876,0.8876,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+GUSB,eGFR,risk,0.833,0.1667,0.8275,0.8275,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+ING1,CAD,protective,7.484e-07,0.9999,0.9945,0.9945,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+INHBB,eGFR,risk,0.6324,0.3676,0.9994,0.9994,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+ITIH4,eGFR,protective,0.04002,0.96,0.9346,0.9346,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+NOTCH2,T2D,protective,0.7438,0.2562,0.9967,0.9967,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+NPDC1,T2D,risk,0.5809,0.4146,0.9176,0.9176,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+NT5C3A,eGFR,risk,0.002911,0.9965,0.8523,0.8523,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+PBLD,eGFR,risk,5.112e-07,1,1,1,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+SORT1,eGFR,protective,0.6111,0.3889,0.9905,0.9905,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+UMOD,CKD,risk,7.053e-11,1,1,1,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+UMOD,eGFR,risk,0.0001569,0.9998,1,1,yes,yes,Drawn,PP.H4_SuSiE >= 0.80 with a converged fit
+ZFYVE19,eGFR,protective,3.769e-12,1,0.9905,0.9905,no,yes,Held (not drawn),PP.H4_SuSiE >= 0.80 only with a non-convergent SuSiE fit (IBSS did not converge even at max_iter=1000)
+APOH,AF,protective,0.1283,0.8701,0.9608,0.1492,yes,yes,Dropped,PP.H4_SuSiE < 0.80 under purity filter
+CHIT1,T2D,risk,0.1224,0.8746,0.9107,1.949e-05,yes,yes,Dropped,PP.H4_SuSiE < 0.80 under purity filter
+CHRDL2,eGFR,protective,0.4033,0.2641,0.8557,—,no,yes,Dropped,Collapsed to no pure credible set under purity filter (min_abs_corr=0.5)
+GHR,AF,risk,0.01758,0.9723,0.8997,—,no,yes,Dropped,Collapsed to no pure credible set under purity filter (min_abs_corr=0.5)
+KLB,AF,risk,0.6881,0.2076,0.8675,—,no,yes,Dropped,Collapsed to no pure credible set under purity filter (min_abs_corr=0.5)
+PDZK1,eGFR,protective,0.3072,0.004689,0.897,—,no,yes,Dropped,Collapsed to no pure credible set under purity filter (min_abs_corr=0.5)
+SCAMP3,AF,protective,1.159e-17,1,0.952,0.0003579,yes,yes,Dropped,PP.H4_SuSiE < 0.80 under purity filter
+TACSTD2,eGFR,risk,0.775,0.07175,0.8266,—,no,yes,Dropped,Collapsed to no pure credible set under purity filter (min_abs_corr=0.5)
+VNN2,CAD,risk,0.7943,0.1974,0.9803,0.0003836,yes,yes,Dropped,PP.H4_SuSiE < 0.80 under purity filter

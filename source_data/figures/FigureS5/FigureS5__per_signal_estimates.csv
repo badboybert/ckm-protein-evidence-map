@@ -1,0 +1,65 @@
+estimand_id,estimand,resource,setting,panel,signal,signal_variant,value,se,ci_lo,ci_hi,row,stat,prim,sens,fires,coloc_clause_pph4_conditional_vs_ARG1_protein
+ii,T2D log-odds per SD of ARG1,FinnGen,marginal,503,A,rs2781668,-0.1910134,0.03356699,-0.256803492,-0.125223308,"FinnGen marginal
+beside",beside,FALSE,FALSE,FALSE,0.969313
+ii,T2D log-odds per SD of ARG1,FinnGen,marginal,503,B,rs17788484,-0.0363272,0.07266564,-0.1787492384,0.1060948384,"FinnGen marginal
+beside",beside,FALSE,FALSE,FALSE,0.009231538
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",FinnGen,marginal,503,A,rs2781668,0.2632858,0.05516769,0.1551591136,0.3714124864,"FinnGen marginal
+co-primary",co-primary,TRUE,FALSE,FALSE,
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",FinnGen,marginal,503,B,rs17788484,0.05074829,0.1017521,-0.1486821629,0.2501787429,"FinnGen marginal
+co-primary",co-primary,TRUE,FALSE,FALSE,
+ii,T2D log-odds per SD of ARG1,FinnGen,conditional,503,A,rs2781668,-0.1975006,0.03487199,-0.265848445,-0.129152755,"FinnGen conditional
+primary",primary,TRUE,FALSE,FALSE,0.969313
+ii,T2D log-odds per SD of ARG1,FinnGen,conditional,503,B,rs17788484,-0.01840223,0.07673274,-0.168795638,0.131991178,"FinnGen conditional
+primary",primary,TRUE,FALSE,FALSE,0.009231538
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",FinnGen,conditional,503,A,rs2781668,0.2723208,0.05788883,0.1588607772,0.3857808228,"FinnGen conditional
+co-primary",co-primary,TRUE,FALSE,FALSE,
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",FinnGen,conditional,503,B,rs17788484,0.02569433,0.1072039,-0.1844214547,0.2358101147,"FinnGen conditional
+co-primary",co-primary,TRUE,FALSE,FALSE,
+ii,T2D log-odds per SD of ARG1,DIAMANTE,marginal,503,A,rs2781668,-0.1138294,0.04661554,-0.2051941802,-0.02246461976,"DIAMANTE marginal
+primary",primary,TRUE,FALSE,FALSE,
+ii,T2D log-odds per SD of ARG1,DIAMANTE,marginal,503,B,rs17788484,0.03945485,0.05264434,-0.0637261612,0.1426358612,"DIAMANTE marginal
+primary",primary,TRUE,FALSE,FALSE,
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",DIAMANTE,marginal,503,A,rs2781668,0.1568983,0.06670136,0.02616603565,0.2876305644,"DIAMANTE marginal
+beside",beside,FALSE,FALSE,FALSE,
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",DIAMANTE,marginal,503,B,rs17788484,-0.05511753,0.07393284,-0.2000232348,0.08978817482,"DIAMANTE marginal
+beside",beside,FALSE,FALSE,FALSE,
+ii,T2D log-odds per SD of ARG1,DIAMANTE,conditional,503,A,rs2781668,-0.1197496,0.04836113,-0.2145356738,-0.0249635262,"DIAMANTE conditional
+beside",beside,FALSE,FALSE,FALSE,
+ii,T2D log-odds per SD of ARG1,DIAMANTE,conditional,503,B,rs17788484,0.04778618,0.05562274,-0.06123238798,0.156804748,"DIAMANTE conditional
+beside",beside,FALSE,FALSE,FALSE,
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",DIAMANTE,conditional,503,A,rs2781668,0.1651149,0.06948757,0.02892176435,0.3013080356,"DIAMANTE conditional
+beside",beside,FALSE,FALSE,FALSE,
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",DIAMANTE,conditional,503,B,rs17788484,-0.06672201,0.07826603,-0.2201206112,0.08667659122,"DIAMANTE conditional
+beside",beside,FALSE,FALSE,FALSE,
+ii,T2D log-odds per SD of ARG1,DIAMANTE_SEfromP,marginal,503,A,rs2781668,-0.1138294,0.047036,-0.2060182667,-0.0216405333,"DIAMANTE, SE from p,
+marginal; sensitivity",sensitivity,FALSE,TRUE,FALSE,
+ii,T2D log-odds per SD of ARG1,DIAMANTE_SEfromP,marginal,503,B,rs17788484,0.03945485,0.05113352,-0.06076500839,0.1396747084,"DIAMANTE, SE from p,
+marginal; sensitivity",sensitivity,FALSE,TRUE,FALSE,
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",DIAMANTE_SEfromP,marginal,503,A,rs2781668,0.1568983,0.06725981,0.02507149375,0.2887251062,"DIAMANTE, SE from p,
+marginal; sensitivity",sensitivity,FALSE,TRUE,FALSE,
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",DIAMANTE_SEfromP,marginal,503,B,rs17788484,-0.05511753,0.07183372,-0.1959090352,0.08567397519,"DIAMANTE, SE from p,
+marginal; sensitivity",sensitivity,FALSE,TRUE,FALSE,
+ii,T2D log-odds per SD of ARG1,DIAMANTE_SEfromP,conditional,503,A,rs2781668,-0.1198122,0.04879714,-0.2154528377,-0.0241715623,"DIAMANTE, SE from p,
+conditional; sensitivity",sensitivity,FALSE,TRUE,FALSE,
+ii,T2D log-odds per SD of ARG1,DIAMANTE_SEfromP,conditional,503,B,rs17788484,0.04755841,0.05402696,-0.05833248663,0.1534493066,"DIAMANTE, SE from p,
+conditional; sensitivity",sensitivity,FALSE,TRUE,FALSE,
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",DIAMANTE_SEfromP,conditional,503,A,rs2781668,0.1652012,0.07006754,0.02787134403,0.302531056,"DIAMANTE, SE from p,
+conditional; sensitivity",sensitivity,FALSE,TRUE,FALSE,
+iii,"T2D log-odds per arginine unit (CLSA scale), direct comparison",DIAMANTE_SEfromP,conditional,503,B,rs17788484,-0.06640399,0.07604968,-0.215458625,0.08265064501,"DIAMANTE, SE from p,
+conditional; sensitivity",sensitivity,FALSE,TRUE,FALSE,
+i,arginine (CLSA units) per SD of ARG1,CLSA arginine,marginal,503,A,rs2781668,-0.7254982,0.09312691,-0.908023591,-0.542972809,"Marginal
+primary",primary,TRUE,FALSE,FALSE,0.9896568
+i,arginine (CLSA units) per SD of ARG1,CLSA arginine,marginal,503,B,rs17788484,-0.7158312,0.1110081,-0.9334030797,-0.4982593203,"Marginal
+primary",primary,TRUE,FALSE,FALSE,0.9999896
+vi,ornithine (CLSA units) per SD of ARG1,CLSA ornithine,marginal,503,A,rs2781668,0.2710169,0.08958698,0.09542964433,0.4466041557,"Marginal
+primary",primary,TRUE,FALSE,TRUE,0.34462
+vi,ornithine (CLSA units) per SD of ARG1,CLSA ornithine,marginal,503,B,rs17788484,0.8274301,0.1130126,0.6059294725,1.048930728,"Marginal
+primary",primary,TRUE,FALSE,FALSE,0.9998926
+i,arginine (CLSA units) per SD of ARG1,CLSA arginine,conditional,503,A,rs2781668,-0.7252498,0.09655768,-0.9144993767,-0.5360002233,"Conditional
+beside",beside,FALSE,FALSE,FALSE,0.9896568
+i,arginine (CLSA units) per SD of ARG1,CLSA arginine,conditional,503,B,rs17788484,-0.7161981,0.1172556,-0.9460148548,-0.4863813452,"Conditional
+beside",beside,FALSE,FALSE,FALSE,0.9999896
+vi,ornithine (CLSA units) per SD of ARG1,CLSA ornithine,conditional,503,A,rs2781668,0.2489496,0.09277595,0.06711207793,0.4307871221,"Conditional
+beside",beside,FALSE,FALSE,TRUE,0.34462
+vi,ornithine (CLSA units) per SD of ARG1,CLSA ornithine,conditional,503,B,rs17788484,0.8597634,0.1200174,0.6245336166,1.094993183,"Conditional
+beside",beside,FALSE,FALSE,FALSE,0.9998926

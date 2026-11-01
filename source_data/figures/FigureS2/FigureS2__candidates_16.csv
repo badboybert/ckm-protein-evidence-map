@@ -1,0 +1,17 @@
+gene,outcome,grp,abf_h4,abf_h3,susie_h4,inadm,state,note
+UMOD,CKD,Kidney,7.053e-11,1,1,TRUE,inadmissible,""
+PBLD,eGFR,Kidney,5.112e-07,1,1,TRUE,inadmissible,""
+DPEP1,eGFR,Kidney,6.387e-07,1,0.9541,TRUE,inadmissible,""
+UMOD,eGFR,Kidney,0.0001569,0.9998,1,TRUE,inadmissible,""
+NT5C3A,eGFR,Kidney,0.002911,0.9965,0.8523,FALSE,admissible,""
+ITIH4,eGFR,Kidney,0.04002,0.96,0.9346,TRUE,inadmissible,""
+CELSR2,eGFR,Kidney,0.05902,0.941,0.9903,TRUE,inadmissible,""
+SORT1,eGFR,Kidney,0.6111,0.3889,0.9905,TRUE,inadmissible,""
+INHBB,eGFR,Kidney,0.6324,0.3676,0.9994,TRUE,inadmissible,""
+GSTA1,eGFR,Kidney,0.7617,0.2381,0.8876,TRUE,inadmissible,""
+GUSB,eGFR,Kidney,0.833,0.1667,0.8275,FALSE,admissible,""
+APOE,CAD,Other,1.007e-12,1,0.9894,TRUE,inadmissible,""
+ING1,CAD,Other,7.484e-07,0.9999,0.9945,TRUE,inadmissible,I
+NPDC1,T2D,Other,0.5809,0.4146,0.9176,TRUE,inadmissible,""
+APOBR,HF,Other,0.5944,0.2227,0.8119,TRUE,inadmissible,""
+NOTCH2,T2D,Other,0.7438,0.2562,0.9967,TRUE,inadmissible,S

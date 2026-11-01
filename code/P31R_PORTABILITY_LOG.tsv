@@ -1,0 +1,225 @@
+path	source_md5	shipped_md5	rules
+code/R2_rewrite/figures/scripts/P31R_Fig1.R	536fa97b44508673694f549506be418d	536fa97b44508673694f549506be418d	none (byte-identical)
+code/R2_rewrite/figures/scripts/P31R_Fig2.R	85d2a871687c4d7f9776922cae84b096	85d2a871687c4d7f9776922cae84b096	none (byte-identical)
+code/R2_rewrite/figures/scripts/P31R_Fig3.R	d39d1f5bb723460bc8ffc0092f74206b	d39d1f5bb723460bc8ffc0092f74206b	none (byte-identical)
+code/R2_rewrite/figures/scripts/P31R_Fig4.R	1715d6983137aac87bd62d1bd987ea87	2f031986e510910d50d7550d936eae42	P1 ext x1; P1 v3 x2; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_Fig5.R	3624df47148628c9a5cba69cce4a61aa	e51e5af7d9ab378695144b190e2c2192	P1 v3 x1; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_FigS1.R	2277fac6ce9597b044503401bae93820	dbb67b8ba8afb5aa264cf7b05f59892a	P1 v3 x2; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_FigS2.R	dce389dbe26da28639d30b4084f34f27	2db91ca12b90edeba9f42e4d2731c1e5	P1 v3 x3; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_FigS3.R	495469ddb14ce24c41c348edc0e4fa7d	cdbca47ef63d278a48bb4a19ebf9e74f	P1 v3 x2; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_FigS4.R	646c0d6550996fcad5218f14de322009	f0c6442f9082ba5eaeb08eb6cd84a142	P1 v3 x2; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_FigS5.R	12249073a9b1014d7408a6eb8a6b283e	f5bc2621cb1c9c011c1f55583fb59210	P1 ext x1; P1 v3 x3; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_FigS6.R	f592a0d5f80826c98e530f9be57211c4	20099825022f610af2f73554c0d74a87	P1 v3 x2; P6 comment x1; P7 prologue x1; S special edit x1
+code/R2_rewrite/figures/scripts/P31R_fig_common.R	e71ad76bf9a454fa43d705cdb23cfcfd	98f23d3b285da278398ccbbdb9b92491	S special edit x1
+code/R2_rewrite/figures/af3/P31R_af3_common.R	ea82f966b13a140e3d7bff29dae27625	750ca7a4c32631ba1e831c6583d9dc2c	S special edit x1
+code/R2_rewrite/figures/af3/P31R_af3_glyphs.R	09c8e54ed88d24db6a683980edba0fc9	09c8e54ed88d24db6a683980edba0fc9	none (byte-identical)
+code/v3.2/scripts/theme_publication_ckm.R	4edd95224fd4eca32f67f6d6db4172fe	4edd95224fd4eca32f67f6d6db4172fe	none (byte-identical)
+code/v3.2/scripts/ckm_palette.R	2e31dc401ab2158fd949529df8aaa1ee	2e31dc401ab2158fd949529df8aaa1ee	none (byte-identical)
+code/R2_rewrite/figures/af3/P31R_af3_assemble.py	8f88821e5177e81baaa11c7ddb8ec52a	d01059f2f008686cbcc0956401585e8a	P2 fonts x1; P7 prologue x1
+code/R2_rewrite/figures/af3/build_legend_AF3_R2.py	070ce364a4988f687b09b92ca6ddd162	070ce364a4988f687b09b92ca6ddd162	none (byte-identical)
+code/R2_rewrite/figures/scripts/P31R_figgate.py	f438500bf1a55924fde7dbe2ade1c51e	d52e18a2e19fb143f1dd81ac504410ff	P2 fonts x1; P7 prologue x1
+code/R2_rewrite/scripts/P31R_gate.py	63f3271709f6c5f753263e528f869a80	63f3271709f6c5f753263e528f869a80	none (byte-identical)
+code/R2_rewrite/scripts/P31R_tablegate.py	718cac6b298108978ab6bf1c63a16358	718cac6b298108978ab6bf1c63a16358	none (byte-identical)
+code/R2_rewrite/scripts/P31R_af1_devstage.py	29f324c517e215ec609c71c9ba88ff9f	29f324c517e215ec609c71c9ba88ff9f	none (byte-identical)
+code/R2_rewrite/scripts/P31R_build_af1.py	d9488e8ad0f97aee45c22b488e9d6f1a	d9488e8ad0f97aee45c22b488e9d6f1a	none (byte-identical)
+code/R2_rewrite/figures/render_all_units.py	098e11eea92a841898df01d5484d4fd6	098e11eea92a841898df01d5484d4fd6	none (byte-identical)
+code/R2_rewrite/release/P31R_build_release.py	9d4745767b16720536794e40b8595df0	9d4745767b16720536794e40b8595df0	none (byte-identical)
+code/R2_rewrite/release/rel_screen.py	38b4d5370c86304ebf101a7386c4d2b6	38b4d5370c86304ebf101a7386c4d2b6	none (byte-identical)
+code/R2_rewrite/release/rel_tables.py	ba4cb6d10bbbd4e5d91b5c5a60c94235	ba4cb6d10bbbd4e5d91b5c5a60c94235	none (byte-identical)
+code/R2_rewrite/release/rel_docs.py	64e31711be7f3d0d3e7d1f78f19f0c20	64e31711be7f3d0d3e7d1f78f19f0c20	none (byte-identical)
+code/R2_rewrite/release/rel_licence.py	4b259a287c69fc9075675b279de0a18d	4b259a287c69fc9075675b279de0a18d	none (byte-identical)
+code/R2_rewrite/release/P31R_releasegate.py	fd99b49fe912d07dbefa12a1b050876e	a370b6523b467232929f771e12e799dd	P6 comment x1
+code/paper3_deposit_request_v4/scripts/R/00_config.R	cc58fcf6be207052f792315589853307	1b0f0e446559ba74de4993614568b0d0	P1 ext x8; P2 rscript x1; P7 prologue x1
+code/paper3_deposit_request_v4/scripts/R/_phase1_set.R	ee452b37cecb143d6e92e1fbe68f8cb8	d44a83a41bcc8b90b50144e68cfe1600	P1 ext x2; P7 prologue x1
+code/paper3_deposit_request_v4/scripts/R/coloc.R	5b9c838962b9e2a9afedc45f0cf7a10d	4c631207c2c9cc51ddc817b43fe0a55d	P1 ext x1; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/_local_outcome_extract.R	42975c900ef4c770609c30dec1f54fe6	c4b5c48264ca2c6eae544767b9304ec4	P1 ext x1; P7 prologue x1
+code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/01_mr_screen.R	6c70f3195107279a9552a10fd72bdf19	4e40e4fd2064e8287dbb512b968163ae	P1 ext x4; P7 prologue x1
+code/R1_stage1/S1R1_R2_01_rad23b/w1_common.R	f9b7e8a623bf092fa0164e54e0f0b487	bbf5a6954d2902940291ae8cde142d83	P1 v3 x11; P2 rscript x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_01_rad23b/w1_compare_seen.R	ee96c2fcb12589ef9979281b52b252a6	74fb6202599828ba1425d97f03555082	P1 v3 x4; P7 prologue x1; S special edit x1
+code/R1_stage1/S1R1_R2_01_rad23b/w1_extract.R	2012f1253eff9f585278e5dd5b6a25ae	34e39214a1f1aadf524fbb10a57385dc	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_01_rad23b/w1_main.R	66d588590eaec1cfe9f29d812e774ba4	826d684ed385beb85967c01aa834faeb	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_00_prestart.py	3e395a9a3712694c6e6626f742370940	1043161fc58d1aca1a0e465071a05482	P2 rscript x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_01_extract.py	d2a82efa9826a484fdbc73ad20a34b4d	d2a82efa9826a484fdbc73ad20a34b4d	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_02_locus.py	b493c1c9c34032fbc944f21ae5790b78	b493c1c9c34032fbc944f21ae5790b78	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_02b_join_audit.py	6820025afa40c53e139d936fc1a3666f	a440c2e06bddb636917c036e1546838b	P1 ext x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_02c_fitset7.py	2a193e46f5142fa716ca842977a0045d	2a193e46f5142fa716ca842977a0045d	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_03_cond.py	f5ba437c0628f2f567b94ef0ca8ef0e7	f5ba437c0628f2f567b94ef0ca8ef0e7	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_04_susie_coloc.R	6c72b9c6a5983d50e95578e0f210f5c2	6c72b9c6a5983d50e95578e0f210f5c2	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_04b_fitset7.R	cab5596345865187a5b485344e4b938f	cab5596345865187a5b485344e4b938f	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_05_annot.py	75b11050fd42db208b0c309b3517fd3a	75b11050fd42db208b0c309b3517fd3a	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_06_coloc_boot.R	0c52cb033629dfa7619ccb3b2783edda	fb1e72bbbf81f8529e2c25d098992d67	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_07_twobytwo.py	2db8f584b515f0d9323798f643253e98	2db8f584b515f0d9323798f643253e98	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_08_assemble.py	db2b0465f5f1f906778a918d7392f582	db2b0465f5f1f906778a918d7392f582	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_09_compare_seen.py	6f4b2ce8acc7ec65769691def9b73bdd	6f4b2ce8acc7ec65769691def9b73bdd	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_10_step2_gate.py	85d0e25bf4645fa0ecf824b321b4617c	85d0e25bf4645fa0ecf824b321b4617c	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_11_gate_mutations.py	eeb17ba259cd2c7beb96b474a24a7842	eeb17ba259cd2c7beb96b474a24a7842	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_common.py	2c35ad0fbec0f14bdd60a053132c5739	f321efa04c14f272fbf663ff2ca7a7a1	P1 ckm x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_rerun_diff.py	a6c64ea62ade87a792d947dbee18634d	a6c64ea62ade87a792d947dbee18634d	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_step2_gate_lib.py	b95488cfb72654c3ddb786fc50b1579a	b95488cfb72654c3ddb786fc50b1579a	none (byte-identical)
+code/R1_stage1/S1R1_R2_02_tgfb1/w2_step2_make_expected.py	e7526cd705f48354ff4f1e47a995592e	e7526cd705f48354ff4f1e47a995592e	none (byte-identical)
+code/R1_stage1/S1R1_R2_03_extcoloc/w3_00_extract.py	5dc6a956f234ed11f3a38b2d9ae616cd	63553bdc30ead0d2c05715c6b2067e5e	P1 v3 x4; P7 prologue x1
+code/R1_stage1/S1R1_R2_03_extcoloc/w3_01_coloc.R	7a4089cdefe464fb8c05ed12a55b9111	98478237b8efe6602985683aa0f87048	P1 v3 x13; P3 named-argument call x3; P7 prologue x1
+code/R1_stage1/S1R1_R2_03_extcoloc/w3_02_selfcheck.py	48d9666d6057753427a50e4b3ca2849c	a521b4ec44c38d2bc6733ee4703c2d59	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_03_extcoloc/w3_03_compare_seen.py	c6a58d8bdf4374bfa1aea571fd2b4749	f60d400268fa38af48ffbcb469aad13b	P1 v3 x4; P7 prologue x1
+code/R1_stage1/S1R1_R2_03_extcoloc/w3_snapshot.py	9987ea560e1fbcb1ac68ce980e9ae2ae	64360f9dd967e1e72a77edb6f3400797	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_R2_04a_arg1grid/w4a_compare_seen.R	a9a5fcaa9591b0e8e87a5a74e03b3dae	071165c936a7b8448bac02dc96086f29	P1 v3 x4; P7 prologue x1
+code/R1_stage1/S1R1_R2_04a_arg1grid/w4a_final_check.R	00309447ec9b51e5e3374e9afcc2359e	2389c691e8da1aa91d09f5a69849be5b	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_R2_04a_arg1grid/w4a_funcs.R	75b90d2e3b3f6366c25be75b12fa281e	75b90d2e3b3f6366c25be75b12fa281e	none (byte-identical)
+code/R1_stage1/S1R1_R2_04a_arg1grid/w4a_main.R	b9ad82b6f4f5883168e0f6585436613b	74ff78bd49f4bef8001f57ce49767297	P1 v3 x7; P7 prologue x1
+code/R1_stage1/S1R1_R2_04a_arg1grid/w4a_staging_beside.R	c79c2b0e4858ae443e38082f92c50b72	98f4a0275acd1157ed23296c0438b1b6	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_00_setup.R	5fc9ecdab70448a2aa8c8c8c0b0f40c3	1d54290ab26f870729ac4d4f2acac2f6	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_01_data.R	cf04779190acc5a8105ec24c1e13c92a	1d612c1446e388a69c38d7e05ca1584e	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_02_susie.R	dae9eaf60cd8862b0108af3e2c0bd01b	9fe8cfff80c3f316d495adb159b89a1c	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_02b_fitset7.R	f2c821a1da87033696c0ae1a731c3f4a	f4f6b83eb9d7103d52aaea866d51be2b	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_03_omnibus.R	7ca3a960e25caad62d42ee2332584b96	5afffc1ebdf924c5e9b29f959c3867aa	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_04_credsets.R	f8bb716c16e23fa309a1688852b60da2	8d35de1dfb721c7af2ec5d8cf8cb9fd9	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_05_rules.R	35193bdb4b4741a893b894777ca6bf1a	9b2211ab0565ea54e9aa9a4de50efbc0	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_06_compare_seen.R	01ec29453d0dd496e690097477204f86	a252e9924d0bde2b3142b8dcea2fe8bf	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_06b_step2_gate.R	58ee9d289c08d475153047693adf85e1	8748077f58f87ab34b69ec169fc0726c	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_06c_gate_mutations.R	28add24d08372d3be80133eff07352b2	f0fc2993fa03cee299e4a615fa8a5d87	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_07_finish.R	5dd258dc476e924bbea31a12ff4ab4d3	9b0c6aaa0679d92130cf783c3bdf7133	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_common.R	2c291884d56d8490c408188b457b8ee4	1ad43770dcd7cffe90d491c89df73f8d	P1 ckm x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_run_all.R	823d9adbc423b6e21bd6da9baf2bcf1a	4cc8addd7b50af4fffa560d996bb23cb	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_step2_gate_lib.R	f8bd0d085ed6d01f80b08adb11d7d289	f8bd0d085ed6d01f80b08adb11d7d289	none (byte-identical)
+code/R1_stage1/S1R1_R2_04b_arg1sets/w4b_step2_make_expected.R	41edb2c278b8a5e5ec4e4a2a7619f916	4c772cea18492c85200dba9dfcabf126	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_R2_06a_renal/w6a_compare.R	d5f8df2cb926b4b5172f4dce262c42bc	75a03092b5c2e37f3ca7fb9d2abccd2e	P1 v3 x4; P7 prologue x1
+code/R1_stage1/S1R1_R2_06a_renal/w6a_compute.R	9899727729bba7011bfa1886e8001e15	0dbb239881346fd40a0c0c7977269f86	P1 v3 x6; P7 prologue x1
+code/R1_stage1/S1R1_R2_06a_renal/w6a_mutation_tests.R	e931c4edb5aec608ec921fb160938350	14bff7618f5d3d3d4d653e1a4ed9bb4e	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_R2_06a_renal/w6a_run_all.R	fdf350b3238c45f0aac4809c95a2ed77	d3c839f5fef22eba7d12f9d56a809b96	P1 v3 x2; P6 comment x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_07_ancestry/w7_main.R	c96733e1e15bfdabf96334d8c23dff9e	191da1c59ec07e782cde5db1b8a7c304	P1 v3 x6; P6 comment x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_07_ancestry/w7_mutations.R	58c3d5465bd20930c35f49eaea7beb86	b5278ecdb24871cffefe2368547abc1d	P1 v3 x1; P6 comment x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_10_integration/w9_common.R	eb3538a12a3a17c626b9776dc25a9e3f	bbc3982bccbe766f91f5206e2496c3d7	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_10_integration/w9_compare_seen.R	1c68d74ffa7b66dade6b2b0dd90abac5	e6f15ae96fe9929dea9b101601465ab3	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_10_integration/w9_main.R	7d776f39d20209c795da873598800f3f	9a6b22226fec514a34b653538ab2b44e	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_10_integration/w9_mutation.R	7fc87c18f8feda5ccae0ddfa2c0f77f1	160a0234961c543b32149890894cda62	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_10_integration/w9_readme.R	e32298b6bdacc86aff1c7160639b039d	2baf6e2ed8f570d4d171e1df709657fc	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_06_claims_ledger/S1R1_build_ledger.py	9aa0ad93aac067ced9e4441a16251626	024bc85acb8fa13e9be0473e84cee46f	P1 ext x3; P7 prologue x1
+code/R1_stage1/S1R1_06_claims_ledger/S1R1_id_alloc.py	0fc5a826446d13e4911169dd6676f496	0fc5a826446d13e4911169dd6676f496	none (byte-identical)
+code/R1_stage1/S1R1_06_claims_ledger/R2_derived_rows.py	1acda126baeba0816c52174290216a43	1acda126baeba0816c52174290216a43	none (byte-identical)
+code/R1_stage1/S1R1_06_claims_ledger/ext_af1.py	98865f1b701d1f0f9f42b7a0eba99d50	98865f1b701d1f0f9f42b7a0eba99d50	none (byte-identical)
+code/R1_stage1/S1R1_06_claims_ledger/ext_r2_release.py	e2fdc34da3dfc9863ca686d0ea8b4674	e2fdc34da3dfc9863ca686d0ea8b4674	none (byte-identical)
+code/R1_stage1/S1R1_06_claims_ledger/ext_r2_stage1.py	8cb6af8b3d9ac8ad626a3a34dbce2a78	8cb6af8b3d9ac8ad626a3a34dbce2a78	none (byte-identical)
+code/R1_stage1/S1R1_06_claims_ledger/ext_r2_stage5.py	9907def8356defdb4b902e478bf579e6	9907def8356defdb4b902e478bf579e6	none (byte-identical)
+code/R1_stage1/S1R1_06_claims_ledger/ext_supp.py	c4d3082f723bb406b4ff00ac461f365d	c4d3082f723bb406b4ff00ac461f365d	none (byte-identical)
+code/R1_stage1/S1R1_06_claims_ledger/ext_supp2.py	d4ce294670477f0a58d6395243ca58ab	730996fdad8eda1cfebc0ddb7aadabf6	P1 ext x2; P2 rscript x1; P7 prologue x1
+code/R1_stage1/S1R1_06_claims_ledger/ext_table1.py	e75ea4e8dfd5f12f6ef3237de8f4fb9c	31760e558bee9f99fd202fc521e5790c	P1 ext x6; P7 prologue x1
+code/R1_stage1/S1R1_06_claims_ledger/ext_table2.py	61e5d0d37ba2907ca5a7be30e7edbe87	61e5d0d37ba2907ca5a7be30e7edbe87	none (byte-identical)
+code/V4_local/builders/l3fm__conditional.py	92012e452b1631830c566f6f944b960d	92012e452b1631830c566f6f944b960d	none (byte-identical)
+code/V4_local/builders/l3fm__common.py	83f1c9904eb52075a8512ca94b779ca7	48a911e324f64e38cb200279f2c41ab6	P1 ext x1; P6 comment x1; P7 prologue x1
+code/V4_local/builders/l3fm__panel2.py	84c9405a32f6850074dc1efd8279ac85	84c9405a32f6850074dc1efd8279ac85	none (byte-identical)
+code/V4_local/builders/l3fm__prep.py	0e97c45ce5aa9926259efeb2c4a61400	0e97c45ce5aa9926259efeb2c4a61400	none (byte-identical)
+code/V4_local/builders/l3__build_bridge_screen_eur.py	7dc2a38d9462380f4b5cf4d83c88c504	e8276d4314df491cb051cb91e10921de	P6 comment x1
+code/R1_stage1/S1R1_R2_00_resources/gls_q.R	b7390fdf5b6f2f9c1d30c298d6afdafc	b7390fdf5b6f2f9c1d30c298d6afdafc	none (byte-identical)
+code/R1_stage1/S1R1_R2_06a_renal/exact_cond_or.R	1217326d2a6880b174f91d377c5b21b9	1217326d2a6880b174f91d377c5b21b9	none (byte-identical)
+code/R1_stage1/S1R1_R2_05_dpep1/S5_00_run_all.R	c421d757d55b779b360f9481f7b33e14	3efa4bf084a62bb649524e02b62488a4	P1 v3 x1; P6 comment x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_05_dpep1/S5_01_prepare.R	d35a071728e923c2b36bf28f58ed5696	34fba95e1a05cfceff7381b85c79d912	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_05_dpep1/S5_02_analyses.R	e302294466e66d28b7f0cfa3325f9201	a3ef192736ace54e1dc78ee033203071	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_05_dpep1/S5_03_bootstrap.R	b84ab4d0b1649c8cc082b6942cec2093	56caa4a1ded371ec0bbbb07e43d0c29e	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_05_dpep1/S5_04_assemble.R	b3f7dae32ed50ec92c96fdb2a798930d	cb568a326d6fadb9cef9a89e474bc6f1	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_05_dpep1/S5_05_selfcheck.R	be42f0b3640efab150533fcde7fa9de4	fa50211b6a84f3806a302b2708b509b5	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_05_dpep1/S5_common.R	1835b57e33b7b8c928c3418dd6977494	a04bd570e3b021edfb3983b975980c10	P1 ckm x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/00b_log_reads.R	53ed210db587e138e97193b91ebb3d47	f5e9051096fd5b483abf7e45ee23145b	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/00_common.R	7d671d989148aea39ec406dade82fe86	106946551fcaccfc1c00a01e43c299d7	P1 ckm x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/01_setup.R	e723665086b9b7089e44bc59e4c54042	51b501487affa0620844fc0828269f61	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/02_candidates.R	2057965523f01320f08b5a64a6927bc1	2602201064b7f415bc96bcaf1fb81cbb	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/03_windows.R	1877087138b7b74d6ceef8d2943b13b2	a4663ada1bb26ee2457e7ef43a26b98e	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/04_harmonise.R	f0c4d156abb93cb2755fb56137d10c49	1c000290bcc3ef92be7727440b253c9a	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/05b_fitset7.R	42d3fbcbe9e3e001ddee8048a0d5dbc1	d851ea0b70584fe4464e618248913d3b	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/05_susie.R	f46dab8ccc24bf6266d5d7d848825012	4ae9d987965a98eca7d9bc2b3aca4e01	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/07_fisher_d.R	2e558f2f7bec03e15abc5f396dca05ff	45f47307c2283d73e88d39b1084f38c4	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/08_umod.R	09597d7fd9f1d31fc2c02b827dc5a304	9367027bd6df6ca715e8a28a1fb524f8	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/09_collect.R	bdf7ce518f7c147415c38e9361554d95	e5f96c8f5c721ab76c2adb5dc7120469	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/10b_normalise_inputs.py	cc317bbae9cc89340bf3c61537078cfa	0f83544593c27e1e6f69ea4e9617e3e5	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/10_branches.R	73149989838dd1ab2571a318e9a5dcad	fb1ff1fa304ad878468ac4a7876861b2	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/11_compare_seen.R	0a99217125517a0c839d59118c10b0eb	0fb6536a49027eac1197748255a556b9	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/12_end.R	aacd73e5033465e5b75a15beb65e10ae	ea2d491a7d3653ccfcc99adfd56271af	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/13_mutation_tests.R	993a7f2b4f9b93fc573710e00943c996	988f135adae31f1663f367c4359dd5ee	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/14_join_yields.R	b5ca767a546e51d0be7a2ebc3870ddd4	efd59e3ec25203d90dc4b0a651d5f67b	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/run_all.R	f4973d57c5f9cb547f89603138c7c9ec	d8339cee4d90423d63b6a1f8fd3a8d24	P1 v3 x1; P2 pyexe x1; P6 comment x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/step2_diff.R	4a6384222f55fef9d79ba5ef5755e0a1	4b931688e735685546b43d53e35d0cc1	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/step2_gate_lib.R	20ed126ae1b3808a9745728f4fabd12e	20ed126ae1b3808a9745728f4fabd12e	none (byte-identical)
+code/R1_stage1/S1R1_R2_06b_renal_d_umod/R/step2_make_expected.R	78619bb7d6a12215c1bcd35fa837a929	d104814b97e29ea439a2637966643c00	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_R2_11_extchecks/C1_extchecks.R	5c674576b04a0607efddc756f7d48eac	ffa616751ec73606eb8c909e415d5e6b	P1 v3 x3; P7 prologue x1
+code/R1_stage1/S1R1_R2_11_extchecks/C1_compare_seen.R	b869bd072f9b972e6a856ae000d1775b	a58aaa7cbb5dfc6a418d88d28706a452	P1 v3 x3; P7 prologue x1
+code/R1_stage1/S1R1_R2_11_extchecks/C1_compare_mutation.R	0222dc9513cfaf57417bb2c4ec97a514	973185a6c34463602317f8d67a3377b7	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_05b_outcome_checks/S1R1_00_instruments.R	1df1ffbc84fbe0406fc06df3e3647263	77f91902790314d0ad3d33821d5078f9	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_05b_outcome_checks/S1R1_01_extract.py	45ffc1a02dc510ec6f6e9757a5f1e26e	2d867c66c30e3cd7923aab047f09e510	P1 ext x5; P7 prologue x1
+code/R1_stage1/S1R1_05b_outcome_checks/S1R1_02_outcome_checks.R	18e7e989e6e508a0b25a1314c872b9a9	a268c9222d3da42e5de61f18a5184613	P1 ext x3; P1 v3 x1; P6 comment x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_12_chen_instrument/scripts/a01_chen_extract.py	c2009930b07dbe931c4f3e9376161189	f7dfa61a1f8df8838c9ef5dad7b9ea8c	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_R2_12_chen_instrument/scripts/b01_ld.R	e1b2f31d868d5cd9e3244474420e72cc	eb7da1f35db3d9b47163441ed4292e7a	P1 ckm x1; P7 prologue x1; S special edit x1
+code/R1_stage1/S1R1_R2_12_chen_instrument/scripts/b02_tables.R	d5fdd6be045897a4ca358bcf2510bcd7	0347a406d30b8e927bd3fb6fb8e1cc7a	P1 ckm x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_12_chen_instrument/scripts/b03_snapshot_check.R	d41b291afcf86d5ccfb6e13f2cf31949	c2b75c4f6b1079ca470c4f707a0d2289	P1 v3 x1; P7 prologue x1
+code/R2_rewrite/figures/registry/APPROVED_SOURCE_MANIFEST.tsv	af4c872cb376e772182fc086a8778172	02a080a3b8fcdca2902e49a6790f269a	P10 data cell x1
+code/R2_rewrite/figures/af3/P31R_ACTIVE_FIGURES.json	513007d950ecbc24c395d9bc7f6ab498	513007d950ecbc24c395d9bc7f6ab498	none (byte-identical)
+code/R2_rewrite/release/rel_ledger.py	7cc35324b06d72cf0075982b20d3af92	7cc35324b06d72cf0075982b20d3af92	none (byte-identical)
+code/R2_rewrite/release/rel_portability.py	58b41f3c955bc581d1b4c6eb894f3211	e7c1f8f70274626501d1a098583264a6	P1 ext x2; P7 prologue x1
+code/V4_local/builders/_vendor/l3__mr_coloc.py	fa6db396645e411504c4825864f75dd4	fa6db396645e411504c4825864f75dd4	none (byte-identical)
+code/V4_local/builders/_vendor/l3__tabix_remote.py	391fcc8c5385c72a8a095f50b2f69210	391fcc8c5385c72a8a095f50b2f69210	none (byte-identical)
+code/v3.2/prose/scripts/v4_facts.py	e171171501bba3cf6bbba87fdefc2137	e171171501bba3cf6bbba87fdefc2137	none (byte-identical)
+code/v3.2/prose/scripts/l2l4_facts.py	1cafe3e58fdf185d735cd26412c094ef	1cafe3e58fdf185d735cd26412c094ef	none (byte-identical)
+code/v3.2/prose/scripts/sidecar_claims.py	32fd3cfe574d4b144d60fb1ea9a79b12	e817d386ec60cdcd0f4b362dc777542f	P6 comment x1
+code/V4_local/builders/eas__census_common.py	48cd9e4f6a5a57304044773359f217e8	d591858500bde11d73a8210a3aecd7a2	P1 ckm x1; P1 ext x4; P2 home x1; P6 comment x1; P7 prologue x1
+code/v3.2/prose/scripts/addfiles.py	12d1e7cbeadf503d5a2b687a00b8689d	12d1e7cbeadf503d5a2b687a00b8689d	none (byte-identical)
+code/v3.2/prose/scripts/renumber_refs.py	169d0d0582bfbea22ae1c6d47f1f3086	169d0d0582bfbea22ae1c6d47f1f3086	none (byte-identical)
+code/v3.2/prose/scripts/apply_supplement.py	7c15d23efaf1028f671b0a90ab769758	7c15d23efaf1028f671b0a90ab769758	none (byte-identical)
+code/v3.2/prose/scripts/docx_edit.py	e5e1eefc803d9416fae152f05967c8bd	16128ad853f148765ae02a2fd3def9ae	P1 v3 x1; P7 prologue x1
+code/V4_local/builders/_vendor/eas__census_mr_coloc.py	fa6db396645e411504c4825864f75dd4	fa6db396645e411504c4825864f75dd4	none (byte-identical)
+code/V4_local/builders/_vendor/eas__census_tabix_remote.py	391fcc8c5385c72a8a095f50b2f69210	391fcc8c5385c72a8a095f50b2f69210	none (byte-identical)
+code/R1_stage1/S1R1_R2_06a_renal/fix_F1_diffgate.R	b189283aa11fdf976e8744071685f14b	b189283aa11fdf976e8744071685f14b	none (byte-identical)
+code/R2_rewrite/release/rel_tiers.py	38db87b953c0b4eaeb5a582f7bfd3bbe	38db87b953c0b4eaeb5a582f7bfd3bbe	none (byte-identical)
+code/paper3_ckd_rerun_v3/scripts_sent/01_renal_triad_mr.R	aaf23876adb66df7e8d57cf9f2ad72c6	a3787a46d37fa65371b8774031da50e9	P1 ext x3; P7 prologue x1
+code/paper3_ckd_rerun_v3/scripts_sent/02_renal_coloc_concordance.R	ed0f33c2a5dae61180cb7037f42cbeef	113c0de2ce75ecb78f1399a4fc9cf705	P1 ext x4; P7 prologue x1
+code/R2_rewrite/release/rel_records.py	c33c49d6b4a97ad014a3701f7dad9ee3	c33c49d6b4a97ad014a3701f7dad9ee3	none (byte-identical)
+code/paper3_deposit_request_v5/scripts/R/_coloc_inputs_key.R	d1a6461f131fd6f59563021d99b1a84a	d1a6461f131fd6f59563021d99b1a84a	none (byte-identical)
+code/paper3_deposit_request_v5/scripts/R/_ld_namespace.R	fb4fc909c22081f82aecf11db157518f	fb4fc909c22081f82aecf11db157518f	none (byte-identical)
+code/paper3_deposit_request_v5/scripts/R/_outcome_prevalence.R	676d33cec5ac1c22921402bfcf02177e	676d33cec5ac1c22921402bfcf02177e	none (byte-identical)
+code/paper3_deposit_request_v5/scripts/R/_prior_bands.R	4341c6af8038d96101782564b0fbc610	4341c6af8038d96101782564b0fbc610	none (byte-identical)
+code/paper3_deposit_request_v5/scripts/R/strand_align.R	3e80a37c9b85082225d7f656640d6608	3e80a37c9b85082225d7f656640d6608	none (byte-identical)
+code/paper3_deposit_request_v5/scripts/scripts/_shared/aric/01_aric_replication_mr.R	8c2e8437a814ec3c3fa0d00b666b691b	498aa7bdd863c3c6a0a434f273bf2315	P1 ext x2; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/decode/01_decode_replication_mr.R	839fe4f7c08b1f07a321dc34069b012f	ce8a77c880a875f1c69e086d688bd731	P1 ext x2; P6 comment x2; P7 prologue x1; S special edit x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/01_acquire_and_localize_outcomes.py	4167fa49a742e5e13a0a7135747af3e2	ea2a324af03db9090702918240d9ae59	P1 ext x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/02_eas_outcome_coverage.R	4011cc10834d36a346a73c9df355bcea	987349ec72278f2abc120b9b0f292442	P1 ext x3; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/03_eas_outcome_wald.R	2708380a2cc912b4d211751d201398a0	e5acc2e030221e7da5fb6fc79777af27	P1 ext x2; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/04_eas_pqtl_transferability.R	7504c44bbba8df45e9714da7dbff78f0	7534230d3fd8c4d8897ce805f9e2031c	P1 ext x2; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/05_assign_eas_state.R	aa9492a93f1cc7b337a831ea1ce508ec	9a4cdd72b35190d80af1c239f6841b38	P1 ext x2; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/09_phase1_harmonise_hg38.R	034b2515ad5a9b684997496c3f66d71b	13199674efc015a80298bff760be9d32	P1 ext x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/49_susie_grid_corrected.R	f0ed9965f5b31b0f1078f853bc8b6a4e	94f75a9d7888aa21609f918428d6ee60	P1 ext x4; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/50_phase2_sensitivity_offline.R	5c02c94c25dc7a9817d1fa54026fd98d	770be5960fe2d446c2913c28443db67b	P1 ext x6; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/50c_sens5e8_egfr_offline.R	7ab5751fe77f666e7f703f0993df2519	2940e40c150c425896d1cdca10036186	P1 ext x5; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/53_correlated_ivw_recompute.R	149dcd29e3ffbf72c69da46c6a81bd2a	a14d42a4e179cdf4baee1944a76f9431	P1 ext x3; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/61_lead_snp_consequences.py	e05a04541c51c80c5387e6e435868cc7	2e97eb1309e95e91dcdec585e8fe3aad	P1 ext x2; P2 rscript x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/_guard.R	45e7018c90aff1d03b6236680294ceb6	45e7018c90aff1d03b6236680294ceb6	none (byte-identical)
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/cascade/07_susie.R	f6fe2fafc70227518ba259de71355711	a4dbadfe8eb0bc4e4d837b7f04d6267f	P1 ext x3; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/cascade/08_susie_egfr.R	4bc1893099ca061e0b4d610a9aa854ea	7f11e0e77209ab6df9bba72e39076d64	P1 ext x3; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/cascade/09_steiger.R	16c3b4f78e04153c78b978828db2dccf	d01d7d1e2b52125e056abd8d9e031eff	P1 ext x3; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/cascade/10_prior_sweep.R	47b59d722d11799b87f85fb993448459	3ca554d0126a2af39f61c124b90c3241	P1 ext x3; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/cascade/11_prior_sweep_egfr.R	c891d45437bffd2efe8366f06d635e1b	f869c219576b7e19ae6e7825e6af39bf	P1 ext x3; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/cascade/12_decode.R	871365e3c802297b006d891379a1956b	18c3705680c921bbded64d733fb737b8	P1 ext x3; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/cascade/12b_aric.R	60e0d344849541e9fea5a57addd0963d	99302b9f6e8a9c94f3936e9b1d40498e	P1 ext x3; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/cascade/16_assert_annotation.R	c6724878c21892f8c526699462d2a606	2dd883c9b0f2ccc071acf166a7af8dd2	P1 ext x2; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase2/11_phase2s_sensitivity.R	5715ffd9076a6307b9821d5f262e445a	66a01e6ce018cf82dcc2221127c90dd8	P1 ext x1; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase2/15_phase2_sens_5e8.R	127c7099e45af5135f691d7499e243cc	ada2075fee56a76280bf845f6a7e08ce	P1 ext x1; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase2/16_sens_5e8_egfr.R	f8eca37870c114d6dc23fe969efca3c2	8329f0f2ee7de5606f58f91f7d4ab129	P1 ext x3; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/10_phase3s_prior_sweep.R	91c103ea7a857b137261df20ab79b9fd	b2381b9f4ec014b30d74965b62411192	P1 ext x3; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/15_susie_coloc.R	2a21caa2b837ab9f0c55224e1d7f06ea	53fca1401fa0d4079e46e50c4a27434a	P1 ext x4; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/16_susie_grid.R	5a70c42a20d32b1fa8da3de092337028	8f4aa552bfd84d1c4435d667df94cf09	P1 ext x4; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/25_prior_sweep_egfr.R	4f60ff5be3a8f125bba1b4144ebc13fe	32241bc14f72d81003a6f7b21cc4fe58	P1 ext x4; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/26_susie_coloc_egfr.R	509d199316668da45184c51006e0a4bc	5b54a784ab097a80780a690aefc8d605	P1 ext x3; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/28_candidate_edge_enumerate.R	94a7f94799aea98b83d43ba6332c0545	e783e5bb807ae6cef4d4fae54ce753fd	P1 ext x2; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/29_candidate_susie.R	ad08896a950757452f4cf3f8a9233966	1ec43ca84b49dc4db07e578edf7b9a1f	P1 ext x2; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/29a_palindrome_registry.R	d8f75e1704e524b7b02efb00d3e0369e	cb0f02ecf230447dc1a321c4f080aea5	P1 ext x2; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/30_candidate_edge_audit.R	12b70b7fc087ba2e0f4dd8e5a962c333	cf5d7e3a648e15b9cc819a2b0ee0d972	P1 ext x1; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/31_candidate_susie_sensitivity.R	617ba3fb18133230e8f21264f33e4a57	e2de5cc8d112d1bfe21e503a17167438	P1 ext x2; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/32_dashed_finalize.R	4f60d90fd36f1d8e0edcd12f732d729b	de5b0f05f16c11cf4ac499a4135148fd	P1 ext x1; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/33_sensitivity_provenance.R	e14dadaeb063f7c5e671016e1eb8abab	671e0be2756e194b283002896dc718d1	P1 ext x2; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/34_coloc_robustness_table.R	82d5d9801feab7625b7fb9f5aa632c43	9200ee785b3a942ef1b4e1646898bde2	P1 ext x4; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/39_palindromic_freq_gate.R	b5c6efdb90b02a14e0217df8ebfe7a0b	5e3a6d76506442d303cc35727fe3881d	P1 ext x2; P7 prologue x1
+code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/_candidate_null_classify.R	3df0d669cdef6ca36b5b0697c05bc24f	3df0d669cdef6ca36b5b0697c05bc24f	none (byte-identical)
+code/R2_rewrite/review_R2/S6_classrule_recon.py	4770cf00fe73020bc6dc9ec019b8cefa	4770cf00fe73020bc6dc9ec019b8cefa	none (byte-identical)
+code/R1_stage1/S1R1_R2_06a_renal/w6a_posthoc_nopurity.R	37f031e4b39407d8faca159c852b79f1	5b0598238eb6bdcbcf0a9c6fde0c2e65	P1 v3 x2; P7 prologue x1
+code/R1_stage1/S1R1_R2_08_proxy_record/w8_proxy_record.py	0230df617199b69ba991f5d087e618ae	09a46e7ba7743a0963e54050b981a34a	P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_08_proxy_record/w8_raw_scan.py	6423e8b773cfab1a2dd4d49bad17598f	b7f8e17b5917a13159891b0dc2e7f14f	P1 ext x1; P1 v3 x1; P7 prologue x1
+code/R1_stage1/S1R1_R2_08_proxy_record/w8_export_ld.R	c084d737fd019076d37bde1a23f41177	5e9e30e167468b1d3c3a8179ec39f65e	P1 v3 x1; P7 prologue x1
+decoy/S1R1_decoy_rates.R	3109a9fd9882e496a41ee2763b9ce9bc	a3be917c6c7c5388fa67e3389ac56474	X0 outside code/ (source_md5 = the copy before this step; the declared source file has md5 3109a9fd); P1 v3 x1; P7 prologue x1
+sensitivity_uncited/SuppTable_LDaware_IVW_multiinstrument.csv	8839eb8e283ffde62ae63bf4d55aae5f	6f7a18a70de9d047306afb2b23334341	X0 outside code/ (source_md5 = the copy before this step; the declared source file has md5 8839eb8e); P11 data cell / document (public relative form) x1
+workstreams/W2/results.tsv	12549a5afa5f7efc3338878cfaa7cbf8	45f95c189628494452cfd4d6afda76e4	X0 outside code/ (source_md5 = the copy before this step; the declared source file has md5 306bf3a7); P11 data cell / document (public relative form) x1

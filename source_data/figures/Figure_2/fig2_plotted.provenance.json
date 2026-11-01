@@ -1,0 +1,37 @@
+{
+  "figure": "Figure_2",
+  "note": "plotted frames written by P31R_Fig2.R at save time; every value is read from the pinned sources in render_log/Figure_2.tsv; discovery 95% CI = value +/- 1.959964 x se (arithmetic on stored values; the W11 discovery rows hold value and se only); external CI = stored W11 ci_lo/ci_hi (equal to value +/- 1.959964 x se, asserted)",
+  "h4_not_run_pairs": ["ARG1-T2D", "FGFR4-T2D (EAS)"],
+  "literature_codes": [
+    {
+      "pair": "PAM-T2D",
+      "nid": "N2",
+      "code": "pair reported before"
+    },
+    {
+      "pair": "RAD23B-T2D",
+      "nid": "N3",
+      "code": "not found (main texts only; Table 2)"
+    },
+    {
+      "pair": "ARG1-T2D",
+      "nid": "N2",
+      "code": "pair reported before"
+    },
+    {
+      "pair": "PCSK9-CAD",
+      "nid": "N1",
+      "code": "estimate published; regional test new"
+    },
+    {
+      "pair": "TGFB1-CAD",
+      "nid": "N1",
+      "code": "estimate published; regional test new"
+    },
+    {
+      "pair": "FGFR4-T2D (EAS)",
+      "nid": "N7",
+      "code": "reported before"
+    }
+  ]
+}

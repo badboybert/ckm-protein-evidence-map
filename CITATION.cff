@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use these files, please cite the article and this release."
+title: "A genetic evidence map of circulating proteins across cardiovascular, kidney and metabolic outcomes: release repository"
+version: "v2.0.4-R2"
+type: dataset
+license: CC-BY-4.0
+authors:
+  - family-names: "Hsueh"
+    given-names: "Cheng-Yu"
+    affiliation: "Department of Biomedical Sciences, College of Medicine, Chang Gung University, Taoyuan, Taiwan"
+  - family-names: "Nguyen"
+    given-names: "Trang Huyen"
+    orcid: "https://orcid.org/0000-0002-4079-7486"
+    affiliation: "Department of Biomedical Sciences, College of Medicine, Chang Gung University, Taoyuan, Taiwan"
+  - family-names: "Chen"
+    given-names: "Ko-Ting"
+    orcid: "https://orcid.org/0000-0002-6795-5974"
+    affiliation: "Department of Neurosurgery, Lin-Kou Medical Center, Chang Gung Memorial Hospital, Taoyuan 33305, Taiwan"
+  - family-names: "Tan"
+    given-names: "Bertrand Chin-Ming"
+    orcid: "https://orcid.org/0000-0002-2218-7115"
+    affiliation: "Department of Biomedical Sciences, College of Medicine, Chang Gung University, Taoyuan, Taiwan"
+# A DOI is added when the release is deposited, which is a separate approval. No date-released is written: the build has no clock.

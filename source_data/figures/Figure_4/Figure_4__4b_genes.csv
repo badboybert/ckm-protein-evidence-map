@@ -1,0 +1,4 @@
+symbol,strand,plot_y,protein_coding_start_mb,protein_coding_end_mb,canonical_start_mb,canonical_end_mb,canonical_drawn
+MED23,-1,-0.9,131.572244,131.628313,131.586732,131.628242,TRUE
+ARG1,1,1,131.48,131.584332,131.573226,131.584329,TRUE
+ENPP3,1,1,131.628433,131.67,131.637302,131.67,TRUE

@@ -1,0 +1,24 @@
+x,y,label,hj,vj,tc,row
+2,2.5,"European instrument, East Asian outcome data",0,0.5,#333333,1
+17,9,All pairs 81,0.5,0.5,#333333,2
+17,20,Evaluable 52,0.5,0.5,#333333,3
+62,20.6,Not evaluable 29 | includes all 3 Convergent pairs,0.5,0.5,#333333,4
+10,29.2,By direction relative to the European estimate,0,0.5,#333333,5
+43.75,35,Same sign 45,0.5,0.5,#333333,6
+88,39.6,Opposite sign 7 | none significant,1,1,#333333,7
+10,47.6,"By East Asian significance, the same pairs",0,0.5,#333333,8
+19,55,Compatible 12,0.5,0.5,#333333,9
+58,55,Inconclusive 40,0.5,0.5,#333333,10
+90,55,Discordant 0,0,0.5,#333333,11
+52.75,59.4,33 same sign,0.5,1,#333333,12
+82.75,59.4,7 opposite sign,0.5,1,#333333,13
+2,65.4,14 of the evaluable pairs are eGFR pairs in a single East Asian eGFR file | (standardized effects; compared by sign and p only),0,1,#333333,14
+110.5,2.5,East Asian instrument and outcome data,0,0.5,#333333,15
+133,9,Eligible pairs 48,0.5,0.5,#333333,16
+133,20,Testable 47,0.5,0.5,#333333,17
+133,31,Colocalized 7,0.5,0.5,#333333,18
+133,42,Robust 3,0.5,0.5,white,19
+116,47.2,"Testable, not colocalized:",0,0.5,#333333,20
+117.5,52.25,No outcome association 32,0,0.5,#333333,21
+117.5,59.75,Distinct variants 7,0,0.5,#333333,22
+117.5,68.25,"Below the rule: DNER–eGFR, | PP.H4 0.536",0,0.5,#333333,23

@@ -1,0 +1,90 @@
+{
+ "locus": "DPEP1_16q24",
+ "chr": "16",
+ "window_grch38": [
+  89113308,
+  90138456
+ ],
+ "join_on": "pos38",
+ "window_grch37_ref": [
+  89178787,
+  90189467
+ ],
+ "n_snps": 3575,
+ "n_primary_rows": 7388,
+ "drops": {
+  "dup_key_P__DPEP1": 0,
+  "dup_key_P__CDH15": 0,
+  "dup_key_P__CHMP1A": 0,
+  "dup_key_M__GCST90200364": 0,
+  "dup_key_M__GCST90199883": 0,
+  "dup_key_M__GCST90200319": 0,
+  "dup_key_M__GCST90199922": 0,
+  "dup_key_M__GCST90200282": 0,
+  "dup_key_M__GCST90199961": 0,
+  "dup_key_M__GCST90200234": 0,
+  "nojoin_M__GCST90200364": 1655,
+  "ref_absent": 570,
+  "nojoin_P__CDH15": 1,
+  "nojoin_M__GCST90199883": 1,
+  "ref_maf_lt_0.01": 1501,
+  "palindromic_maf_gt_0.40": 84,
+  "af_discordant_M__GCST90200364": 1
+ },
+ "rsid_concordance": "3575/3575",
+ "ref_panel": "paper 6/analysis/g1000_eur/g1000_eur",
+ "ref_n": 503,
+ "ref_maf_min": 0.01,
+ "af_diff_max": 0.2,
+ "palin_maf_max": 0.4,
+ "inputs": {
+  "P__DPEP1": {
+   "path": "weight-loss.omics/data/proteome/pqtl_regional/OID20897_chr16_cis.tsv",
+   "md5": "1f9c402c023f7a37cb1a9dd1776cc3c3"
+  },
+  "P__CDH15": {
+   "path": "weight-loss.omics/data/proteome/pqtl_regional/OID21005_chr16_cis.tsv",
+   "md5": "2dea4d96f8f858820d0910c5ee52ce53"
+  },
+  "P__CHMP1A": {
+   "path": "weight-loss.omics/data/proteome/pqtl_regional/OID20930_chr16_cis.tsv",
+   "md5": "8aa9eb6a640e2b5817a5c9c9b220f252"
+  },
+  "M__GCST90200364": {
+   "path": "V3/V4_local/raw/d1-bridge-eur/chen_windows/GCST90200364__chr16_89113308_90138456.tsv.gz",
+   "md5": "e7a9d55a31820f6a0ea5494e22311958"
+  },
+  "M__GCST90199883": {
+   "path": "V3/V4_local/raw/d1-bridge-eur/chen_windows/GCST90199883__chr16_89113308_90138456.tsv.gz",
+   "md5": "b683648f00480b241fcd52163d26a720"
+  },
+  "M__GCST90200319": {
+   "path": "V3/V4_local/raw/d1-bridge-eur/chen_windows/GCST90200319__chr16_89113308_90138456.tsv.gz",
+   "md5": "f838630638ed5f630cec9aa381506aa6"
+  },
+  "M__GCST90199922": {
+   "path": "V3/V4_local/raw/d1-bridge-eur/chen_windows/GCST90199922__chr16_89113308_90138456.tsv.gz",
+   "md5": "95133b76803ca4d76eb49a8bbcda7328"
+  },
+  "M__GCST90200282": {
+   "path": "V3/V4_local/raw/d1-bridge-eur/chen_windows/GCST90200282__chr16_89113308_90138456.tsv.gz",
+   "md5": "9cdb62380eea55de782a8b73e68afd7a"
+  },
+  "M__GCST90199961": {
+   "path": "V3/V4_local/raw/d1-bridge-eur/chen_windows/GCST90199961__chr16_89113308_90138456.tsv.gz",
+   "md5": "a5310ca433e8fa48536c805a7846b40d"
+  },
+  "M__GCST90200234": {
+   "path": "V3/V4_local/raw/d1-bridge-eur/chen_windows/GCST90200234__chr16_89113308_90138456.tsv.gz",
+   "md5": "8f238cf2388c5b097e510f3f34f146d9"
+  }
+ },
+ "outputs": {
+  "harmonised.tsv.gz": "0d197e1a7f9c86a35d00a2671d4f19b5",
+  "traits.tsv": "e8292c478a0ca6782e7c11fe835b16b3",
+  "V3/V4_local/raw/l3-finemap/DPEP1_16q24__ref_A1dosage_503xP.i8": "c5b37c7db585e5cd7068c0a56734f6ee"
+ },
+ "builder_md5": "0e97c45ce5aa9926259efeb2c4a61400",
+ "common_md5": "83f1c9904eb52075a8512ca94b779ca7",
+ "built_at": "2026-09-26T21:52:16"
+}

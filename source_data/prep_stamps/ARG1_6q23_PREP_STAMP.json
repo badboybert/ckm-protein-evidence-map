@@ -1,0 +1,59 @@
+{
+ "locus": "ARG1_6q23",
+ "chr": "6",
+ "window_grch38": [
+  130970832,
+  132084332
+ ],
+ "join_on": "pos38",
+ "window_grch37_ref": [
+  131291089,
+  132406428
+ ],
+ "n_snps": 3067,
+ "n_primary_rows": 6247,
+ "drops": {
+  "dup_key_P__ARG1": 0,
+  "dup_key_P__CCN2": 0,
+  "dup_key_M__GCST90200372": 0,
+  "dup_key_M__GCST90200404": 0,
+  "nojoin_P__CCN2": 14,
+  "nojoin_M__GCST90200372": 1178,
+  "ref_absent": 522,
+  "ref_maf_lt_0.01": 1440,
+  "palindromic_maf_gt_0.40": 25,
+  "af_discordant_M__GCST90200372": 1
+ },
+ "rsid_concordance": "3054/3067",
+ "ref_panel": "paper 6/analysis/g1000_eur/g1000_eur",
+ "ref_n": 503,
+ "ref_maf_min": 0.01,
+ "af_diff_max": 0.2,
+ "palin_maf_max": 0.4,
+ "inputs": {
+  "P__ARG1": {
+   "path": "weight-loss.omics/data/proteome/pqtl_regional/OID21445_chr6_cis.tsv",
+   "md5": "a6d1f14e0f8f171911495efc54b5aebf"
+  },
+  "P__CCN2": {
+   "path": "weight-loss.omics/data/proteome/pqtl_regional/OID20709_chr6_cis.tsv",
+   "md5": "e6f24a7e3d28f48f78f56127128596d5"
+  },
+  "M__GCST90200372": {
+   "path": "V3/V4_local/raw/d1-bridge-eur/chen_windows/GCST90200372__chr6_130970832_132084332.tsv.gz",
+   "md5": "dbd68a8cc11b8735353f24994408169b"
+  },
+  "M__GCST90200404": {
+   "path": "V3/V4_local/raw/d1-bridge-eur/chen_windows/GCST90200404__chr6_130970832_132084332.tsv.gz",
+   "md5": "9b32f83516131114a29a69ab1d5f6a2f"
+  }
+ },
+ "outputs": {
+  "harmonised.tsv.gz": "c394b6a1c0acbe32bfabc65d136ac974",
+  "traits.tsv": "669c13a473d2c311200fcb72b0a84644",
+  "V3/V4_local/raw/l3-finemap/ARG1_6q23__ref_A1dosage_503xP.i8": "548e02d431c56888cd93afa2cf5d0fd6"
+ },
+ "builder_md5": "0e97c45ce5aa9926259efeb2c4a61400",
+ "common_md5": "83f1c9904eb52075a8512ca94b779ca7",
+ "built_at": "2026-09-26T21:52:17"
+}

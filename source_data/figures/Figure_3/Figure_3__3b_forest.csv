@@ -1,0 +1,7 @@
+row,vkey,status,marker,or,ci_lo,ci_hi,printed_text,source_file,quantity_ids,ledger_ids,ci_hi_note
+1,primary,primary,circle,3.332162128,1.002789613,12.90137592,3.33 (1.003 to 12.9),R1_stage1/S1R1_R2_06a_renal/results.tsv,S6.primary.or_mle;S6.primary.or_lo;S6.primary.or_hi,L862;L861;L860,""
+2,a,sensitivity,circle,2.979111679,0.8736987259,11.70145144,2.98 (0.874 to 11.7),R1_stage1/S1R1_R2_06a_renal/results.tsv,S6.b.a_pair.or_mle;S6.b.a_pair.or_lo;S6.b.a_pair.or_hi,L849;L848;L847,""
+3,b,sensitivity,circle,3.081607957,0.8630285129,12.47900097,3.08 (0.863 to 12.5),R1_stage1/S1R1_R2_06a_renal/results.tsv,S6.b.locus_outcome.or_mle;S6.b.locus_outcome.or_lo;S6.b.locus_outcome.or_hi,L853;L852;L851,""
+4,c,sensitivity,diamond,3.181818182,1.027527184,12.46034418,3.18 (1.03 to 12.5),R1_stage1/S1R1_R2_06a_renal/results.tsv,S6.c.haldane_or;S6.c.pooled_lo;S6.c.pooled_hi,L854;L856;L855,""
+5,d,sensitivity,none,Inf,0.2551108189,Inf,"OR not finite | interval from 0.255, | no finite upper bound",R1_stage1/S1R1_R2_06b_renal_d_umod/results.tsv,S6.d.or;S6.d.lo;S6.d.hi,NA;L885;NA,no finite upper bound: drawn as an arrow to the axis end; no point marker
+6,dkept,sensitivity,circle,2.740199132,0.1399375022,164.4415762,2.74 (0.140 to 164.4),R1_stage1/S1R1_R2_06b_renal_d_umod/results.tsv,S6.d.kept.or;S6.d.kept.lo;S6.d.kept.hi,L872;L871;L870,""

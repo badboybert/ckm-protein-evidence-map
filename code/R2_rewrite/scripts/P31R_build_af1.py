@@ -108,9 +108,15 @@ REL_STALE = []   # (source, shipped path): the manifest pins another md5 for the
 
 def repo_src(p):
     v3rel = os.path.relpath(p, V3).replace("\\", "/")
+    here = md5(p)
+    # G5 (2026-11-01, release-F1): a manifest row built from a relocated copy of this file names the copy's path in source_path (V4_local/staging/...), so a
+    # file with no path match is matched by its source_md5 (path first, so byte-identical vendored twins keep their own row); the two Table S7b census
+    # sources (results_census.tsv, results_ckbfree.tsv) are the case in point
     hits = REL_MAN[REL_MAN["source_path"].apply(lambda sp: v3rel in sp.split(";"))]
+    if not len(hits):
+        hits = REL_MAN[REL_MAN["source_md5"].apply(lambda sm: here in sm.split(";"))]
     if len(hits):
-        here, out = md5(p), []
+        out = []
         for _, h in hits.iterrows():
             if ";" not in h["source_path"] and h["source_md5"] != here:
                 REL_STALE.append((v3rel, h["path"]))
@@ -468,8 +474,8 @@ S1MAP = {
                  "Generalisability across ancestries is discussed; across exposure periods and levels it is not."),
     ("18", ""): ([loc("Declarations", "Funding", 1, "This work was supported")], "reported", "Funding and the funders' role are stated in the Declarations."),
     ("19", ""): ([loc("Declarations", "Availability of data and materials", 1, "published or publicly released genetic-association summary statistics"),
-                  loc("Declarations", "Availability of data and materials", 2, "The repository holds the analysis and figure code")], "partly reported",
-                 "Data sources and the repository contents are stated; the repository URL and archive DOI are to be completed by the authors."),
+                  loc("Declarations", "Availability of data and materials", 2, "The repository holds the analysis and figure code")], "reported",
+                 "Data sources, the repository contents, the repository URL and the archive DOI (the Zenodo concept DOI) are stated in the Declarations."),
     ("20", ""): ([loc("Declarations", "Competing interests", 1, "The authors declare that")], "reported", "Competing interests of all authors are stated in the Declarations."),
 }
 _it = pd.read_csv(SRC["strobe"], sep="\t", dtype=str).fillna("")
@@ -924,8 +930,8 @@ for _, r in oc.iterrows():
                  C_BON: yn(bool(r.bonferroni_6)) if "signal B" not in r.pair else "not applicable",
                  "Discovery estimate (log-odds per SD of protein)": r.discovery_wald, "Discovery SE": r.discovery_se,
                  # S2-D43 (M5): the TPMI pair is compared by sign and p only (its note, Table 2 and the Results), so no magnitude test is printed for it
-                 "Heterogeneity p, external vs discovery": "not computed (sign and p only)" if r.resource == "TPMI" else r.het_p, "Note": note})
-assert sum(1 for x in rows if x["Heterogeneity p, external vs discovery"] == "not computed (sign and p only)") == 1, "the sign-and-p-only pair is not exactly one row"
+                 "Heterogeneity p, external vs discovery": "not reported (sign and p only)" if r.resource == "TPMI" else r.het_p, "Note": note})
+assert sum(1 for x in rows if x["Heterogeneity p, external vs discovery"] == "not reported (sign and p only)") == 1, "the sign-and-p-only pair is not exactly one row"
 eq(len(ph), LV("L250")[0], "post hoc pairs (L250)")
 phe = ph[~ph.cls.str.startswith("not evaluable")]
 eq([len(phe), int(phe.same_sign.sum()), int((phe.cls == "concordant").sum())], LV("L250")[:3], "post hoc same sign / concordant (L250)")

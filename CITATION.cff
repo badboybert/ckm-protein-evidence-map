@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use these files, please cite the article and this release."
 title: "A genetic evidence map of circulating proteins across cardiovascular, kidney and metabolic outcomes: release repository"
-version: "v2.0.4-R2"
+version: "v2.0.5-R2"
 type: dataset
 license: CC-BY-4.0
 authors:
@@ -20,4 +20,4 @@ authors:
     given-names: "Bertrand Chin-Ming"
     orcid: "https://orcid.org/0000-0002-2218-7115"
     affiliation: "Department of Biomedical Sciences, College of Medicine, Chang Gung University, Taoyuan, Taiwan"
-# A DOI is added when the release is deposited, which is a separate approval. No date-released is written: the build has no clock.
+# No doi key: Zenodo mints a version DOI for each GitHub release of this repository; README.md gives the concept DOI (10.5281/zenodo.23855497), which resolves to the latest version. No date-released: the release date is on the Zenodo record.

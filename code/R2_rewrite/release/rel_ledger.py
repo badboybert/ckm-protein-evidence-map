@@ -348,6 +348,17 @@ def tpmi_values(withheld, out):
     return vals
 
 
+_AGENT_PAREN_RX = re.compile(r" \([A-Za-z][A-Za-z0-9 ,'/-]*\)$")
+
+
+def _claim_public(claim, mk):
+    """G5 (2026-11-01, step 5f list): the claim text of a CHEMBL-masked row may end in a parenthetical naming the agent ('development-stage note (<agent>)',
+    L110-L113); the mask covers that parenthetical too, so the public claim column names no ChEMBL-derived agent."""
+    if mk and mk[0] == "CHEMBL" and _AGENT_PAREN_RX.search(claim):
+        return _AGENT_PAREN_RX.sub(" (agent name masked: CHEMBL)", claim)
+    return claim
+
+
 def mask_reason(r, withheld_src, tpmi_toks=frozenset(), tpmi_mode="withheld", raw_toks=frozenset()):
     """None, or (code, detail) for a private ledger row. tpmi_mode is the SW1 switch ('withheld' | 'ship'); raw_toks are the raw per-variant TPMI keys (ship mode)."""
     txt = " ".join(r[c] for c in ("claim", "source", "display", "value"))
@@ -418,7 +429,7 @@ def make_public(v3, out, withheld, ledger_rows):
             dis = "[masked: %s]" % why
             stats[code] += 1
         src, before = shipped_md5_source(public_source(r["source"], shipped), out)
-        pub.append(dict(id=r["id"], section=_cell(_DRIVE_RX.sub("<external>/", r["section"])), claim=_cell(_DRIVE_RX.sub("<external>/", r["claim"])),
+        pub.append(dict(id=r["id"], section=_cell(_DRIVE_RX.sub("<external>/", r["section"])), claim=_cell(_DRIVE_RX.sub("<external>/", _claim_public(r["claim"], mk))),
                         value=_cell(val), display=_cell(dis),
                         source=src, evidence_status=evidence_status(r["independent_check"], r["load_bearing"]),
                         source_md5_before_release_transform=";".join(before),

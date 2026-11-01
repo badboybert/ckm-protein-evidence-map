@@ -62,7 +62,7 @@ EXEMPT = [r"\b\d{3}-\d{4}-[A-Z]-\d{3}-\d{3}-MY\d\b",   # Stage 10 step 4 (2026-1
           r"\[\d+(?:[,–-]\s?\d+)*\]", r"1000 Genomes", r"FinnGen R10", r"GRCh3[78]", r"\brs\d+", r"\b\d+[pq]\d+(?:\.\d+)?\b",
           r"\b[A-Z][A-Z0-9-]*\d[A-Z0-9-]*\b", r"\bp1(?:2)?\b", r"\bPP\.H[34]\b", r"\bp2\b", r"\bH[34]\b", r"Glu351Gln", r"Gly388Arg",
           r"[αβγδκ]\d", r"[Tt]ype [12] [Dd]iabetes", r"(?:DIAMANTE|CARDIoGRAMplusC4D|GIGASTROKE|MEGASTROKE)\s(?:19|20)\d\d", r"PheCode\s[\d.]+",
-          r"95%\s(?:interval|confidence interval|CI)", r"Olink Explore 3072", r"coloc 5\.2\.3", r"\bL\s?=\s?10\b", r"ln\(eGFR\)", r"\b(?:two|one)-sample\b", r"SomaScan v\d", r"\bR\s\d\.\d\.\d", r"CC BY 4\.0"]   # Stage 10 step 3a: the licence name in the Software paragraph (S2-D66 C2)
+          r"95%\s(?:interval|confidence interval|CI)", r"Olink Explore 3072", r"coloc 5\.2\.3", r"\bL\s?=\s?10\b", r"ln\(eGFR\)", r"\b(?:two|one)-sample\b", r"SomaScan v\d", r"\bR\s\d\.\d\.\d", r"CC BY 4\.0", r"\bdoi\.org/10\.\d{4,9}/[A-Za-z0-9._-]+"]   # Stage 10 step 3a: the licence name in the Software paragraph (S2-D66 C2); G5 (2026-11-01): the archive DOI URL in the Declarations (a locator, not a quantity); APPENDED, never inserted: _PROSE_ONLY indexes EXEMPT
 # Figure subset of EXEMPT, shared with figures/scripts/P31R_figgate.py (one list, no fork): drop the prose-only patterns
 # ({SM:key}, [@key], SMn, reference brackets, which on a figure would hide real numbers such as "[1, 3]"), and use an
 # upper-case token pattern WITHOUT hyphens, so "CAD-0.19" is not masked as a gene name; IL-6 and chr coordinates are added.

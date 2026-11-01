@@ -58,9 +58,15 @@ PROV_TABLE = [      # S2-D37 D4: the three labels and what each does not establi
     ("timestamp evidence only", "the file's modification time precedes the outputs of the run, and no run recorded a hash of it (a candidate historical version)", "a demonstrated match to the executed version"),
 ]
 SELF_FILES = ("RELEASE_MANIFEST.tsv", "README.md", "REPRODUCE.md", "LICENSE", "CITATION.cff", ".gitattributes")
-VERSION = "v2.0.4-R2"   # Stage 7 A2.6 (USER 2026-10-23); v2.0.0-R2 bumped to v2.0.1-R2 at A2.9c (USER 2026-10-25), then to v2.0.2-R2 at Stage 8 step 4 (USER-approved plan 2026-10-26), then to v2.0.3-R2 at Stage 9 (USER-approved 2026-10-27: the release content changed again), then to v2.0.4-R2 at Stage 10 step 1 (USER 2026-10-28: the shipped Additional file 1 builder changed)
+VERSION = "v2.0.5-R2"   # Stage 7 A2.6 (USER 2026-10-23); v2.0.0-R2 bumped to v2.0.1-R2 at A2.9c (USER 2026-10-25), then to v2.0.2-R2 at Stage 8 step 4 (USER-approved plan 2026-10-26), then to v2.0.3-R2 at Stage 9 (USER-approved 2026-10-27: the release content changed again), then to v2.0.4-R2 at Stage 10 step 1 (USER 2026-10-28: the shipped Additional file 1 builder changed), then to v2.0.5-R2 at G5 (2026-11-01: the repository URL and the Zenodo concept DOI inserted; the AF1, gate, ledger-mask and tier-rule minors of the step 5f list)
 # LICENSE and CITATION.cff text lives in release/templates/, outside the shipped code: release gate R15 reads shipped scripts for licence and
 # copyright notices, and the authors' own licence text must not sit in a script. {VERSION} is filled in here and asserted.
+# G5 (2026-11-01): the deposit's identifiers. Written by review_R2/s10h23_make_pairs.py from the Zenodo API record (review_R2/zenodo_record_v2.0.4-R2/), never
+# typed, and asserted against that record every time the README is built (_readme). CITATION.cff carries no doi key: Zenodo mints a version DOI per GitHub release.
+CONCEPT_DOI = "10.5281/zenodo.23855497"
+REPO_URL = "https://github.com/badboybert/ckm-protein-evidence-map"
+ZENODO_RECORD_REL = "R2_rewrite/review_R2/zenodo_record_v2.0.4-R2/g4_record.json"
+ZENODO_RAW_REL = "R2_rewrite/review_R2/zenodo_record_v2.0.4-R2/zenodo_record_23855498_edit1.json"
 _TPL = Path(__file__).resolve().parent / "templates"
 LICENSE_TEXT = (_TPL / "LICENSE.txt").read_text(encoding="utf-8").replace("{VERSION}", VERSION)
 CITATION_TEXT = (_TPL / "CITATION.cff").read_text(encoding="utf-8").replace("{VERSION}", VERSION)
@@ -797,6 +803,10 @@ def _readme(v3, out, led, code, prov):
         _req(any(f.startswith(d) for f in files), "Table 3 folder %s is not in out/" % d)
     pv = read_tsv(Path(v3) / PROV_REL)
     _req(pv and all(r["terms_status"] in ("confirmed_from_official_page", "inferred", "not_found") for r in pv), "PROVIDERS.tsv: a terms_status outside confirmed_from_official_page / inferred / not_found")
+    _zr = json.loads((Path(v3) / ZENODO_RECORD_REL).read_text(encoding="utf-8"))      # G5 (2026-11-01): the DOI constants are checked against the Zenodo API record on every build
+    _req(_zr.get("concept_doi") == CONCEPT_DOI, "rel_docs.CONCEPT_DOI differs from the Zenodo record %s" % ZENODO_RECORD_REL)
+    _zraw = json.loads((Path(v3) / ZENODO_RAW_REL).read_text(encoding="utf-8"))
+    _req(any(str(x.get("identifier", "")).startswith(REPO_URL + "/") for x in _zraw["metadata"].get("related_identifiers", [])), "rel_docs.REPO_URL is not the repository the Zenodo record names")
     L = []
     a = L.append
     a("# Release repository for \"%s\", version `%s`\n" % (_ms_title(v3), VERSION))
@@ -806,7 +816,7 @@ def _readme(v3, out, led, code, prov):
     a("## Version, licence and citation\n")
     a("This is release `%s`. `LICENSE` gives the terms: the MIT License for code the authors wrote, and `CC BY 4.0` for tables the authors derived "
       "(`own_derived` in `RELEASE_MANIFEST.tsv`); files derived from third-party data keep their providers' terms (below). "
-      "`CITATION.cff` says how to cite the release; a DOI is added when it is deposited.\n" % VERSION)
+      "`CITATION.cff` says how to cite the release. The repository is `%s`; its archived versions are on Zenodo under the concept DOI `https://doi.org/%s`, which resolves to the latest version.\n" % (VERSION, REPO_URL, CONCEPT_DOI))
     _zroot = "P31R_R2_release_%s/" % VERSION
     _paths = [str(f).replace("\\", "/") for f in files]      # derived from the built tree, never typed; printed as code spans (R7 blanks code spans)
     _longest = sorted(f for f in _paths if len(f) == max(len(x) for x in _paths))      # Stage 10 step 3 fix round: every path of the maximal length, so a tie is reported, not hidden by max()
@@ -825,10 +835,10 @@ def _readme(v3, out, led, code, prov):
     if _tpmi == "ship":
         a("TPMI is one declared switch (`release_records/TIER_RULES.tsv`, row `SW1`), set to `ship` for this release. The derived per-pair TPMI values ship with a citation of the TPMI PheWeb (`PheCode 250.2`): the Wald ratio, its standard error, p, class and verdict, and the study-level case and control counts. "
           "The TPMI effect, standard error and allele frequency columns of the check table are withheld. A single-instrument Wald ratio with its standard error is a derived per-pair result (first tier) and ships. "
-          "ChEMBL- and DGIdb-derived drug and stage data fields are withheld (ChEMBL is CC BY-SA); the mask covers these data fields only, and drug names in manuscript prose come from the literature. Open Targets (CC0) fields are native and ship.\n")
+          "ChEMBL- and DGIdb-derived drug and stage data fields are withheld (ChEMBL is CC BY-SA); the mask covers these data fields only, and drug names in manuscript prose come from the literature. Shipped scripts that quote ChEMBL facts as string literals are declared under Code licence. Open Targets (CC0) fields are native and ship.\n")
     else:
         a("TPMI is one declared switch, here `withheld`: the TPMI-derived ledger rows are masked and the TPMI-derived files are kept out. "
-          "ChEMBL- and DGIdb-derived drug data fields are withheld (ChEMBL is CC BY-SA); the mask covers these data fields only, and drug names in manuscript prose come from the literature. Open Targets (CC0) fields are native.\n")
+          "ChEMBL- and DGIdb-derived drug data fields are withheld (ChEMBL is CC BY-SA); the mask covers these data fields only, and drug names in manuscript prose come from the literature. Shipped scripts that quote ChEMBL facts as string literals are declared under Code licence. Open Targets (CC0) fields are native.\n")
     a("Where each third-party source is obtained, and how to cite it. A source whose redistribution is not confirmed contributes derived results; the cases in which an individual per-variant value appears are listed above. "
       "A licence is given only where the provider states one. The page that was read for each provider, the wording it states and its status are recorded in `release_records/PROVIDER_TERMS.tsv`. "
       "Names, routes and citations are identifiers and are set in code font.\n")
@@ -979,7 +989,7 @@ def _build(v3, out, withheld, ledger):
         {"release_path": "LICENSE", "ship_status": "ship", "source_paths": common, "producer": PRODUCER, "licence_class": "own_derived", "rows": "", "columns": "",
          "note": "MIT for the authors' code, CC BY 4.0 for the authors' own-derived tables (S2-D27(1)); third-party-derived files keep their providers' terms."},
         {"release_path": "CITATION.cff", "ship_status": "ship", "source_paths": common, "producer": PRODUCER, "licence_class": "own_derived", "rows": "", "columns": "",
-         "note": "Citation File Format 1.2.0; version %s; all authors listed; DOI added at deposit." % VERSION},
+         "note": "Citation File Format 1.2.0; version %s; all authors listed; no doi key (Zenodo mints a version DOI per GitHub release; the concept DOI is in the README)." % VERSION},
         {"release_path": ".gitattributes", "ship_status": "ship", "source_paths": common, "producer": PRODUCER, "licence_class": "own_derived", "rows": "", "columns": "",
          "note": "The single line `* -text`: git never rewrites line endings, so a clone equals the zip byte for byte."},
     ]

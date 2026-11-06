@@ -14,7 +14,9 @@ whole text and is run with `python scripts/P31R_figgate.py --pointers`, not here
 After saving, the PDF is READ BACK with two readers other than the builder's own layout code (PyMuPDF text layer via pdftext, and pdfminer):
 characters per page inside a two-sided band and the two readers within 15%; every legend title recovered; for every unit, text lines known to be
 in the unit PDF recovered on the assembled page by pdfminer and drawn at unit scale (width ratio 1.000 +/- 0.005, so nothing was shrunk);
-author metadata. The row it appends to af3/AF3_assembly_log.tsv pins the assembled md5 and every input md5 (unit PDFs, legends, active
+author metadata; R8, every character in the builder's own fonts is one it was given. Before saving, each glyph's ToUnicode entry is re-pointed
+at the character the builder drew (PyMuPDF otherwise names an alias: U+00A0 for ' ', U+00AD for '-', U+037E for ';'; G6f, 2026-11-06).
+The row it appends to af3/AF3_assembly_log.tsv pins the assembled md5 and every input md5 (unit PDFs, legends, active
 registry, title page, this script, figgate).
 
     python -I P31R_af3_assemble.py            build (refuses on a red gate), read back, log
@@ -147,6 +149,64 @@ def title_page(P, title, plan, fig_pages, legend_text):
                 P.page.insert_text((A4[0] - MARGIN - 20, P.y - PITCH + BODY), str(pg), fontname="ar", fontsize=BODY)
 
 
+def _fix_tounicode(fitz, doc, given):
+    """Re-point the ToUnicode map of the fonts the builder itself embeds (resource names ar/ab on the page) so each glyph reads back as the character
+    the builder was given (G6f, 2026-11-06). PyMuPDF writes the map from the font's own cmap and, where Arial gives one glyph to two code points,
+    names the higher one: ' ' -> U+00A0, '-' -> U+00AD, ';' -> U+037E. Only ever relabels a glyph between its own aliases in the font file; refuses
+    when two given characters share a glyph, when a glyph to re-point sits in a bfrange, or when an entry names a code point that is not that glyph.
+    Returns the number of entries changed."""
+    want = set(given) | {chr(i) for i in range(0x20, 0x7f)}
+    xrefs = {}
+    for pno in range(doc.page_count):
+        for xref, ext, typ, base, ref, enc, referencer in doc.get_page_fonts(pno, full=True):
+            if ref in ("ar", "ab") and referencer == 0:
+                xrefs[xref] = REGULAR if ref == "ar" else BOLD
+    if not xrefs:
+        raise Refuse("no font of the builder's own (page resources ar/ab) found: nothing to re-point")
+    changed = 0
+    for xref, ff in sorted(xrefs.items()):
+        font = fitz.Font(fontfile=ff)
+        by_gid = {}
+        for c in sorted(want):
+            g = font.has_glyph(ord(c))
+            if not g:
+                continue
+            if g in by_gid:
+                raise Refuse("characters U+%04X and U+%04X share one glyph (%d) in %s: the text layer cannot tell them apart"
+                             % (ord(by_gid[g]), ord(c), g, os.path.basename(ff)))
+            by_gid[g] = c
+        tu = doc.xref_get_key(xref, "ToUnicode")
+        if tu[0] != "xref":
+            raise Refuse("font %d (%s) has no ToUnicode stream to re-point" % (xref, os.path.basename(ff)))
+        sx = int(tu[1].split()[0])
+        cm = doc.xref_stream(sx).decode("latin-1")
+        for blk in re.findall(r"beginbfrange(.*?)endbfrange", cm, re.S):
+            if "[" in blk:
+                raise Refuse("ToUnicode of %s has an array-form bfrange: not checked, so not re-pointed" % os.path.basename(ff))
+            for a, b, d in re.findall(r"<([0-9a-fA-F]+)>\s*<([0-9a-fA-F]+)>\s*<([0-9a-fA-F]+)>", blk):
+                for g in range(int(a, 16), int(b, 16) + 1):
+                    if g in by_gid and int(d, 16) + g - int(a, 16) != ord(by_gid[g]):
+                        raise Refuse("glyph %d of %s sits in a ToUnicode range that names U+%04X, not U+%04X: not re-pointed"
+                                     % (g, os.path.basename(ff), int(d, 16) + g - int(a, 16), ord(by_gid[g])))
+        n0 = changed
+
+        def repoint(m):
+            nonlocal changed
+            g, u = int(m.group(1), 16), int(m.group(2), 16)
+            c = by_gid.get(g)
+            if c is None or ord(c) == u:
+                return m.group(0)
+            if font.has_glyph(u) != g:
+                raise Refuse("ToUnicode of %s maps glyph %d to U+%04X, which is not that glyph in the font file: glyph ids were renumbered"
+                             % (os.path.basename(ff), g, u))
+            changed += 1
+            return "<%s> <%04x>" % (m.group(1), ord(c))
+        new = re.sub(r"beginbfchar.*?endbfchar", lambda b: re.sub(r"<([0-9a-fA-F]{4})>\s*<([0-9a-fA-F]{4})>", repoint, b.group(0)), cm, flags=re.S)
+        if changed > n0:
+            doc.update_stream(sx, new.encode("latin-1"))
+    return changed
+
+
 def assemble(plan, title, unit_pdf, legend_text, out_path):
     import fitz
     # two passes: the first fixes where each figure starts so the contents page can name page numbers; the layout is deterministic
@@ -193,6 +253,7 @@ def assemble(plan, title, unit_pdf, legend_text, out_path):
         doc.subset_fonts()
     except Exception:
         pass
+    _fix_tounicode(fitz, doc, title + "".join(legend_text.values()))   # after subsetting (it rewrites the font objects), before saving
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     tmp = out_path + ".tmp"
     doc.save(tmp, garbage=4, deflate=True)
@@ -206,7 +267,7 @@ def _norm(s):
     return re.sub(r"\s+", "", s)
 
 
-def readback(out_path, plan, unit_pdf, legend_text, expect_pages=None):
+def readback(out_path, plan, unit_pdf, legend_text, expect_pages=None, title=""):
     """Independent reading of the shipped PDF. Returns (failures, stats). Never returns an empty reader result as clean."""
     import fitz
     from pdfminer.high_level import extract_text
@@ -255,6 +316,33 @@ def readback(out_path, plan, unit_pdf, legend_text, expect_pages=None):
                         f.append("R7 %s: line %r drawn at %.3f x its size in the unit PDF (a figure page must not be scaled)" % (u, c[:40], ratio))
                 else:
                     f.append("R7 %s: line %r not located by the PyMuPDF search on both PDFs" % (u, c[:40]))
+    # R8 (G6f, 2026-11-06): the text layer of the builder's own fonts. (a) Every character in it is one the builder was given: a ToUnicode entry
+    # naming another code point of the same glyph (U+00A0 for ' ', U+00AD for '-', U+037E for ';') prints right and reads wrong, and _norm cannot
+    # see it. (b) Every legend, title and body, reads back IN SEQUENCE from those fonts once footers and continuation headings are removed: a glyph
+    # relabelled to another given character (';' read as ',') passes (a) and fails (b).
+    import collections
+    given = set("".join(legend_text.values()) + title) | {chr(i) for i in range(0x20, 0x7f)}
+    own = {fitz.Font(fontfile=REGULAR).name, fitz.Font(fontfile=BOLD).name}
+    seen, alien, ownt = 0, collections.Counter(), []
+    for pg in doc:
+        for blk in pg.get_text("rawdict")["blocks"]:
+            for ln in blk.get("lines", []):
+                for sp in ln["spans"]:
+                    if sp["font"].split("+")[-1] in own:
+                        for ch in sp["chars"]:
+                            seen += 1
+                            ownt.append(ch["c"])
+                            if ch["c"] not in given:
+                                alien[ch["c"]] += 1
+    if not seen:
+        f.append("R8 no text in the builder's own fonts (%s) was read: the check is blind" % ", ".join(sorted(own)))
+    if alien:
+        f.append("R8 the builder's fonts read back characters it was never given: %s" % ", ".join("U+%04X x%d" % (ord(c), k) for c, k in alien.most_common()))
+    stream = re.sub(r"FigureS\d+\(legend,continued\)", "", re.sub(r"Additionalfile3\|page\d+of\d+", "", _norm("".join(ownt))))
+    for fe, _units in plan:
+        lead, body = parse_legend(legend_text[fe["id"]])
+        if _norm(lead + " " + body) not in stream:
+            f.append("R8 legend of %s not read back in sequence from the builder's fonts" % fe["id"])
     doc.close()
     return f, dict(pages=n, chars_pymupdf=c1, chars_pdfminer=c2)
 
@@ -304,7 +392,7 @@ def build(cfg=None):
         raise Refuse("the figure gate is not green for the AF3 units: not assembling")
     title = manuscript_title(cfg["title_page"])
     assemble(plan, title, unit_pdf, legend_text, cfg["out"])
-    fails, stats = readback(cfg["out"], plan, unit_pdf, legend_text)
+    fails, stats = readback(cfg["out"], plan, unit_pdf, legend_text, title=title)
     if fails:
         raise Refuse("read-back of the assembled PDF failed:\n  " + "\n  ".join(fails))
     row = log_row(cfg, FG.ACTIVE_JSON, plan, unit_pdf, legend_text, stats, out)
@@ -339,7 +427,7 @@ def verify(cfg=None):
     late = [u for u, p in unit_pdf.items() if os.path.getmtime(p) > t + FG.STALE_TOL_S]
     if late:
         f.append("V5 unit PDF(s) newer than the assembled PDF: %s" % ", ".join(late))
-    rb, _ = readback(cfg["out"], plan, unit_pdf, legend_text, int(row["pages"]))
+    rb, _ = readback(cfg["out"], plan, unit_pdf, legend_text, int(row["pages"]), title=manuscript_title(cfg["title_page"]))
     return f + rb
 
 
@@ -359,6 +447,7 @@ def _fixture_unit(path, tag_letters, lines, w_mm=170.0, h_mm=120.0):
         pg.insert_text((40, y), l, fontname="ar", fontsize=9)
         y += 14
     pg.draw_line((10, 100), (200, 100), width=0.6)
+    _fix_tounicode(fitz, d, "".join(tag_letters) + "".join(lines))   # a real (cairo) unit carries a correct text layer; R8 reads unit text too
     d.save(path)
     d.close()
 
@@ -494,6 +583,86 @@ def selftest():
             rep("a shrunken figure page is refused", "R7" in str(e), "(%s)" % str(e).splitlines()[1][:80] if "R7" in str(e) else str(e)[:160])
         finally:
             fitz.Page.show_pdf_page = orig_show
+        # ---- G6f (2026-11-06): the text layer
+        fix_keep = _fix_tounicode
+        globals()["_fix_tounicode"] = lambda *a, **k: 0
+        try:
+            with contextlib.redirect_stdout(io.StringIO()):
+                build(dict(cfg, out=os.path.join(tmp, "af3out", "mut3.pdf"), log=os.path.join(tmp, "mut3_log.tsv")))
+            rep("no ToUnicode re-point: R8 refuses the build", False, "built")
+        except Refuse as e:
+            hit = re.search(r"(?m)^\s+(R8 the builder's fonts read back characters it was never given: .*U\+00A0.*)$", str(e))
+            rep("no ToUnicode re-point: R8 refuses the build", bool(hit), "(%s)" % (hit.group(1)[:70] if hit else "wrong reason: " + str(e)[:160]))
+        finally:
+            globals()["_fix_tounicode"] = fix_keep
+
+        def one_page(text):
+            d = fitz.open()
+            pg = d.new_page()
+            pg.insert_font(fontname="ar", fontfile=REGULAR)
+            pg.insert_text((50, 50), text, fontname="ar", fontsize=9)
+            return d
+        d = one_page("a b;c-d")
+        n_fix = _fix_tounicode(fitz, d, "a b;c-d")
+        fp = os.path.join(tmp, "fix.pdf")
+        d.save(fp)
+        d.close()
+        got = fitz.open(fp)[0].get_text().strip()
+        rep("the re-point reads ' ', ';' and '-' back", got == "a b;c-d" and n_fix >= 3, "(%r, %d entries)" % (got, n_fix))
+        try:
+            _fix_tounicode(fitz, one_page("a b"), "a b c")
+            rep("two given characters sharing one glyph are refused", False, "not refused")
+        except Refuse as e:
+            rep("two given characters sharing one glyph are refused", "share one glyph" in str(e), "(%s)" % str(e)[:70])
+        d = one_page("a;b")
+        sx = int(d.xref_get_key([x[0] for x in d.get_page_fonts(0, full=True) if x[4] == "ar"][0], "ToUnicode")[1].split()[0])
+        cm = d.xref_stream(sx).decode("latin-1")
+        if cm.count("<001e> <037e>") != 1:
+            rep("renumbered glyph ids are refused", False, "mutation target '<001e> <037e>' absent: the test is stale")
+        else:
+            d.update_stream(sx, cm.replace("<001e> <037e>", "<001e> <0041>").encode("latin-1"))
+            try:
+                _fix_tounicode(fitz, d, "a;b")
+                rep("renumbered glyph ids are refused", False, "not refused")
+            except Refuse as e:
+                rep("renumbered glyph ids are refused", "renumbered" in str(e), "(%s)" % str(e)[:70])
+        try:
+            e0 = fitz.open()
+            e0.new_page()
+            _fix_tounicode(fitz, e0, "x")
+            rep("no builder font to re-point is refused", False, "not refused")
+        except Refuse as e:
+            rep("no builder font to re-point is refused", "nothing to re-point" in str(e), "(%s)" % str(e)[:70])
+        d = one_page("a;b")
+        sx = int(d.xref_get_key([x[0] for x in d.get_page_fonts(0, full=True) if x[4] == "ar"][0], "ToUnicode")[1].split()[0])
+        cm = d.xref_stream(sx).decode("latin-1")
+        if cm.count("endcmap") != 1:
+            rep("an array-form bfrange is refused", False, "mutation target 'endcmap' not exact-once: the test is stale")
+        else:
+            d.update_stream(sx, cm.replace("endcmap", "1 beginbfrange\n<0024> <0025> [<0041> <0042>]\nendbfrange\nendcmap").encode("latin-1"))
+            try:
+                _fix_tounicode(fitz, d, "a;b")
+                rep("an array-form bfrange is refused", False, "not refused")
+            except Refuse as e:
+                rep("an array-form bfrange is refused", "array-form" in str(e), "(%s)" % str(e)[:70])
+        # an ASCII-to-ASCII relabel (';' read as ',') in the clean build: R8's set check cannot see it, its sequence check must
+        mp = os.path.join(tmp, "af3out", "mislabel.pdf")
+        dm = fitz.open(cfg["out"])
+        xs = sorted({x[0] for p_ in range(dm.page_count) for x in dm.get_page_fonts(p_, full=True) if x[4] == "ar" and x[6] == 0})
+        sx = int(dm.xref_get_key(xs[0], "ToUnicode")[1].split()[0])
+        cm = dm.xref_stream(sx).decode("latin-1")
+        if len(xs) != 1 or cm.count("<001e> <003b>") != 1:
+            rep("an ASCII relabel (';' read as ',') is caught by R8", False, "mutation target absent (%d fonts, %d entries): the test is stale" % (len(xs), cm.count("<001e> <003b>")))
+        else:
+            dm.update_stream(sx, cm.replace("<001e> <003b>", "<001e> <002c>").encode("latin-1"))
+            dm.save(mp)
+            dm.close()
+            plan_ = af3_plan(active)
+            lt_ = {fe["id"]: io.open(fe["legend"], encoding="utf-8").read() for fe, _ in plan_}
+            up_ = {u: os.path.join(out, u + ".pdf") for _, us in plan_ for u in us}
+            fl, _ = readback(mp, plan_, up_, lt_, title=manuscript_title(title))
+            seq = [x for x in fl if x.startswith("R8 legend of") and "in sequence" in x]
+            rep("an ASCII relabel (';' read as ',') is caught by R8", bool(seq) and not any("never given" in x for x in fl), "(%s)" % ((seq or fl or ["clean"])[0][:70]))
     finally:
         for k, v in keep.items():
             setattr(FG, k, v)

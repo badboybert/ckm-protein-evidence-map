@@ -484,12 +484,18 @@ assert set(zip(_it["item"], _it["sub"])) == set(S1MAP), "S1 map does not cover e
 s1 = pd.DataFrame([dict(Item=r["item"] + r["sub"], Part=r["part"], Heading=r["heading"], **{"Checklist item (short form)": r["label"]},
                         **{"Where addressed": where(S1MAP[(r["item"], r["sub"])][0]), "Status": S1MAP[(r["item"], r["sub"])][1],
                            "Note": S1MAP[(r["item"], r["sub"])][2]}) for _, r in _it.iterrows()])
+# G5b (2026-11-06): the Status legend lists the values the S1 table uses, in a fixed order, instead of a typed list ('author-supplied' stayed
+# listed after no row carried it); a value outside the order fails the build.
+_S1_STATUS_ORDER = ("reported", "partly reported", "not reported", "not applicable", "see subitems")
+_s1_used = set(s1["Status"])
+assert _s1_used <= set(_S1_STATUS_ORDER), ("S1 Status value outside the legend order", sorted(_s1_used - set(_S1_STATUS_ORDER)))
+S1_STATUS_LEGEND = " / ".join(x for x in _S1_STATUS_ORDER if x in _s1_used)
 ni, ns = LV("L453")
 sheet("S1", "Table S1. STROBE-MR checklist.",
       "The %d items and %d subitems of the STROBE-MR statement (Skrivankova et al., JAMA 2021; PMID 34698778), in short form; the full wording is in the statement and its explanation paper (BMJ 2021; PMID 34702754). For each item: where the manuscript addresses it, by section and paragraph (paragraphs are counted within each subsection), and whether it is reported. Content that the main text places in Additional file 2 is located by section there." % (ni, ns),
       s1, {"Item": "checklist item and subitem letter", "Part": "part of the checklist", "Heading": "item heading in the statement",
            "Checklist item (short form)": "what the item asks for, shortened", "Where addressed": "manuscript section and paragraph (paragraphs counted within each subsection), table or figure",
-           "Status": "reported / partly reported / not reported / not applicable / author-supplied / see subitems", "Note": "what is or is not covered"}, S1_SRCS)
+           "Status": S1_STATUS_LEGEND, "Note": "what is or is not covered"}, S1_SRCS)
 
 # ================================================================================================ S2 data sources
 s2_note = ""

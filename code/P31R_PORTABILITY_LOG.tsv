@@ -2,8 +2,8 @@ path	source_md5	shipped_md5	rules
 code/R2_rewrite/figures/scripts/P31R_Fig1.R	536fa97b44508673694f549506be418d	536fa97b44508673694f549506be418d	none (byte-identical)
 code/R2_rewrite/figures/scripts/P31R_Fig2.R	85d2a871687c4d7f9776922cae84b096	85d2a871687c4d7f9776922cae84b096	none (byte-identical)
 code/R2_rewrite/figures/scripts/P31R_Fig3.R	d39d1f5bb723460bc8ffc0092f74206b	d39d1f5bb723460bc8ffc0092f74206b	none (byte-identical)
-code/R2_rewrite/figures/scripts/P31R_Fig4.R	1715d6983137aac87bd62d1bd987ea87	2f031986e510910d50d7550d936eae42	P1 ext x1; P1 v3 x2; P6 comment x1; P7 prologue x1
-code/R2_rewrite/figures/scripts/P31R_Fig5.R	3624df47148628c9a5cba69cce4a61aa	e51e5af7d9ab378695144b190e2c2192	P1 v3 x1; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_Fig4.R	fcb637b0c573fa2a32a77aaabbb9de41	95dabd2bc1fde47cddee55813b0ebc3e	P1 ext x1; P1 v3 x2; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_Fig5.R	54f6b98cfa01916e74cc86d6cda48e69	cb161c6b3599ac9630622f94f3370617	P1 v3 x1; P6 comment x1; P7 prologue x1
 code/R2_rewrite/figures/scripts/P31R_FigS1.R	2277fac6ce9597b044503401bae93820	dbb67b8ba8afb5aa264cf7b05f59892a	P1 v3 x2; P6 comment x1; P7 prologue x1
 code/R2_rewrite/figures/scripts/P31R_FigS2.R	dce389dbe26da28639d30b4084f34f27	2db91ca12b90edeba9f42e4d2731c1e5	P1 v3 x3; P6 comment x1; P7 prologue x1
 code/R2_rewrite/figures/scripts/P31R_FigS3.R	495469ddb14ce24c41c348edc0e4fa7d	cdbca47ef63d278a48bb4a19ebf9e74f	P1 v3 x2; P6 comment x1; P7 prologue x1
@@ -15,18 +15,18 @@ code/R2_rewrite/figures/af3/P31R_af3_common.R	ea82f966b13a140e3d7bff29dae27625	7
 code/R2_rewrite/figures/af3/P31R_af3_glyphs.R	09c8e54ed88d24db6a683980edba0fc9	09c8e54ed88d24db6a683980edba0fc9	none (byte-identical)
 code/v3.2/scripts/theme_publication_ckm.R	4edd95224fd4eca32f67f6d6db4172fe	4edd95224fd4eca32f67f6d6db4172fe	none (byte-identical)
 code/v3.2/scripts/ckm_palette.R	2e31dc401ab2158fd949529df8aaa1ee	2e31dc401ab2158fd949529df8aaa1ee	none (byte-identical)
-code/R2_rewrite/figures/af3/P31R_af3_assemble.py	8f88821e5177e81baaa11c7ddb8ec52a	d01059f2f008686cbcc0956401585e8a	P2 fonts x1; P7 prologue x1
+code/R2_rewrite/figures/af3/P31R_af3_assemble.py	d29c43814ae0c24eb1091672fb2c1044	b71d49efcd4739c26ff6a04079291932	P2 fonts x1; P7 prologue x1
 code/R2_rewrite/figures/af3/build_legend_AF3_R2.py	070ce364a4988f687b09b92ca6ddd162	070ce364a4988f687b09b92ca6ddd162	none (byte-identical)
 code/R2_rewrite/figures/scripts/P31R_figgate.py	f438500bf1a55924fde7dbe2ade1c51e	d52e18a2e19fb143f1dd81ac504410ff	P2 fonts x1; P7 prologue x1
 code/R2_rewrite/scripts/P31R_gate.py	1190097d199a1cbb732b73c64ad64d0f	1190097d199a1cbb732b73c64ad64d0f	none (byte-identical)
 code/R2_rewrite/scripts/P31R_tablegate.py	718cac6b298108978ab6bf1c63a16358	718cac6b298108978ab6bf1c63a16358	none (byte-identical)
 code/R2_rewrite/scripts/P31R_af1_devstage.py	29f324c517e215ec609c71c9ba88ff9f	29f324c517e215ec609c71c9ba88ff9f	none (byte-identical)
-code/R2_rewrite/scripts/P31R_build_af1.py	091ab269cccc9a0ade1e55f28ab5fd08	091ab269cccc9a0ade1e55f28ab5fd08	none (byte-identical)
+code/R2_rewrite/scripts/P31R_build_af1.py	7458134f3cc3c6911cdc8ca70eb5cf6d	7458134f3cc3c6911cdc8ca70eb5cf6d	none (byte-identical)
 code/R2_rewrite/figures/render_all_units.py	098e11eea92a841898df01d5484d4fd6	098e11eea92a841898df01d5484d4fd6	none (byte-identical)
 code/R2_rewrite/release/P31R_build_release.py	9d4745767b16720536794e40b8595df0	9d4745767b16720536794e40b8595df0	none (byte-identical)
 code/R2_rewrite/release/rel_screen.py	38b4d5370c86304ebf101a7386c4d2b6	38b4d5370c86304ebf101a7386c4d2b6	none (byte-identical)
 code/R2_rewrite/release/rel_tables.py	ba4cb6d10bbbd4e5d91b5c5a60c94235	ba4cb6d10bbbd4e5d91b5c5a60c94235	none (byte-identical)
-code/R2_rewrite/release/rel_docs.py	ea24d84819a62794a916201f7bde4335	ea24d84819a62794a916201f7bde4335	none (byte-identical)
+code/R2_rewrite/release/rel_docs.py	4e4c675f24c97bbd990ca384b3f809aa	4e4c675f24c97bbd990ca384b3f809aa	none (byte-identical)
 code/R2_rewrite/release/rel_licence.py	4b259a287c69fc9075675b279de0a18d	4b259a287c69fc9075675b279de0a18d	none (byte-identical)
 code/R2_rewrite/release/P31R_releasegate.py	fd99b49fe912d07dbefa12a1b050876e	a370b6523b467232929f771e12e799dd	P6 comment x1
 code/paper3_deposit_request_v4/scripts/R/00_config.R	cc58fcf6be207052f792315589853307	1b0f0e446559ba74de4993614568b0d0	P1 ext x8; P2 rscript x1; P7 prologue x1

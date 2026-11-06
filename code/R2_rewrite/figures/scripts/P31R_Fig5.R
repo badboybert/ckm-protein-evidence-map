@@ -304,7 +304,7 @@ tg_note <- paste0("Instruments ", led("L085", 4, function(v) sprintf("%.0f", v),
                   led("L214", 3, function(v) sprintf("%.3f", v), "b: TGFB1-CAD European PP.H4, conservative prior", anchor = "^European colocalization not robust \\(PP\\.H4 {}\\)$"), ")")
 fg_note <- paste0("From the East Asian screen; European p ", led("L215", 2, function(v) sprintf("%.2f", v), "b: FGFR4-T2D European p", anchor = "^From the East Asian screen; European p {} \\(non-rejection\\)$"),
                   " (non-rejection)")
-f5_note <- "Scales differ: European \u2212(natural-log eGFR) per SD vs\nEast Asian per SD of rank-inverse-normal eGFR\n(Taiwan\u2013Japan meta-analysis); estimates not compared"
+f5_note <- "Scales differ: European \u2212(natural-log eGFR) per SD vs\nEast Asian per SD of rank-inverse-normal eGFR\n(Taiwan\u2013Japan meta-analysis); magnitudes not compared"
 note_df <- data.table(x = 0, y = c(cb[protein == "TGFB1", y], cb[protein == "FGFR4", y], Y_F5), label = c(tg_note, fg_note, f5_note))
 pR <- ggplot() + geom_text(data = note_df, aes(x = x, y = y, label = label), hjust = 0, vjust = 0.5, size = ANNOT, family = BASE_FONT, lineheight = 0.95) +
   sep_layer() + rowscale + scale_x_continuous(limits = c(0, 1), expand = c(0, 0)) +

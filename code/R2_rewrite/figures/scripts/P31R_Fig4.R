@@ -2,9 +2,9 @@
 # Plan: review_R2/FIGURE_MESSAGES_R2_2026-10-15.md (v3, section 4; decisions S2-D24, F2, F7, F11, F13, F14, F15); spec figures/P31R_FIGURE_SPEC.md.
 #   a  four separately labelled estimands, each A versus B with a pointwise 95% interval and its own scale (no shared null):
 #      (i) arginine, ratio of ratios (null 1); (vi) ornithine, difference (null 0); (ii) protein-scaled T2D, difference, four
-#      resource-by-setting cells (primary = filled, sensitivity = open); (iii) direct comparison, difference, four cells at equal
+#      resource-by-setting cells (primary = filled, beside = open); (iii) direct comparison, difference, four cells at equal
 #      weight. Covariance-aware second-order p values only (W4a). Visual status (plan section 0, S2-D24): primary filled /
-#      sensitivity open; no colocalization = circle with a cross + word; sensitive to the reference LD = dotted outline + word.
+#      beside open; no colocalization = circle with a cross + word; sensitive to the reference LD = dotted outline + word.
 #   b  compact locus (enlarged interval), PROTEIN TRACK ONLY (S2-D26): the ARG1 protein -log10 p track with signals A and B and LD colouring; gene
 #      models; credible sets at signal A, one row per trait and method with its own status read from the canonical file; rs2246012 at its actual
 #      coordinate. The arginine and T2D regional tracks, per-signal estimates, signal B's sets and the 1-Mb overview are in Additional file 3
@@ -14,7 +14,7 @@
 # from the dosage panel; spec section 1 bins) and all three are pinned in the render log. FETCH_RECORD.json is still metadata read only to check
 # an md5 and is listed in REG$unregistered_reads.
 # Status encodings in this figure (one key, stated in the graphic; S2-D24 five-encoding rule, S2-D25 distinct glyphs, S2-D26 glyph harmonisation): primary
-# or equal-weight cell = filled marker; sensitivity = open marker; signal A not colocalized = circle with a cross (shape 13) + the word; inadmissible fit =
+# or equal-weight cell = filled marker; beside = open marker; signal A not colocalized = circle with a cross (shape 13) + the word; inadmissible fit =
 # the HATCHED circle of AF3 S2 / S5c (P31R_af3_glyphs.R geom_hatchdot); not robust to the reference LD = the DOTTED RING of AF3 S5c (geom_dotring) in
 # the credible-set rows, and the dotted outline round a forest row in panel a. In panel b one status marker per credible-set row (as in S5c); the
 # members of every set are plain ticks. No glyph carries two statuses.
@@ -142,9 +142,9 @@ c2 <- function(res, set, lab, kind, share, pid) {
   mk(Q(paste0(q, ".diff")), Q(paste0(q, ".diff_lo")), Q(paste0(q, ".diff_hi")), Q(paste0(q, ".p_aware_2nd")), robust3ii(share), label = lab, kind = kind, pid = pid)
 }
 rii <- rbind(c2("FinnGen", "cond", "FinnGen, conditional, primary", "primary", "S4.ld.boot.FinnGen.cond.aware2nd.share_same", "L814"),
-             c2("FinnGen", "marg", "FinnGen, marginal, sensitivity", "sens", "S4.ld.boot.FinnGen.marg.aware2nd.share_same", "L776"),
+             c2("FinnGen", "marg", "FinnGen, marginal, beside", "sens", "S4.ld.boot.FinnGen.marg.aware2nd.share_same", "L776"),
              c2("DIAMANTE", "marg", "DIAMANTE, marginal, primary", "primary", "S4.ld.boot.DIAMANTE.marg.aware2nd.share_same", "L808"),
-             c2("DIAMANTE", "cond", "DIAMANTE, conditional, sensitivity", "sens", "S4.ld.boot.DIAMANTE.cond.aware2nd.share_same", "L765"))
+             c2("DIAMANTE", "cond", "DIAMANTE, conditional, beside", "sens", "S4.ld.boot.DIAMANTE.cond.aware2nd.share_same", "L765"))
 LQ("L814", "S4.grid.FinnGen.cond.p_aware_2nd"); LQ("L776", "S4.grid.FinnGen.marg.p_aware_2nd"); LQ("L808", "S4.grid.DIAMANTE.marg.p_aware_2nd"); LQ("L765", "S4.grid.DIAMANTE.cond.p_aware_2nd")
 LQ("L809", "S4.grid.FinnGen.cond.diff"); LQ("L811", "S4.grid.FinnGen.cond.diff_lo"); LQ("L810", "S4.grid.FinnGen.cond.diff_hi")
 LQ("L766", "S4.grid.DIAMANTE.marg.diff"); LQ("L768", "S4.grid.DIAMANTE.marg.diff_lo"); LQ("L767", "S4.grid.DIAMANTE.marg.diff_hi")
@@ -265,7 +265,7 @@ reg_lit("0.2", "scale: LD bin boundary of the track colours (light bin 0.2 to 0.
 reg_lit("0.2", "scale: LD bin boundary of the track colours (grey below 0.2)", anchor = "< {}$", not_ledger = "figure-spec LD bin boundary, not a result")
 LDK <- data.table(x = c(2, 4.7, 12.4, 15.1), ld = c("A_hi", "A_lo", "B_hi", "B_lo"), y = KEY_MM - 8.9)
 kd <- data.table(x = c(2, 52, 78, 127), y = KEY_MM - 3.3, shape = c("primary", "sens", "nocoloc", "dot"),
-                 lab = c("filled, primary or direct-comparison cell", "open, sensitivity", "ARG1–ornithine not colocalized at A", "sensitive to the reference LD"))
+                 lab = c("filled, primary or direct-comparison cell", "open, beside (iii)", "ARG1–ornithine not colocalized at A", "sensitive to the reference LD"))
 key <- ggplot() +
   geom_point(data = kd[shape == "primary"], aes(x, y), shape = 21, size = 2.1, stroke = 0.45, fill = INK, colour = INK) +
   geom_point(data = kd[shape == "sens"], aes(x, y), shape = 21, size = 2.1, stroke = 0.6, fill = "white", colour = INK) +

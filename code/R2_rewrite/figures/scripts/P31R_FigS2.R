@@ -89,7 +89,7 @@ pb <- ggplot(cand, aes(y = pair)) +
   geom_text(aes(x = 1.07, label = wlab), hjust = 0, size = ANNOT, family = BASE_FONT) +
   facet_grid(grp ~ ., scales = "free_y", space = "free_y") +
   scale_x_continuous(breaks = X_B, labels = XLAB, expand = expansion(0), guide = guide_axis(cap = "upper"),
-                     sec.axis = dup_axis(breaks = num("L236"), labels = "Colocalization rule", name = NULL)) +
+                     sec.axis = dup_axis(breaks = num("L236"), labels = "PP.H4 threshold", name = NULL)) +
   scale_y_discrete(expand = expansion(add = c(0.6, 0.6))) +
   coord_cartesian(xlim = XLIM) +
   labs(x = "PP.H4 (tick, coloc.abf; dot, multi-signal)", y = NULL) +

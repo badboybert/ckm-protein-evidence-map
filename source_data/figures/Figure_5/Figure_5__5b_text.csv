@@ -14,7 +14,7 @@ pair label,0,49.75,FGFR4–T2D
 "instrument rsIDs, European / East Asian",0,39.35,rs73045269 / rs12983775
 "instrument rsIDs, European / East Asian",0,52.35,rs351855 / rs451643
 pair label,0,63,FGF5–eGFR
-note,0,38,Instruments 32 kb apart: instrument-dependent estimates; | not evidence of ancestry-specific reversal. | European colocalization not robust (PP.H4 0.753)
-note,0,51,From the East Asian screen; European p 0.27 (non-rejection)
+note,0,38,Instruments 32 kb apart; outcome data also differ; | not evidence of ancestry-specific reversal. | European colocalization not robust (PP.H4 0.753)
+note,0,51,Separate East Asian screen (outside panel a); | European p 0.27 (non-rejection)
 note,0,63,Scales differ: European −(natural-log eGFR) per SD vs | East Asian per SD of rank-inverse-normal eGFR | (Taiwan–Japan meta-analysis); magnitudes not compared
-forest annotation,-0.13,63,Estimates not shown | PP.H4 1.000
+forest annotation,-0.13,63,Estimates not shown | PP.H4 >0.999 at both priors

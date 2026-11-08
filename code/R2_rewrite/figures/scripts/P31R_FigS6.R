@@ -147,7 +147,7 @@ kab <- ggplot() +
   geom_point(aes(x = mm(3), y = 1), shape = 21, fill = INK, colour = INK, size = 1.8, stroke = 0.45) + TXT(aes(x = mm(5.5), y = 1, label = "Compatible"), hjust = 0) +
   geom_point(aes(x = mm(25), y = 1), shape = 21, fill = "white", colour = INK, size = 1.8, stroke = 0.45) + TXT(aes(x = mm(27.5), y = 1, label = "Not significant"), hjust = 0) +
   geom_point(aes(x = mm(52), y = 1), shape = 21, size = 3.6, stroke = 0.4, fill = NA, colour = INK) + TXT(aes(x = mm(56), y = 1, label = "Ring: palindromic instrument (A/T or C/G)"), hjust = 0) +
-  TXT(aes(x = mm(108), y = 1, label = "Labelled: compatible pairs only"), hjust = 0) +
+  TXT(aes(x = mm(108), y = 1, label = "Labeled: compatible pairs only"), hjust = 0) +
   coord_cartesian(xlim = c(0, 1), ylim = c(0.4, 1.6), expand = FALSE) + theme_void()
 top <- (pa + labs(tag = "a")) + (pb + labs(tag = "b")) + plot_layout(widths = c(1, 1))
 fig <- top / wrap_elements(full = kab) + plot_layout(heights = c(90, 6))
@@ -180,7 +180,7 @@ stopifnot(!any(grepl("2P2M", comp$accession, ignore.case = TRUE)), all(comp[outc
           all(comp[run == TRUE & outcome %in% c("T2D", "Stroke")]$rerun))
 comp[, status_f := factor(fifelse(!run, "Not run", fifelse(rob, "Robust to the conservative prior", fifelse(sup, "Colocalized, not robust", "Not colocalized"))),
                           levels = c("Robust to the conservative prior", "Colocalized, not robust", "Not colocalized", "Not run"))]
-comp[, why := fcase(!run, "no East Asian outcome GWAS", sup, "", call == "NOT_SUPPORTED_H3", "distinct variants", call == "NOT_SUPPORTED_H1", "no outcome association",
+comp[, why := fcase(!run, "no East Asian outcome GWAS", sup, "", call == "NOT_SUPPORTED_H3", "distinct variants favored", call == "NOT_SUPPORTED_H1", "protein-only model favored",
                     call == "NOT_SUPPORTED_H4_below_rule", "PP.H4 below the rule", default = NA_character_)]
 stopifnot(!anyNA(comp$why))
 comp[, pair := paste0(gene, EN, fifelse(outcome == "Stroke", "stroke", outcome))]
@@ -197,8 +197,19 @@ comp[, rowtxt := fifelse(sup, as.character(status_f), paste0(tolower(substr(as.c
 cl <- melt(comp[run == TRUE, .(pair, y, grp, status_f, def = h4_def, con = h4_con)], id.vars = c("pair", "y", "grp", "status_f"), variable.name = "prior", value.name = "pp")
 cl[, prior := factor(prior, levels = c("def", "con"), labels = c("Default prior", "Conservative prior"))]
 XB <- c(0, 0.5, 1)
+# R3 (USER): the protein-only wording in this panel, with this panel's own counts; each is a count of the rows plotted here, and the three reasons exhaust the row set
+lit <- function(text, why, anchor = NULL, count = 1L) {
+  REG$literals[[length(REG$literals) + 1]] <<- Filter(Negate(is.null), list(text = text, why = why, count = as.integer(count), anchor = anchor, not_ledger = "a count of the rows plotted in this panel"))
+  text
+}
+nc_ <- comp[run == TRUE & sup == FALSE]
+stopifnot(sum(nc_$why %in% c("protein-only model favored", "distinct variants favored", "PP.H4 below the rule")) == nrow(nc_))
 subt <- paste0("Composite of the ancestry-matched screen and the re-runs: ", led("L084", 1, fmt0, where = "S6c subtitle: CKB-free composite colocalized", anchor = "^Composite of the ancestry-matched screen and the re-runs: {} colocalized"),
-               " colocalized, ", led("L084", 2, fmt0, where = "S6c subtitle: CKB-free composite robust", anchor = "colocalized, {} robust"), " robust to the conservative prior.")
+               " colocalized, ", led("L084", 2, fmt0, where = "S6c subtitle: CKB-free composite robust", anchor = "colocalized, {} robust"), " robust to the conservative prior.",
+               "\nNot colocalized, ", lit(as.character(nrow(nc_)), "other: count of this panel's rows (not colocalized)", anchor = "^Not colocalized, {}:"),
+               ": protein-only model favored (", lit(as.character(sum(nc_$why == "protein-only model favored")), "other: count of this panel's rows (protein-only model favored)", anchor = "protein-only model favored \\({}\\),"),
+               "), distinct variants favored (", lit(as.character(sum(nc_$why == "distinct variants favored")), "other: count of this panel's rows (distinct variants favored)", anchor = "distinct variants favored \\({}\\),"),
+               "), PP.H4 below the rule (", lit(as.character(sum(nc_$why == "PP.H4 below the rule")), "other: count of this panel's rows (PP.H4 below the rule)", anchor = "PP\\.H4 below the rule \\({}\\)\\.$"), ").")
 pcc <- ggplot(cl, aes(pp, y)) +
   geom_vline(xintercept = num("L236"), linetype = "dashed", colour = LINE_GREY, linewidth = 0.3) +
   geom_segment(data = comp[run == TRUE & sup == TRUE], aes(x = h4_con, xend = h4_def, y = y, yend = y), inherit.aes = FALSE, colour = "grey70", linewidth = 0.4) +
@@ -210,7 +221,7 @@ pcc <- ggplot(cl, aes(pp, y)) +
   facet_grid(grp ~ ., scales = "free_y", space = "free_y") +
   scale_shape_manual(values = c("Default prior" = 21, "Conservative prior" = 24), name = NULL) +
   scale_x_continuous(breaks = XB, labels = ticks_set("S6_c_x", XB, c(-0.04, 1.9), "S6 c x, PP.H4", "linear"), expand = expansion(0), guide = guide_axis(cap = "upper"),
-                     sec.axis = dup_axis(breaks = num("L236"), labels = "Colocalization rule", name = NULL)) +
+                     sec.axis = dup_axis(breaks = num("L236"), labels = "PP.H4 threshold", name = NULL)) +
   scale_y_continuous(breaks = NULL, expand = expansion(add = c(0.6, 0.6))) +
   coord_cartesian(xlim = c(-0.04, 1.9), clip = "off") +
   labs(x = "PP.H4 with the outcome resource (circle, default prior; triangle, conservative prior)", y = NULL, title = subt) +

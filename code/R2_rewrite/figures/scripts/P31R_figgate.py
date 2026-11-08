@@ -678,7 +678,7 @@ def g8_provenance(fig, row):
 def legend_panels(txt):
     body = re.sub(r"\[\[[^\]]*\]\]", "", txt)
     got = set(re.findall(r"\*\*\(?([a-h])\)?\*\*", body))
-    got |= set(re.findall(r"(?:^|[\s(])\(([a-h])\)", body))
+    got |= set(re.findall(r"(?<!analysis)(?:^|[\s(])\(([a-h])\)", body))
     return sorted(got)
 
 
@@ -1723,6 +1723,7 @@ def selftest():
     assert norm("4.7 × 10⁻⁹") == norm("4.7×10^−9") == "4.7×10^-9" and norm("10⁶") == "10^6" != norm("106")
     assert PG.parse_text_num(to_gate_form("10^−6"))[0] == 1e-6 and PG.parse_text_num(to_gate_form("10^6"))[0] == 1e6
     assert legend_panels("**Figure 2. Map.** **a**, the map. **b**, forest. (c) inset") == ["a", "b", "c"]
+    assert legend_panels("**Figure 3. Map.** **a**, the map. **b**, forest. Sensitivity analysis (d) is shown with and without one pair.") == ["a", "b"]
     # liveness on a REAL cairo PDF: the 3a gate adversary's fixture (9-pt 'Tests' then 7-pt '12', 0.4 pt apart)
     fx = os.path.join(HERE, "fixtures", "smallint_after.pdf")
     if os.path.exists(fx):

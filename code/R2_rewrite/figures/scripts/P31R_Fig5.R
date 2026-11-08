@@ -220,7 +220,7 @@ L_txt <- rbind(
   tx(mean(c(xs(tab$comp), xs(n_same))), 59.4, n_lab("same sign", "L987", c("inconclusive", "same"), "a: inconclusive, same sign"), 0.5, 1),
   tx(mean(c(xs(n_same), xs(n_same + n_opp))), 59.4, n_lab("opposite sign", "L987", c("inconclusive", "opposite"), "a: inconclusive, opposite sign"), 0.5, 1),
   tx(2, 65.4, paste0(n_lab("of the evaluable pairs are eGFR pairs in a single East Asian eGFR file", "L967", "evaluable",
-                             "a: eGFR pairs in the held file"), "\n(standardized effects; compared by sign and p only)"), 0, 1))
+                             "a: eGFR pairs in the held file"), "\n(compared by sign and p only)"), 0, 1))
 
 # right flow -------------------------------------------------------------------------------------------------------------
 RX0 <- 113; RX1 <- 153
@@ -238,8 +238,8 @@ R_txt <- rbind(
   tx(133, 31, lab_n("Colocalized", "L082", 3, "a: colocalized"), 0.5),
   tx(133, 42, lab_n("Robust", "L082", 4, "a: robust"), 0.5, tc = W_),
   tx(RX0 + 3, 47.2, "Testable, not colocalized:"),
-  tx(RX0 + 4.5, 52.25, lab_n("No outcome association", "L211", 1, "a: no outcome association")),
-  tx(RX0 + 4.5, 59.75, lab_n("Distinct variants", "L211", 2, "a: distinct variants")),
+  tx(RX0 + 4.5, 52.25, lab_n("Protein-only model favored", "L211", 1, "a: protein-only model favored")),
+  tx(RX0 + 4.5, 59.75, lab_n("Distinct variants favored", "L211", 2, "a: distinct variants favored")),
   tx(RX0 + 4.5, 68.25, paste0("Below the rule: DNER", EN, "eGFR,\nPP.H4 ", led("L255", NULL, function(v) sprintf("%.3f", v), "a: below the rule", anchor = "^PP\\.H4 {}$"))))
 
 Bx <- rbind(L_boxes, R_boxes); Sg <- rbind(L_seg, R_seg); Tx <- rbind(L_txt, R_txt)
@@ -283,8 +283,10 @@ pL <- ggplot() + geom_text(data = lab_df, aes(x = x, y = y, label = label, colou
   theme_p31r() + blank_axes + theme(plot.margin = margin(0, 0, 0, LEFT_MM, "mm"))
 
 # forest
-f5_lines <- paste0("Estimates not shown\nPP.H4 ",
-                   led("L213", 1, function(v) sprintf("%.3f", v), "b: FGF5-eGFR PP.H4 (both priors)", anchor = "^PP\\.H4 {}$"))
+stopifnot(num("L213", 1) > 0.999, num("L213", 2) > 0.999)      # R3 D8 (2026-11-08): FGF5-eGFR PP.H4 at both priors rounds to 1.000; the panel prints the bound
+REG$literals[[length(REG$literals) + 1]] <- list(text = "0.999", why = "other: printed bound that FGF5-eGFR PP.H4 exceeds at both priors (L213, asserted above)", count = 1L,
+                                                 anchor = "^PP\\.H4 >{} at both priors$", not_ledger = "a bound asserted against L213, not a ledger value")
+f5_lines <- "Estimates not shown\nPP.H4 >0.999 at both priors"
 pF <- ggplot(long) + sep_layer() +
   annotate("segment", x = 0, xend = 0, y = 0, yend = Y_S2, colour = REF$colour, linewidth = REF$linewidth, linetype = REF$linetype) +
   geom_segment(aes(x = xmin, xend = xmax, y = y, yend = y), colour = N_[["mid"]], linewidth = 0.4) +
@@ -299,10 +301,10 @@ pF <- ggplot(long) + sep_layer() +
 
 # notes
 tg_note <- paste0("Instruments ", led("L085", 4, function(v) sprintf("%.0f", v), "b: TGFB1-CAD instruments kb apart",
-                                      anchor = "^Instruments {} kb apart: instrument-dependent estimates;$"),
-                  " kb apart: instrument-dependent estimates;\nnot evidence of ancestry-specific reversal.\nEuropean colocalization not robust (PP.H4 ",
+                                      anchor = "^Instruments {} kb apart; outcome data also differ;$"),
+                  " kb apart; outcome data also differ;\nnot evidence of ancestry-specific reversal.\nEuropean colocalization not robust (PP.H4 ",
                   led("L214", 3, function(v) sprintf("%.3f", v), "b: TGFB1-CAD European PP.H4, conservative prior", anchor = "^European colocalization not robust \\(PP\\.H4 {}\\)$"), ")")
-fg_note <- paste0("From the East Asian screen; European p ", led("L215", 2, function(v) sprintf("%.2f", v), "b: FGFR4-T2D European p", anchor = "^From the East Asian screen; European p {} \\(non-rejection\\)$"),
+fg_note <- paste0("Separate East Asian screen (outside panel a);\nEuropean p ", led("L215", 2, function(v) sprintf("%.2f", v), "b: FGFR4-T2D European p", anchor = "^European p {} \\(non-rejection\\)$"),
                   " (non-rejection)")
 f5_note <- "Scales differ: European \u2212(natural-log eGFR) per SD vs\nEast Asian per SD of rank-inverse-normal eGFR\n(Taiwan\u2013Japan meta-analysis); magnitudes not compared"
 note_df <- data.table(x = 0, y = c(cb[protein == "TGFB1", y], cb[protein == "FGFR4", y], Y_F5), label = c(tg_note, fg_note, f5_note))

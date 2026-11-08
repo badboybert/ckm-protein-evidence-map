@@ -128,7 +128,7 @@ mk_est <- function(e, ttl, xlab, axis_id, show_y, extra = NULL) {
     scale_colour_manual(values = COL_SIG, guide = "none") + scale_fill_manual(values = COL_SIG, guide = "none") +
     scale_x_continuous(breaks = br, labels = ticks_set(paste0("S5_", axis_id, "_x"), br, lims, paste0("S5 ", axis_id, " x, ", xlab)), expand = expansion(0)) +
     scale_y_continuous(breaks = -seq_along(rows), labels = if (show_y) rows else rep("", length(rows)), expand = expansion(0)) +
-    coord_cartesian(xlim = lims, ylim = c(-length(rows) - 0.5, if (e == "vi") 0.05 else -0.5), clip = "off") +
+    coord_cartesian(xlim = lims, ylim = c(-length(rows) - 0.5, if (e == "vi") 0.25 else -0.5), clip = "off") +
     labs(x = xlab, y = NULL, title = ttl) +
     theme_p31r() +
     theme(axis.ticks.y = element_blank(), plot.title = element_text(size = ANNOT_PT, face = "bold", hjust = 0, margin = margin(b = 2)), plot.title.position = "panel",
@@ -138,8 +138,8 @@ mk_est <- function(e, ttl, xlab, axis_id, show_y, extra = NULL) {
 }
 # the clause label (ornithine at signal A): the printed PP.H4 is ledger L804, the 503-person panel value
 orn_extra <- function(d, lims) {
-  list(annotate("text", x = lims[1] + 0.02 * diff(lims), y = -0.3, hjust = 0, vjust = 0.5, size = ANNOT, family = BASE_FONT, colour = COL_SIG[["A"]],
-                label = paste0("Signal A: not colocalized (PP.H4 ", led("L804", NULL, fmtd(2), where = "S5a ornithine: signal A conditional PP.H4 (503 panel)", anchor = "^Signal A: not colocalized \\(PP\\.H4 {}\\)$"), ")")))
+  list(annotate("text", x = lims[1] + 0.02 * diff(lims), y = -0.1, hjust = 0, vjust = 0.5, size = ANNOT, lineheight = 0.9, family = BASE_FONT, colour = COL_SIG[["A"]],
+                label = paste0("Ornithine at A: not colocalized\nwith ARG1 (PP.H4 = ", led("L804", NULL, fmtd(2), where = "S5a ornithine: signal A conditional PP.H4 (503 panel)", anchor = "^with ARG1 \\(PP\\.H4 = {}\\)$"), ")")))
 }
 pa1 <- mk_est("i",  "Arginine per SD of ARG1", "SD of natural-log arginine per SD of ARG1", "i", TRUE)
 pa2 <- mk_est("vi", "Ornithine per SD of ARG1", "SD of natural-log ornithine per SD of ARG1", "vi", FALSE, orn_extra)
@@ -226,7 +226,7 @@ a_cons <- cd[ykey == "t2d_A" & prior == "Conservative prior"]
 LAB674 <- led("L265", 1, fmtd(3), where = "S5b: T2D signal A | B PP.H4, conservative prior", anchor = "^{}$")
 pb <- ggplot(cd, aes(pp, yd)) +
   annotate("segment", x = num("L236"), xend = num("L236"), y = YD[["t2d_ekf"]] - 0.5, yend = YD[["arg_whole"]] + 0.5, linewidth = 0.3, colour = LINE_GREY, linetype = "dashed") +
-  annotate("text", x = num("L236") - 0.035, y = (YD[["arg_B"]] + YD[["t2dH"]]) / 2, label = "Colocalization rule", hjust = 1, size = ANNOT, family = BASE_FONT, colour = "grey30") +
+  annotate("text", x = num("L236") - 0.035, y = (YD[["arg_B"]] + YD[["t2dH"]]) / 2, label = "PP.H4 threshold", hjust = 1, size = ANNOT, family = BASE_FONT, colour = "grey30") +
   geom_point(data = cd[!(ykey %in% NC & prior == "Default prior")], aes(colour = rowlab, shape = prior), size = 1.5, stroke = 0) +
   geom_point(data = cd[ykey %in% NC & prior == "Default prior"], aes(colour = rowlab), shape = 13, size = 2.0, stroke = 0.4) +   # RULE: a crossed marker takes the colour of its row (signal colour for Signal B | A, black for the black rows), as in panel a
   annotate("text", x = a_cons$pp - 0.03, y = a_cons$yd, label = LAB674, hjust = 1, size = ANNOT, family = BASE_FONT, colour = COL_SIG[["A"]]) +

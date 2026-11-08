@@ -236,10 +236,10 @@ pdg <- ggplot() + vl_ab + vl_t +
   theme(axis.line.y = element_blank(), axis.ticks.y = element_blank(), axis.text.y = element_blank(), plot.margin = margin(2, 12, 4, 4))
 
 # header (own strip, 7 pt): which method gave which result (S2-D25: the reference-LD fit is the inadmissible one, not the single-variant model)
-PP72 <- led("L072", NULL, fmtd(3), where = "S4 header: DPEP1-cysteinylglycine coloc.abf PP.H4", anchor = "coloc\\.abf, PP\\.H4 {} at the declared prior")
+PP72 <- led("L072", NULL, fmtd(3), where = "S4 header: DPEP1-cysteinylglycine coloc.abf PP.H4", anchor = "coloc\\.abf, PP\\.H4 {} at the default prior")
 ph <- ggplot() +
   annotate("text", x = 0, y = 2, hjust = 0, vjust = 1, size = ANNOT, family = BASE_FONT, lineheight = 1.15, fontface = "plain",
-           label = paste0("DPEP1", EN, "cysteinylglycine colocalized under the single-causal-variant model (coloc.abf, PP.H4 ", PP72, " at the declared prior).\n",
+           label = paste0("DPEP1", EN, "cysteinylglycine colocalized under the single-causal-variant model (coloc.abf, PP.H4 ", PP72, " at the default prior).\n",
                           "The reference-LD fine-mapping fit is inadmissible and is not cited as support. Attribution between DPEP1 and CHMP1A is unresolved.")) +
   coord_cartesian(xlim = c(0, 1), ylim = c(0, 2.2), expand = FALSE) + theme_void()
 row3 <- (pd1 / pd2 / pd3 / pdg) + plot_layout(heights = c(1, 1, 1, 0.95))

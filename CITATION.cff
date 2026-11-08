@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use these files, please cite the article and this release."
 title: "A genetic evidence map of circulating proteins across cardiovascular, kidney and metabolic outcomes: release repository"
-version: "v2.0.6-R2"
+version: "v2.0.7-R2"
 type: dataset
 license: CC-BY-4.0
 authors:

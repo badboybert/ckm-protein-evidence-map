@@ -190,7 +190,7 @@ CORR_PAIRS <- unlist(p31r_ledger("L985", "pairs"))
 stopifnot(sum(vd$verdict == "CORROBORATED") == num("L985", "n"), setequal(sub(" \\(EAS\\)", "", vd[verdict == "CORROBORATED"]$pair), CORR_PAIRS),
           vd[pair == "RAD23B-T2D"]$s3 == "4", vd[pair == "PCSK9-CAD"]$s3 == "2 (with add-on)", vd[pair == "TGFB1-CAD"]$s2 == "(a)",
           all(vd[verdict != "CORROBORATED"]$pair %in% c("RAD23B-T2D", "PCSK9-CAD", "TGFB1-CAD")))
-REASON <- c("RAD23B-T2D" = "shared variant unresolved", "PCSK9-CAD" = "conservative prior", "TGFB1-CAD" = "instrument-dependent")
+REASON <- c("RAD23B-T2D" = "shared variant unresolved", "PCSK9-CAD" = "conservative prior", "TGFB1-CAD" = "opposite conditional signs")
 # external regional colocalization (W3): PAM, RAD23B, TGFB1, PCSK9 only; no S3 rows exist for ARG1-T2D or FGFR4-T2D, so those two cells read "not run"
 stopifnot(!any(grepl("^S3\\.(ARG1|FGFR4)", w3$quantity_id)), all(c("PAM_T2D", "RAD23B_T2D", "TGFB1_CAD", "PCSK9_CAD") %in% sub("^S3\\.([A-Z0-9]+_[A-Z0-9]+)\\..*", "\\1", w3$quantity_id)))
 s3 <- function(k, pr, h) qv(w3, sprintf("S3.%s.pmaf.%s.%s", k, pr, h))

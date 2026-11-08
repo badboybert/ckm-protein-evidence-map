@@ -1,12 +1,12 @@
-# Release repository for "A genetic evidence map of circulating proteins across cardiovascular, kidney and metabolic outcomes", version `v2.0.6-R2`
+# Release repository for "A genetic evidence map of circulating proteins across cardiovascular, kidney and metabolic outcomes", version `v2.0.7-R2`
 
 Result tables, per-figure plotted frames, tables as data and analysis-tail code for the manuscript. `REPRODUCE.md` says what regenerates and what does not. `RELEASE_MANIFEST.tsv` lists every released file with its size, md5, row and column counts, source file and md5, producing script and md5, software label, citing document and licence class. The manifest cannot hold its own md5, so it and the files `README.md`, `REPRODUCE.md`, `LICENSE`, `CITATION.cff` and `.gitattributes` have no manifest row. `.gitattributes` holds the one line `* -text`, so that git never rewrites line endings and a clone equals the zip byte for byte.
 
 ## Version, licence and citation
 
-This is release `v2.0.6-R2`. `LICENSE` gives the terms: the MIT License for code the authors wrote, and `CC BY 4.0` for tables the authors derived (`own_derived` in `RELEASE_MANIFEST.tsv`); files derived from third-party data keep their providers' terms (below). `CITATION.cff` says how to cite the release. The repository is `https://github.com/badboybert/ckm-protein-evidence-map`; its archived versions are on Zenodo under the concept DOI `https://doi.org/10.5281/zenodo.23855497`, which resolves to the latest version.
+This is release `v2.0.7-R2`. `LICENSE` gives the terms: the MIT License for code the authors wrote, and `CC BY 4.0` for tables the authors derived (`own_derived` in `RELEASE_MANIFEST.tsv`); files derived from third-party data keep their providers' terms (below). `CITATION.cff` says how to cite the release. The repository is `https://github.com/badboybert/ckm-protein-evidence-map`; its archived versions are on Zenodo under the concept DOI `https://doi.org/10.5281/zenodo.23855497`, which resolves to the latest version.
 
-On Windows, extracting the zip or cloning the repository into a deep folder can fail once a full path exceeds the default Windows path limit (`MAX_PATH`). The longest paths inside this release are `P31R_R2_release_v2.0.6-R2/code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/01_acquire_and_localize_outcomes.py` and `P31R_R2_release_v2.0.6-R2/code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/31_candidate_susie_sensitivity.R` (for a clone, the repository folder name replaces the zip root `P31R_R2_release_v2.0.6-R2/`), so extract or clone close to the drive root, or run `git config core.longpaths true`.
+On Windows, extracting the zip or cloning the repository into a deep folder can fail once a full path exceeds the default Windows path limit (`MAX_PATH`). The longest paths inside this release are `P31R_R2_release_v2.0.7-R2/code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/01_acquire_and_localize_outcomes.py` and `P31R_R2_release_v2.0.7-R2/code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/31_candidate_susie_sensitivity.R` (for a clone, the repository folder name replaces the zip root `P31R_R2_release_v2.0.7-R2/`), so extract or clone close to the drive root, or run `git config core.longpaths true`.
 
 ## Licence tiers, third-party data and the TPMI switch
 
@@ -128,15 +128,15 @@ Table 3 of the manuscript prints the values; this list names the result rows tha
 | claim | repository rows |
 |---|---|
 | `**81 [[L010]] colocalization-supported pairs**` | `--` |
-| `*TGFB1*–CAD and *ARG1*–T2D rest on inadmissible reference-LD fits (flagged at first mention under Rule 3(i))` | `workstreams/W2: S2.susie; workstreams/W4b: S4.s` |
+| `*TGFB1*–CAD and *ARG1*–T2D rest on inadmissible reference-LD fits (flagged at first mention under the LD-admissibility rule)` | `workstreams/W2: S2.susie; workstreams/W4b: S4.s` |
 | `*RAD23B*–T2D significance depends on the SE convention` | `workstreams/W1: S1.se` |
 | `**Pre-declared external outcome checks**` | `--` |
 | `Six checks, each classified on the resource's own p` | `external_outcomes/extchecks: C1.<pair>.p_wald1` |
-| `*RAD23B*–T2D in DIAMANTE: classification depends on the p source and on rounding` | `workstreams/W1: S1.rad23b.ext` |
+| `*RAD23B*–T2D in DIAMANTE: rounding of the printed estimates could move the Wald p across 0.05 [[L961]]` | `workstreams/W1: S1.rad23b.ext` |
 | `DIAMANTE regional colocalizations (*PAM*–T2D supported at the default prior; *RAD23B*–T2D shared variant not resolved)` | `workstreams/W3: S3.RAD23B_T2D.pmafdrop, S3.PAM_T2D.pmafdrop; workstreams/BI: W3 rows 4, 6` |
 | `*PCSK9*–CAD regional colocalization: not a clean control` | `workstreams/W3: S3.PCSK9_CAD.betase; workstreams/BI: W3 rows 10, 11` |
-| `*TGFB1*–CAD protein route is instrument-dependent` | `workstreams/W2: S2.het, S2.p489.het` |
-| `*TGFB1*–CAD is sensitive to the reference LD` | `workstreams/W2: S2.coloc_clause; workstreams/BI: W2 row 1` |
+| `*TGFB1*–CAD conditional estimates differed by instrument` | `workstreams/W2: S2.het, S2.p489.het` |
+| `*TGFB1*–CAD conditional colocalization at rs12983775 is sensitive to the reference LD` | `workstreams/W2: S2.coloc_clause; workstreams/BI: W2 row 1` |
 | `**Kidney pairs among multi-signal candidates**` | `--` |
 | `Multi-signal candidates on inadmissible fits` | `workstreams/W6b: S6.d; workstreams/INT: s6d_fitset_readings.tsv` |
 | `Kidney share among the 16 [[L222]] candidates against the other 144 [[L264]] pool pairs (exploratory; sensitive to grouping, the acceptance rule and the LD guard)` | `workstreams/W6a: S6.primary, S6.b.a_pair` |

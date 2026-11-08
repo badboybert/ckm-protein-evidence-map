@@ -12,13 +12,13 @@ x,y,label,hj,vj,tc,row
 90,55,Discordant 0,0,0.5,#333333,11
 52.75,59.4,33 same sign,0.5,1,#333333,12
 82.75,59.4,7 opposite sign,0.5,1,#333333,13
-2,65.4,14 of the evaluable pairs are eGFR pairs in a single East Asian eGFR file | (standardized effects; compared by sign and p only),0,1,#333333,14
+2,65.4,14 of the evaluable pairs are eGFR pairs in a single East Asian eGFR file | (compared by sign and p only),0,1,#333333,14
 110.5,2.5,East Asian instrument and outcome data,0,0.5,#333333,15
 133,9,Eligible pairs 48,0.5,0.5,#333333,16
 133,20,Testable 47,0.5,0.5,#333333,17
 133,31,Colocalized 7,0.5,0.5,#333333,18
 133,42,Robust 3,0.5,0.5,white,19
 116,47.2,"Testable, not colocalized:",0,0.5,#333333,20
-117.5,52.25,No outcome association 32,0,0.5,#333333,21
-117.5,59.75,Distinct variants 7,0,0.5,#333333,22
+117.5,52.25,Protein-only model favored 32,0,0.5,#333333,21
+117.5,59.75,Distinct variants favored 7,0,0.5,#333333,22
 117.5,68.25,"Below the rule: DNER–eGFR, | PP.H4 0.536",0,0.5,#333333,23

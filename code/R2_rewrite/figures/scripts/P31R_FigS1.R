@@ -114,7 +114,7 @@ p1 <- ggplot(ph, aes(disc_b, wald)) +
   geom_text(data = cl, aes(x = Ti(tx), y = Ti(ty), label = txt), inherit.aes = FALSE, hjust = 0.5, vjust = 0.5, size = ANNOT, family = BASE_FONT) +
   annotate("text", x = Ti(LIMX_T[1] + 0.15), y = Ti(LIMY_T[2] - 0.15), label = "asinh scale", hjust = 0, vjust = 1, size = ANNOT, family = BASE_FONT, colour = "grey25") +
   scale_shape_manual(values = c(sig = 21, ns = 21, sel = 23), drop = FALSE, name = NULL,
-                     labels = c(sig = paste0("External <i>p</i> < ", P_TXT), ns = paste0("External <i>p</i> \u2265 ", P_TXT), sel = "Selected in advance")) +
+                     labels = c(sig = paste0("External <i>p</i> < ", P_TXT), ns = paste0("External <i>p</i> \u2265 ", P_TXT), sel = "Original external check")) +
   scale_fill_identity() + scale_colour_identity() +
   scale_x_continuous(trans = tr, breaks = CBX, labels = CBX_LAB) +
   scale_y_continuous(trans = tr, breaks = CBY, labels = CBY_LAB) +

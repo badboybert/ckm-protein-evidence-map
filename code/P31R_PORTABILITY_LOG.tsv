@@ -1,15 +1,15 @@
 path	source_md5	shipped_md5	rules
 code/R2_rewrite/figures/scripts/P31R_Fig1.R	536fa97b44508673694f549506be418d	536fa97b44508673694f549506be418d	none (byte-identical)
-code/R2_rewrite/figures/scripts/P31R_Fig2.R	85d2a871687c4d7f9776922cae84b096	85d2a871687c4d7f9776922cae84b096	none (byte-identical)
+code/R2_rewrite/figures/scripts/P31R_Fig2.R	3d7ea1e4d115099191bb1b4d3a010174	3d7ea1e4d115099191bb1b4d3a010174	none (byte-identical)
 code/R2_rewrite/figures/scripts/P31R_Fig3.R	d39d1f5bb723460bc8ffc0092f74206b	d39d1f5bb723460bc8ffc0092f74206b	none (byte-identical)
-code/R2_rewrite/figures/scripts/P31R_Fig4.R	fcb637b0c573fa2a32a77aaabbb9de41	95dabd2bc1fde47cddee55813b0ebc3e	P1 ext x1; P1 v3 x2; P6 comment x1; P7 prologue x1
-code/R2_rewrite/figures/scripts/P31R_Fig5.R	54f6b98cfa01916e74cc86d6cda48e69	cb161c6b3599ac9630622f94f3370617	P1 v3 x1; P6 comment x1; P7 prologue x1
-code/R2_rewrite/figures/scripts/P31R_FigS1.R	2277fac6ce9597b044503401bae93820	dbb67b8ba8afb5aa264cf7b05f59892a	P1 v3 x2; P6 comment x1; P7 prologue x1
-code/R2_rewrite/figures/scripts/P31R_FigS2.R	dce389dbe26da28639d30b4084f34f27	2db91ca12b90edeba9f42e4d2731c1e5	P1 v3 x3; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_Fig4.R	322f8aa144a3f77315574deee350aafe	ce14d9950e20ec996058ac3dadbce594	P1 ext x1; P1 v3 x2; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_Fig5.R	cf97daad0ba0d9a43bfe641ef14e7263	7dd77ec01666e2ee0f44fa550a1e9cad	P1 v3 x1; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_FigS1.R	2aa9bff7d72343b3a554c2bfb2d49153	1e6c1ff9c593b9f593c6e783fc14d951	P1 v3 x2; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_FigS2.R	d6b7c8f5649c9ab73374c38556ac7276	ca5d1883d5927a2388fe2ec9ae2522f2	P1 v3 x3; P6 comment x1; P7 prologue x1
 code/R2_rewrite/figures/scripts/P31R_FigS3.R	495469ddb14ce24c41c348edc0e4fa7d	cdbca47ef63d278a48bb4a19ebf9e74f	P1 v3 x2; P6 comment x1; P7 prologue x1
-code/R2_rewrite/figures/scripts/P31R_FigS4.R	646c0d6550996fcad5218f14de322009	f0c6442f9082ba5eaeb08eb6cd84a142	P1 v3 x2; P6 comment x1; P7 prologue x1
-code/R2_rewrite/figures/scripts/P31R_FigS5.R	12249073a9b1014d7408a6eb8a6b283e	f5bc2621cb1c9c011c1f55583fb59210	P1 ext x1; P1 v3 x3; P6 comment x1; P7 prologue x1
-code/R2_rewrite/figures/scripts/P31R_FigS6.R	f592a0d5f80826c98e530f9be57211c4	20099825022f610af2f73554c0d74a87	P1 v3 x2; P6 comment x1; P7 prologue x1; S special edit x1
+code/R2_rewrite/figures/scripts/P31R_FigS4.R	001cdd213066c7d10aaccfff515d034e	daf8326207927476fdab1b4bbb879a9c	P1 v3 x2; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_FigS5.R	c2e1c0500878313441259d20f6befeb4	001e4d5c876cd87e67b60e2619b2e895	P1 ext x1; P1 v3 x3; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_FigS6.R	909c642f60be78d7e6bc8bf56da537fe	a2ce17f6343c70f49904db8a3686008f	P1 v3 x2; P6 comment x1; P7 prologue x1; S special edit x1
 code/R2_rewrite/figures/scripts/P31R_fig_common.R	e71ad76bf9a454fa43d705cdb23cfcfd	98f23d3b285da278398ccbbdb9b92491	S special edit x1
 code/R2_rewrite/figures/af3/P31R_af3_common.R	ea82f966b13a140e3d7bff29dae27625	750ca7a4c32631ba1e831c6583d9dc2c	S special edit x1
 code/R2_rewrite/figures/af3/P31R_af3_glyphs.R	09c8e54ed88d24db6a683980edba0fc9	09c8e54ed88d24db6a683980edba0fc9	none (byte-identical)
@@ -17,16 +17,16 @@ code/v3.2/scripts/theme_publication_ckm.R	4edd95224fd4eca32f67f6d6db4172fe	4edd9
 code/v3.2/scripts/ckm_palette.R	2e31dc401ab2158fd949529df8aaa1ee	2e31dc401ab2158fd949529df8aaa1ee	none (byte-identical)
 code/R2_rewrite/figures/af3/P31R_af3_assemble.py	d29c43814ae0c24eb1091672fb2c1044	b71d49efcd4739c26ff6a04079291932	P2 fonts x1; P7 prologue x1
 code/R2_rewrite/figures/af3/build_legend_AF3_R2.py	070ce364a4988f687b09b92ca6ddd162	070ce364a4988f687b09b92ca6ddd162	none (byte-identical)
-code/R2_rewrite/figures/scripts/P31R_figgate.py	f438500bf1a55924fde7dbe2ade1c51e	d52e18a2e19fb143f1dd81ac504410ff	P2 fonts x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_figgate.py	9c627cdf0199cb5e7c56abad64e51319	4d722c6fa1af59c90bdb36124490a2fc	P2 fonts x1; P7 prologue x1
 code/R2_rewrite/scripts/P31R_gate.py	1190097d199a1cbb732b73c64ad64d0f	1190097d199a1cbb732b73c64ad64d0f	none (byte-identical)
 code/R2_rewrite/scripts/P31R_tablegate.py	718cac6b298108978ab6bf1c63a16358	718cac6b298108978ab6bf1c63a16358	none (byte-identical)
 code/R2_rewrite/scripts/P31R_af1_devstage.py	29f324c517e215ec609c71c9ba88ff9f	29f324c517e215ec609c71c9ba88ff9f	none (byte-identical)
-code/R2_rewrite/scripts/P31R_build_af1.py	7458134f3cc3c6911cdc8ca70eb5cf6d	7458134f3cc3c6911cdc8ca70eb5cf6d	none (byte-identical)
+code/R2_rewrite/scripts/P31R_build_af1.py	30f5ccb962f511eb5ef9444d71ccca1c	30f5ccb962f511eb5ef9444d71ccca1c	none (byte-identical)
 code/R2_rewrite/figures/render_all_units.py	098e11eea92a841898df01d5484d4fd6	098e11eea92a841898df01d5484d4fd6	none (byte-identical)
 code/R2_rewrite/release/P31R_build_release.py	9d4745767b16720536794e40b8595df0	9d4745767b16720536794e40b8595df0	none (byte-identical)
 code/R2_rewrite/release/rel_screen.py	38b4d5370c86304ebf101a7386c4d2b6	38b4d5370c86304ebf101a7386c4d2b6	none (byte-identical)
 code/R2_rewrite/release/rel_tables.py	ba4cb6d10bbbd4e5d91b5c5a60c94235	ba4cb6d10bbbd4e5d91b5c5a60c94235	none (byte-identical)
-code/R2_rewrite/release/rel_docs.py	4e4c675f24c97bbd990ca384b3f809aa	4e4c675f24c97bbd990ca384b3f809aa	none (byte-identical)
+code/R2_rewrite/release/rel_docs.py	80e215aff74134a194f549623e2da2b7	80e215aff74134a194f549623e2da2b7	none (byte-identical)
 code/R2_rewrite/release/rel_licence.py	4b259a287c69fc9075675b279de0a18d	4b259a287c69fc9075675b279de0a18d	none (byte-identical)
 code/R2_rewrite/release/P31R_releasegate.py	fd99b49fe912d07dbefa12a1b050876e	a370b6523b467232929f771e12e799dd	P6 comment x1
 code/paper3_deposit_request_v4/scripts/R/00_config.R	cc58fcf6be207052f792315589853307	1b0f0e446559ba74de4993614568b0d0	P1 ext x8; P2 rscript x1; P7 prologue x1

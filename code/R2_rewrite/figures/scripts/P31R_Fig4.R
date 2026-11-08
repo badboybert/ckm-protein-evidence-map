@@ -275,12 +275,12 @@ key <- ggplot() +
   annotate("segment", x = 0.4, xend = 3.6, y = KEY_MM - 6.1, yend = KEY_MM - 6.1, linewidth = 0.45, colour = INK) +
   annotate("text", x = 5.2, y = KEY_MM - 6.1, hjust = 0, size = ANNOT, family = BASE_FONT,
            label = "pointwise 95% intervals, nominal p; dashed line, no difference") +
-  annotate("text", x = 170, y = KEY_MM - 6.1, hjust = 1, size = ANNOT, family = BASE_FONT, fontface = "bold",
-           label = "Per-signal estimates: Additional file 3: Figure S5") +
+  annotate("text", x = 167.5, y = KEY_MM - 6.1, hjust = 1, size = ANNOT, family = BASE_FONT, fontface = "bold",
+           label = "Per-signal estimates in Fig. S5") +
   geom_point(data = LDK, aes(x = x, y = y, colour = ld), size = 0.8 * 2.2, stroke = 0, show.legend = FALSE) + scale_colour_manual(values = COL_LD, guide = "none") +
   annotate("text", x = c(6.5, 16.9), y = KEY_MM - 8.9, label = c("A", "B"), hjust = 0, size = ANNOT, family = BASE_FONT) +
   annotate("text", x = 21, y = KEY_MM - 8.9, hjust = 0, size = ANNOT, family = BASE_FONT,
-           label = "panel b, variant color: r² with signal A or B; dark ≥ 0.5, light 0.2–0.5, grey < 0.2") +
+           label = "panel b, variant color: r² with signal A or B; dark ≥ 0.5, light 0.2–0.5, gray < 0.2") +
   coord_cartesian(xlim = c(0, 170), ylim = c(0, KEY_MM), expand = FALSE, clip = "off") + theme_void()
 # ---- grid of panel a. Panel heights (mm) set the row proportions; row furniture (title, axis) is added by the plots
 PH <- c(i = 2 * PITCH, vi = 3 * PITCH, ii = 6 * PITCH, iii = 7 * PITCH)
@@ -474,7 +474,7 @@ pG <- ggplot() +
   labs(x = NULL, y = NULL) + theme_p31r() +
   theme(axis.text = element_blank(), axis.ticks = element_blank(), axis.line = element_blank(), plot.margin = margin(0.4, 1, 0.4, 0, "mm"))
 lt_G <- txtcol("Genes (Ensembl)", LM, h_mm = 9)
-rG <- txtcol(c("grey, protein-coding extent;", "black, canonical transcript"), RM, h_mm = 9)
+rG <- txtcol(c("gray, protein-coding extent;", "black, canonical transcript"), RM, h_mm = 9)
 # credible sets
 NR <- nrow(CSK)
 lw_cs <- 0.5

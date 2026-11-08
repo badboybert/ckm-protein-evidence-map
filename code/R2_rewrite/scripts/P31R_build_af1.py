@@ -433,7 +433,7 @@ S1MAP = {
     ("12", "a"): ([loc("Results", RES1, 4, "pairs with a supportive multi-signal class"),
                    loc("Results", RES1, 2, "Exposure-side corroboration in deCODE or ARIC was evaluable")], "reported", "--"),
     ("12", "b"): ([loc(M, "Instruments and harmonization", 1, "Every colocalization-supported pair rests on one lead cis variant"),
-                   loc("Results", RESX, 4, "protein route is instrument-dependent"), loc("Results", RESK, 3, "behaved as a control"),
+                   loc("Results", RESX, 4, "gave negative conditional protein-scaled CAD estimates"), loc("Results", RESK, 3, "behaved as a control"),
                    loc("Results", RESA, 2, "Nearly independent signals"), "Table 3"], "partly reported",
                   "Heterogeneity across independent signals is tested at the multi-signal loci (TGFB1, UMOD, ARG1 and DPEP1; Table 3). The 81 pairs rest on one "
                   "instrument each, so heterogeneity across their variants cannot be assessed."),
@@ -443,7 +443,7 @@ S1MAP = {
                    smloc("S-R13", "Keeping only outcome files that report per-variant sample sizes"),
                    loc("Results", RESE, 2, "including a resource swap that excludes CKB"),
                    smloc("S-R13", "Replacing outcome resources that include CKB with Biobank Japan"),
-                   loc("Results", RESX, 3, "In external regional colocalization"), loc("Results", RESX, 4, "protein route is instrument-dependent"),
+                   loc("Results", RESX, 3, "In external regional colocalization"), loc("Results", RESX, 4, "gave negative conditional protein-scaled CAD estimates"),
                    loc("Results", RESK, 3, "behaved as a control"), loc("Results", RESA, 2, "Nearly independent signals"), "Table 3"], "reported",
                   "The strict East Asian subset and the CKB-free swap are reported in Additional file 2, Section S-R13, and per pair in Additional file 1: Tables S7a and S7b. "
                   "The external regional colocalizations and the signal-level analyses (TGFB1, UMOD, ARG1, DPEP1) are in the Results and Table 3."),
@@ -466,15 +466,15 @@ S1MAP = {
                    loc("Discussion", "", 4, "ARG1 hydrolyzes arginine to urea and ornithine"),
                    loc("Discussion", "", 2, "a fibroblast growth factor receptor involved in bile acid and lipid metabolism")], "partly reported",
                   "Mechanisms are discussed; gene-environment equivalence is not discussed as such."),
-    ("16", "c"): ([loc("Discussion", "", 1, "identify the molecular phenotype and disease outcome to test next"), loc("Conclusions", "", 1, "not to select treatments or certify drug targets")],
-                  "partly reported", "Clinical relevance is addressed as a limit: the map guides research follow-up and does not certify targets. "
+    ("16", "c"): ([loc("Discussion", "", 1, "identify the molecular phenotype and disease outcome to test next"), loc("Conclusions", "", 1, "The map helps researchers prioritize protein–outcome pairs")],
+                  "partly reported", "Clinical relevance is addressed through research follow-up: the map prioritizes protein–outcome pairs for follow-up and does not by itself identify a protein-mediated mechanism. "
                   "Effect sizes of possible interventions are not discussed."),
     ("17", ""): ([loc("Discussion", "", 9, "direction transferred more widely than significance"),
                   loc("Discussion", "", 10, "which may not match Finnish or mixed-ancestry outcome data")], "partly reported",
                  "Generalisability across ancestries is discussed; across exposure periods and levels it is not."),
     ("18", ""): ([loc("Declarations", "Funding", 1, "This work was supported")], "reported", "Funding and the funders' role are stated in the Declarations."),
     ("19", ""): ([loc("Declarations", "Availability of data and materials", 1, "published or publicly released genetic-association summary statistics"),
-                  loc("Declarations", "Availability of data and materials", 2, "The repository holds the analysis and figure code")], "reported",
+                  loc("Declarations", "Availability of data and materials", 2, "The repository contains the analysis and figure scripts")], "reported",
                  "Data sources, the repository contents, the repository URL and the archive DOI (the Zenodo concept DOI) are stated in the Declarations."),
     ("20", ""): ([loc("Declarations", "Competing interests", 1, "The authors declare that")], "reported", "Competing interests of all authors are stated in the Declarations."),
 }
@@ -922,10 +922,10 @@ for _, r in oc.iterrows():
     note = DIA_NOTE if r.resource == "DIAMANTE" else ("TPMI's p is SAIGE's score-test p. The CKB protein effect is per SD of rank-inverse-normal protein level and cross-ancestry magnitudes are approximate, so this pair is compared by sign and p."
                                                        if r.resource == "TPMI" else "--")
     if "signal B" in r.pair:
-        note = ("Signal B (rs17788484) of the arginase-1 analysis, not one of the pairs selected in advance. For this signal, the exposure-side "
+        note = ("Signal B (rs17788484) of the arginase-1 analysis, not one of the six original external checks. For this signal, the exposure-side "
                 "allele frequency comes from the European reference panel because the exposure-sample frequency was unavailable for this SNP. ") + note
-    rows.append({"Analysis": "selected in advance" if "signal B" not in r.pair else "arginase-1 signal B",
-                 "Pair": dash(key) + (" (East Asian)" if "EAS" in r.pair else ""), "Selected in advance": yn("signal B" not in r.pair),
+    rows.append({"Analysis": "original external check" if "signal B" not in r.pair else "arginase-1 signal B",
+                 "Pair": dash(key) + (" (East Asian)" if "EAS" in r.pair else ""), "Original external check": yn("signal B" not in r.pair),
                  "Evidence tier": tierof.get(key, "East Asian only"), "External resource": RES[r.resource], "Instrument": r.instrument,
                  "Palindromic instrument": r.palindrome if isinstance(r.palindrome, str) else "no",
                  "Effect allele, discovery": r.ea,
@@ -952,7 +952,7 @@ for _, r in ph[ph.predeclared].iterrows():
 eq(int(ph.predeclared.sum()), LV("L268") - 1, "European pairs selected in advance inside the post hoc check")
 for _, r in ph.iterrows():
     res = "DIAMANTE" if r.outcome == "T2D" else "CARDIOGRAM"
-    rows.append({"Analysis": "post hoc (all T2D and CAD pairs)", "Pair": "%s–%s" % (r.gene, r.outcome), "Selected in advance": yn(bool(r.predeclared)),
+    rows.append({"Analysis": "post hoc (all T2D and CAD pairs)", "Pair": "%s–%s" % (r.gene, r.outcome), "Original external check": yn(bool(r.predeclared)),
                  "Evidence tier": r.tier, "External resource": RES[res], "Instrument": r.instrument,
                  "Palindromic instrument": r.palindrome if isinstance(r.palindrome, str) else "no",
                  "Effect allele, discovery": _ins_ea[(r.gene, r.instrument)][0],
@@ -965,18 +965,18 @@ s5 = pd.DataFrame(rows)
 assert set(s5.Classification) <= {"concordant", "directionally concordant", "inconclusive", "discordant"}
 nn = {6: "six"}
 sheet("S5", "Table S5. External outcome checks.",
-      ("The %s pairs selected in advance, with signal B of the arginase-1 analysis, and the post hoc check of all %d colocalization-supported T2D "
-       "and CAD pairs, which repeats the European pairs selected in advance. Each check used the discovery instrument without proxies; estimates "
+      ("The %s pairs of the original external check, with signal B of the arginase-1 analysis, and the post hoc check of all %d colocalization-supported T2D "
+       "and CAD pairs, which repeats the European pairs of the original check. Each check used the discovery instrument without proxies; estimates "
        "are log-odds per SD of protein. p is each resource's own p value (for TPMI, SAIGE's score-test p), with the Wald-ratio p from beta and SE "
-       "beside it; the change of p source, made after the checks were run, altered no classification. Under a Wald p computed from DIAMANTE's printed estimates, however, the RAD23B–T2D class depends on their rounding (main text, Table 3). Concordant: discovery sign with p < %g; "
+       "beside it; the change of p source was made after the checks were run, and the resource p values and the first-order Wald p values gave the same concordance classifications. For RAD23B–T2D, rounding of the printed DIAMANTE estimates could move the Wald p value across the concordance threshold (main text, Table 3). Concordant: discovery sign with p < %g; "
        "directionally concordant: discovery sign with p ≥ %g; discordant: opposite sign with p < %g; inconclusive: otherwise. Bonferroni for the "
-       "pairs selected in advance: p < %s. Heterogeneity p compares the external with the discovery estimate (z-test). Frequencies are those of the allele in the column Effect allele, discovery; "
+       "original external checks: p < %s. Heterogeneity p compares the external with the discovery estimate (z-test). Frequencies are those of the allele in the column Effect allele, discovery; "
        "the Wald ratios do not depend on which allele is used. The discovery frequency is that of the discovery sample (UK Biobank Pharma Proteomics Project, or the China Kadoorie Biobank for FGFR4). For arginase-1 signal B it comes from the European reference panel, because the exposure-sample frequency was unavailable. The European resources "
        "include Finnish studies and may share participants with FinnGen, so these are external outcome checks rather than independent replication. "
        "Their sampling-noise correlation with FinnGen (the correlation of null z-scores implied by the cross-trait LD-score-regression intercept) was %.3f (SE %.3f) for T2D and %.3f (SE %.3f) "
        "for CAD (Additional file 2).")
       % ((nn[LV("L268")], LV("L250")[0], P05, P05, P05, BON) + tuple(LV("L449"))),
-      s5, {"Analysis": "selected in advance / arginase-1 signal B / post hoc", "Pair": "protein-outcome", "Selected in advance": "yes / no",
+      s5, {"Analysis": "original external check / arginase-1 signal B / post hoc", "Pair": "protein-outcome", "Original external check": "yes / no",
            "Evidence tier": "tier of the pair (FGFR4-T2D: found in the East Asian screen only)", "External resource": "external outcome GWAS",
            "Instrument": "discovery lead variant (no proxies)", "Palindromic instrument": "A/T or C/G, with whether allele frequency orients it",
            "Effect allele, discovery": "the allele that the two frequency columns refer to (the instrument's effect allele in the exposure data)",
@@ -985,7 +985,7 @@ sheet("S5", "Table S5. External outcome checks.",
            "External estimate (log-odds per SD of protein)": "Wald ratio in the external resource", "External SE": "first-order SE",
            "Odds ratio": "exp(estimate)", "OR 95% CI lower": "exp(estimate - 1.96 SE)", "OR 95% CI upper": "exp(estimate + 1.96 SE)",
            "p, as reported by the resource": "the resource's own p (TPMI: SAIGE score test)", "p, Wald ratio from beta and SE": "for comparison",
-           "Classification": "concordant / directionally concordant / inconclusive / discordant", C_BON: "pairs selected in advance only",
+           "Classification": "concordant / directionally concordant / inconclusive / discordant", C_BON: "original external checks only",
            "Discovery estimate (log-odds per SD of protein)": "FinnGen (FGFR4-T2D: East Asian discovery estimate)", "Discovery SE": "SE of the discovery estimate",
            "Heterogeneity p, external vs discovery": "z-test of the difference", "Note": "precision and scale caveats"},
       ["oc", "ph", "ckbf", "harm"],
@@ -1133,7 +1133,7 @@ assert set(zip(ckf.gene, ckf.outcome)) == set(zip(cen[cen.ckb_overlap.map(lambda
                                                   cen[cen.ckb_overlap.map(lambda v: str(v).strip().upper() == "TRUE")].outcome)), "CKB-free rows != CKB-including rows"
 cf = pd.concat([base, ckf])
 eq([int(cf.support.map(tf).sum()), int((cf.support.map(tf) & cf["support_p12_1e-6"].map(tf)).sum())], LV("L084"), "CKB-free colocalizations (L084)")
-CALL = {"SUPPORTED": "colocalized", "NOT_SUPPORTED_H1": "no East Asian outcome association (H1 most probable)", "NOT_SUPPORTED_H3": "distinct variants (H3 most probable)",
+CALL = {"SUPPORTED": "colocalized", "NOT_SUPPORTED_H1": "protein-only model favored (H1 most probable)", "NOT_SUPPORTED_H3": "distinct variants favored (H3 most probable)",
         "NOT_SUPPORTED_H4_below_rule": "below the colocalization rule", "NOT_TESTABLE_NO_EAS_GWAS": "not testable (no East Asian outcome GWAS)",
         "NOT_SUPPORTED_H0": "no association with either trait (H0 most probable)", "NOT_SUPPORTED_H2": "no protein association (H2 most probable)"}
 tierof2 = dict(zip(pe.gene + "|" + pe.outcome, pe.evidence_tier))

@@ -230,7 +230,7 @@ stopifnot(abs(qv(w2, "S2.het.finngen_chd.p_aware_2nd") - num("L728")) < 1e-18, a
 # "sensitive to the reference LD": conditional colocalization at rs12983775 falls below the 0.90 bootstrap rule in both resources (L715, L716, L924)
 stopifnot(abs(qv(w2, "S2.coloc_clause.boot.rs12983775.finngen_chd.share") - num("L715")) < 1e-9, abs(qv(w2, "S2.coloc_clause.boot.rs12983775.ieu_a_7.share") - num("L716")) < 1e-9,
           num("L715") < num("L924"), num("L716") < num("L924"), num("L085", 4) > 32, num("L085", 4) < 33)
-cdt[, ylab := paste0(fifelse(snp == "rs73045269", "A ", "B "), snp)]
+cdt[, ylab := fifelse(snp == "rs73045269", "Discovery", "East Asian")]
 
 # ================================================================== panel a: evidence map (as before, plus the S2-D24 notes and marks)
 DX <- 0.024
@@ -342,21 +342,18 @@ NOTE_EV <- paste(c(
          L("L014", "Convergent", anchor = "= {} Convergent"), " Convergent"),
   paste0("+ ", L("L962", c("core_complete", "supported_no_arm"), anchor = "\\+ {} Supported"), " Supported + ",
          L("L962", c("core_complete", "flagged"), anchor = "\\+ {} Flagged"), " Flagged.")), collapse = "\n")
-# the LD-admissibility note and the no-evaluable-arm note are SEPARATE sentences (full stops) and separate blocks, each inside ONE row band
+# the LD-admissibility note is a separate block inside ONE row band
 NOTE_LD <- paste(c(
   "‡ Reference-LD fit inadmissible;",
   paste0("tier not rebuilt. ", L("L964", "not_assessed", anchor = "{} of 81"), " of ", L("L010", anchor = "of {} pairs"), " pairs"),
   "not assessed for admissibility."), collapse = "\n")
-NOTE_ARM <- paste(c(
-  paste0(L("L226", 1, anchor = "{} of 45"), " of ", L("L226", 2, anchor = "of {} Supported"), " Supported pairs"),
-  "have no evaluable arm."), collapse = "\n")
 DEF_OPP <- "none had the discovery sign"
 DEF_COH <- "one of the two had the discovery sign"
 DEF_NE <- wrap_mm(paste0("Not evaluable: not assayed, by neither cohort; weak instrument, F-statistic below ", L("L235", anchor = "below {}"),
                          "; no usable variant, lead variant missing; assays disagree, two assays of the protein differed in sign."), 84)
 MIN_X <- min(a$x)
 NOTE_W_MAX <- 36   # mm: the left strip beside the data is free to x = 0.30 (no pair left of 0.31; 1 unit = 125 mm, text starts at 0.012)
-stopifnot(MIN_X > 0.30, max(vapply(strsplit(c(NOTE_EV, NOTE_LD, NOTE_ARM), "\n"), function(v) max(vapply(v, wmm, 0)), 0)) < NOTE_W_MAX,
+stopifnot(MIN_X > 0.30, max(vapply(strsplit(c(NOTE_EV, NOTE_LD), "\n"), function(v) max(vapply(v, wmm, 0)), 0)) < NOTE_W_MAX,
           max(vapply(strsplit(DEF_SAME, "\n")[[1]], wmm, 0)) < 40)   # DEF_SAME sits above the first data row, so it may be wider
 # the plotted data must leave those areas free: no point right of 0.60 in "Opposite direction", none left of 0.62 in "Cohorts disagree",
 # none left of 0.77 in the last two rows
@@ -368,9 +365,9 @@ op_row <- ytab[cls == "discordant"]; co_row <- ytab[cls == "conflicting"]
 nu_row <- ytab[cls == "no usable variant"]; as_row <- ytab[cls == "assay discordant (within platform)"]
 CCND2_Y <- a[gene == "CCND2"]$y[1]
 conc_row <- ytab[cls == "concordant"]
-note_df <- data.table(grpf = factor(GRP_LAB[c("ev", "ne", "ne", "ne")], levels = GRP_LAB), x = 0.012, txt = c(NOTE_EV, NOTE_LD, NOTE_ARM, DEF_NE),
-                      y = c(top_ev - 4.9, CCND2_Y - 0.9, ne_row$ymid + 0.5, (as_row$ylo + as_row$yhi) / 2), vj = c(1, 1, 0.5, 0.5),
-                      band_lo = c(conc_row$ylo, na_row$ylo, ne_row$ylo, as_row$ylo), band_hi = c(conc_row$yhi, na_row$yhi, ne_row$yhi, as_row$yhi))
+note_df <- data.table(grpf = factor(GRP_LAB[c("ev", "ne", "ne")], levels = GRP_LAB), x = 0.012, txt = c(NOTE_EV, NOTE_LD, DEF_NE),
+                      y = c(top_ev - 4.9, CCND2_Y - 0.9, (as_row$ylo + as_row$yhi) / 2), vj = c(1, 1, 0.5),
+                      band_lo = c(conc_row$ylo, na_row$ylo, as_row$ylo), band_hi = c(conc_row$yhi, na_row$yhi, as_row$yhi))
 # every note lies wholly inside ONE row band (lane units; one 7-pt line, box padding included, is 1.3 lanes at this panel height)
 LPL <- 1.3
 note_df[, n := vapply(strsplit(txt, "\n", fixed = TRUE), length, 0L)]
@@ -555,10 +552,10 @@ pf <- P("L728"); pc2 <- P("L729")
 TB <- c("Difference between instruments:",
         paste0("FinnGen CHD: *p* ", pf$md),
         paste0("CARDIoGRAMplusC4D: *p* ", pc2$md),
-        paste0("The instruments lie ", L("L085", 4, anchor = "{} kb"), " kb apart; opposite protein-scaled"),
-        "estimates from different instruments do not show opposite",
-        "causal effects. Sensitive to the reference LD: conditional",
-        "colocalization at rs12983775 is not robust to it.")
+        paste0("Instruments ", L("L085", 4, anchor = "{} kb"), " kb apart. Opposite protein-scaled estimates"),
+        "from different instruments do not show opposite causal",
+        "effects. Conditional colocalization at the East Asian",
+        "instrument is sensitive to the reference LD.")
 TB_PLAIN <- plain_md(TB)
 # a line's width: 7 pt for the text, plus the 9-pt '10' of each power of ten it carries
 PV_TXT <- c(pf$txt, pc2$txt)
@@ -582,6 +579,7 @@ sigcol <- c(rs73045269 = PAL_SIGNAL[["A"]], rs12983775 = PAL_SIGNAL[["B"]])
 cval <- data.table(x = CX$v + 8, y = cdt$y, txt = vapply(seq_len(nrow(cdt)), function(i)
   L(c(finngen_chd_rs73045269 = "L732", finngen_chd_rs12983775 = "L731", ieu_a_7_rs73045269 = "L734", ieu_a_7_rs12983775 = "L733")[[paste0(cdt$res[i], "_", cdt$snp[i])]], digits = 3), ""))
 c_res <- data.table(x = CX$lab, y = c(mean(cdt[res == "finngen_chd"]$y), mean(cdt[res == "ieu_a_7"]$y)), txt = unname(RS[c("finngen_chd", "ieu_a_7")]))
+stopifnot(max(vapply(cdt$ylab, wmm, 0)) <= CX$f0 - CX$sig - 1)   # the instrument labels end before the forest
 c_sig <- data.table(x = CX$sig, y = cdt$y, txt = cdt$ylab)
 tb_df <- data.table(x = CX$t, y = Hc - TB_Y0 - c(0, cumsum(TB_D)), txt = TB)
 stopifnot(min(tb_df$y) - LINE_MM / 2 > 0.2)

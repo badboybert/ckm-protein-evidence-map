@@ -183,12 +183,10 @@ pa <- pa + tx(XR2, T1, "Test of a common ratio (five signals)", fontface = "bold
 T2 <- T1 - 5.6 * step
 f1 <- paste0("Inadmissible: s ", led("L869", NULL, num(3), "panel a, diagnostic maximum s", "s {} against"), " against a limit of ",
              led("L923", NULL, num(2), "panel a, admissibility limit", "limit of {};"), ";")
-f2 <- paste0("not used as support. Conditioning s: ", led("L867", NULL, num(3), "panel a, conditioning s 503", "s: {}"))
-f3 <- paste0("(", led("L936", NULL, num(0), "panel a", "{} panel"), " panel), ", led("L868", NULL, num(3), "panel a, conditioning s 489", "panel\\), {} \\("),
-             " (", led("L937", NULL, num(0), "panel a", "{} panel"), " panel); robustness to")
+f2 <- "not used as support. Robustness to the"
 pa <- pa + rule(T2 + 2.2) + tx(XR2, T2, "Fine-mapping fit with reference LD", fontface = "bold") +
-  ln(f1, T2 - step) + ln(f2, T2 - 2 * step) + ln(f3, T2 - 3 * step) +
-  ln("the reference LD was evaluated only on the", T2 - 4 * step) + ln("all-signal test.", T2 - 5 * step)
+  ln(f1, T2 - step) + ln(f2, T2 - 2 * step) +
+  ln("reference LD was evaluated only on the", T2 - 3 * step) + ln("all-signal test.", T2 - 4 * step)
 
 # key (inside the graphic, bottom left) and the interval note (bottom right)
 ky <- c(13.4, 10.2, 7.0, 3.8)
@@ -280,12 +278,12 @@ fr_b <- data.table::copy(FR)[, .(row = seq_len(.N), vkey, status, marker, or, ci
 fr_b[, ci_hi_note := ifelse(is.finite(ci_hi), "", "no finite upper bound: drawn as an arrow to the axis end; no point marker")]
 fr_a <- data.table::data.table(
   item = c("Q", "df", "p", "p without palindromic signal", "PP.H4 signal A, 503 panel", "PP.H4 signal B, 503 panel", "PP.H4 signal A, 489 panel",
-           "PP.H4 signal B, 489 panel", "diagnostic max s (fine-mapping fit)", "admissibility limit", "conditioning s, 503 panel", "conditioning s, 489 panel"),
-  ledger_id = c("L876", "L877", "L878", "L965", "L888", "L890", "L887", "L889", "L869", "L923", "L867", "L868"),
+           "PP.H4 signal B, 489 panel", "diagnostic max s (fine-mapping fit)", "admissibility limit"),
+  ledger_id = c("L876", "L877", "L878", "L965", "L888", "L890", "L887", "L889", "L869", "L923"),
   value = c(rv(rb, "S6.umod.Q.aware_2nd.Q"), rv(rb, "S6.umod.Q.aware_2nd.df"), rv(rb, "S6.umod.Q.aware_2nd.p"), p31r_ledger("L965", 3),
             rv(rb, "S6.umod.H4.A.503"), rv(rb, "S6.umod.H4.B.503"), rv(rb, "S6.umod.H4.A.489"), rv(rb, "S6.umod.H4.B.489"),
-            rv(rb, "S6.d.UMOD_eGFR.s_max"), p31r_ledger("L923"), p31r_ledger("L867"), p31r_ledger("L868")),
-  source = c(rep(SRC_D, 3), "R1_stage1/S1R1_R2_1b_verify/S6/adjudication/A_third/a3_umod_q.tsv (ledger L965 only; file not opened)", rep(SRC_D, 5), "ledger L923", "ledger L867", "ledger L868"))
+            rv(rb, "S6.d.UMOD_eGFR.s_max"), p31r_ledger("L923")),
+  source = c(rep(SRC_D, 3), "R1_stage1/S1R1_R2_1b_verify/S6/adjudication/A_third/a3_umod_q.tsv (ledger L965 only; file not opened)", rep(SRC_D, 5), "ledger L923"))
 fr_a[, panel_state := "values printed as text in panel a (test, conditional colocalization, fine-mapping fit); each is read from the ledger at print"]
 # the forest as drawn: eGFR* = -ln eGFR, so estimate = -ratio and the bounds are swapped; the common ratio is -theta (503 panel)
 fr_f <- data.table::copy(se)[, .(panel, signal, rsid, palindromic, plotted_est_egfrstar = est, plotted_lo = lo, plotted_hi = hi, stored_ratio = ratio, stored_se = se,

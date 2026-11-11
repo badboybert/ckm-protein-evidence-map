@@ -277,7 +277,7 @@ RES1 = "81 colocalization-supported pairs, graded by internal support and exposu
 RESX = "External data corroborate selected T2D associations"
 RESA = "ARG1 substrate, product and diabetes associations across two signals"
 RESE = "Direction transferred to East Asian populations more widely than significance"
-RESK = "Kidney pairs among multi-signal candidates, with UMOD as a control comparison"
+RESK = "Kidney pairs among the exploratory multi-signal candidates, with UMOD as a control"
 
 S1LOG = []   # (item location kind, stem, subsection, paragraph, anchor, occurrences in the markdown, occurrences in the docx or None)
 
@@ -455,7 +455,7 @@ S1MAP = {
                   "Direction is compared with experimental and earlier genetic reports for selected pairs (PAM, TGFB1); no systematic comparison with non-MR effect estimates is made."),
     ("13", "e"): (["--"], "not applicable", "Single instruments: leave-one-out analyses are not possible."),
     ("14", ""): ([loc("Discussion", "", 1, "This study organizes the genetic evidence for"), loc("Discussion", "", 7, "Outside data corroborated"),
-                  loc("Discussion", "", 9, "The kidney and ancestry analyses mark where these interpretations reach")], "reported",
+                  loc("Discussion", "", 9, "The kidney and ancestry analyses show two limits")], "reported",
                  "The Discussion restates the design and the corroborated pairs and where the kidney and ancestry analyses reach; the grades themselves are summarised "
                  "in the Results (map subsection) and Figure 1."),
     ("15", ""): ([loc("Discussion", "", 10, "This study has several limitations")], "reported", "--"),
@@ -466,7 +466,7 @@ S1MAP = {
                    loc("Discussion", "", 4, "ARG1 hydrolyzes arginine to urea and ornithine"),
                    loc("Discussion", "", 2, "a fibroblast growth factor receptor involved in bile acid and lipid metabolism")], "partly reported",
                   "Mechanisms are discussed; gene-environment equivalence is not discussed as such."),
-    ("16", "c"): ([loc("Discussion", "", 1, "identify the molecular phenotype and disease outcome to test next"), loc("Conclusions", "", 1, "The map helps researchers prioritize protein–outcome pairs")],
+    ("16", "c"): ([loc("Discussion", "", 1, "point to the molecular phenotype and disease outcome to test next"), loc("Conclusions", "", 1, "The map helps researchers prioritize protein–outcome pairs")],
                   "partly reported", "Clinical relevance is addressed through research follow-up: the map prioritizes protein–outcome pairs for follow-up and does not by itself identify a protein-mediated mechanism. "
                   "Effect sizes of possible interventions are not discussed."),
     ("17", ""): ([loc("Discussion", "", 9, "direction transferred more widely than significance"),

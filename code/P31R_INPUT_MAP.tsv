@@ -79,7 +79,7 @@ R2_rewrite/figures/af3/source_data/Figure_5__5b_forest.csv	source_data/figures/F
 R2_rewrite/figures/af3/source_data/Figure_5__5b_text.csv	source_data/figures/Figure_5/Figure_5__5b_text.csv	316a8d8eebf73242d441d6d371948e9a	316a8d8eebf73242d441d6d371948e9a	1	0	
 R2_rewrite/figures/data/Figure_2/fig2_plotted.provenance.json	source_data/figures/Figure_2/fig2_plotted.provenance.json	398e55cc119ebeb8a95c7038b1d4bf02	398e55cc119ebeb8a95c7038b1d4bf02	1	0	
 R2_rewrite/figures/data/Figure_2/fig2a_plotted.tsv	source_data/figures/Figure_2/fig2a_plotted.tsv	7ac203b010c577381eec4ac81e745e9a	7ac203b010c577381eec4ac81e745e9a	1	0	
-R2_rewrite/figures/data/Figure_2/fig2b_plotted.tsv	source_data/figures/Figure_2/fig2b_plotted.tsv	4b11d6f221d02d6d1470512be6b30510	408c321602011d134a0fd4b29f138cc8	0	0	
+R2_rewrite/figures/data/Figure_2/fig2b_plotted.tsv	source_data/figures/Figure_2/fig2b_plotted.tsv	442c35a2c6752cc0355acd681476021c	f9435f25468c04057a281d142e1c7f85	0	0	
 R2_rewrite/figures/data/Figure_2/fig2c_plotted.tsv	source_data/figures/Figure_2/fig2c_plotted.tsv	88b97210989c24690b941715b15aff96	88b97210989c24690b941715b15aff96	1	0	
 R2_rewrite/figures/registry/Figure_1.json	source_data/figures/Figure_1/Figure_1.json	8f5b9bffbe122f86d3297e371c750eab	8f5b9bffbe122f86d3297e371c750eab	1	0	
 R2_rewrite/posthoc/P31R_posthoc_results.tsv	code/lift_inputs/FigureS1/P31R_posthoc_results.tsv	fa2f203c014c5f5f4cec247934c16fc3	f0b702a8c0cc00d51a1a198266db815e	0	1	FigureS1

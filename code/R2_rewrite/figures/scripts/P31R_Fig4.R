@@ -40,7 +40,8 @@ source(paste0(.P31R_V3, "/R2_rewrite/figures/scripts/P31R_fig_common.R"))
 suppressPackageStartupMessages(library(ggtext))
 source(paste0(.P31R_V3, "/R2_rewrite/figures/af3/P31R_af3_glyphs.R"))   # geom_hatchdot, geom_dotring (the AF3 status glyphs); appends its own md5 to P31R_DEPS
 for (.p in c("Rsamtools", "GenomicRanges", "IRanges")) if (!requireNamespace(.p, quietly = TRUE)) stop("package missing: ", .p)
-EXP_PT <- 7   # exponents print at 7 pt (the production floor); the '10' they follow is 9 pt so the figure gate still reads the 7-pt span as a superscript
+EXP_PT <- 7   # exponents print at 7 pt (the production floor), the size of the '10' they follow, raised (M2 of the final reviews; the figure gate
+              # reads a same-size raised span after '10' as an exponent)
 
 FIG <- "Figure_4"
 V3  <- V3_ROOT
@@ -69,7 +70,7 @@ LPS <- function(id, idx = NULL, where, anchor = NULL) {
   if (round(m, 1) >= 10) { m <- m / 10; e <- e + 1 }
   ms <- formatC(m, format = "f", digits = 1); es <- sub("^-", "−", as.character(e))
   .add("ledger", list(text = sprintf("%s × 10%s", ms, es), id = id, idx = idx, count = 1L, anchor = anchor, where = where))
-  sprintf("%s × <span style='font-size:9pt'>10</span><sup><span style='font-size:%gpt'>%s</span></sup>", ms, EXP_PT, es)
+  sprintf("%s × 10<sup><span style='font-size:%gpt'>%s</span></sup>", ms, EXP_PT, es)
 }
 reg_lit <- function(text, why, count = 1L, anchor = NULL, not_ledger = NULL)
   .add("literals", list(text = text, why = why, count = as.integer(count), anchor = anchor, not_ledger = not_ledger))
@@ -265,7 +266,7 @@ reg_lit("0.2", "scale: LD bin boundary of the track colours (light bin 0.2 to 0.
 reg_lit("0.2", "scale: LD bin boundary of the track colours (grey below 0.2)", anchor = "< {}$", not_ledger = "figure-spec LD bin boundary, not a result")
 LDK <- data.table(x = c(2, 4.7, 12.4, 15.1), ld = c("A_hi", "A_lo", "B_hi", "B_lo"), y = KEY_MM - 8.9)
 kd <- data.table(x = c(2, 52, 78, 127), y = KEY_MM - 3.3, shape = c("primary", "sens", "nocoloc", "dot"),
-                 lab = c("filled, primary or direct-comparison cell", "open, beside (iii)", "ARG1–ornithine not colocalized at A", "sensitive to the reference LD"))
+                 lab = c("filled, primary or direct-comparison row", "open, beside (iii)", "ARG1–ornithine not colocalized at A", "sensitive to the reference LD"))
 key <- ggplot() +
   geom_point(data = kd[shape == "primary"], aes(x, y), shape = 21, size = 2.1, stroke = 0.45, fill = INK, colour = INK) +
   geom_point(data = kd[shape == "sens"], aes(x, y), shape = 21, size = 2.1, stroke = 0.6, fill = "white", colour = INK) +

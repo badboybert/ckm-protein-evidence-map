@@ -1,12 +1,12 @@
-# Release repository for "A genetic evidence map of circulating proteins across cardiovascular, kidney and metabolic outcomes", version `v2.0.8-R2`
+# Release repository for "A genetic evidence map of circulating proteins across cardiovascular, kidney and metabolic outcomes", version `v2.0.9-R2`
 
 Result tables, per-figure plotted frames, tables as data and analysis-tail code for the manuscript. `REPRODUCE.md` says what regenerates and what does not. `RELEASE_MANIFEST.tsv` lists every released file with its size, md5, row and column counts, source file and md5, producing script and md5, software label, citing document and licence class. The manifest cannot hold its own md5, so it and the files `README.md`, `REPRODUCE.md`, `LICENSE`, `CITATION.cff` and `.gitattributes` have no manifest row. `.gitattributes` holds the one line `* -text`, so that git never rewrites line endings and a clone equals the zip byte for byte.
 
 ## Version, licence and citation
 
-This is release `v2.0.8-R2`. `LICENSE` gives the terms: the MIT License for code the authors wrote, and `CC BY 4.0` for tables the authors derived (`own_derived` in `RELEASE_MANIFEST.tsv`); files derived from third-party data keep their providers' terms (below). `CITATION.cff` says how to cite the release. The repository is `https://github.com/badboybert/ckm-protein-evidence-map`; its archived versions are on Zenodo under the concept DOI `https://doi.org/10.5281/zenodo.23855497`, which resolves to the latest version.
+This is release `v2.0.9-R2`. `LICENSE` gives the terms: the MIT License for code the authors wrote, and `CC BY 4.0` for tables the authors derived (`own_derived` in `RELEASE_MANIFEST.tsv`); files derived from third-party data keep their providers' terms (below). `CITATION.cff` says how to cite the release. The repository is `https://github.com/badboybert/ckm-protein-evidence-map`; its archived versions are on Zenodo under the concept DOI `https://doi.org/10.5281/zenodo.23855497`, which resolves to the latest version.
 
-On Windows, extracting the zip or cloning the repository into a deep folder can fail once a full path exceeds the default Windows path limit (`MAX_PATH`). The longest paths inside this release are `P31R_R2_release_v2.0.8-R2/code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/01_acquire_and_localize_outcomes.py` and `P31R_R2_release_v2.0.8-R2/code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/31_candidate_susie_sensitivity.R` (for a clone, the repository folder name replaces the zip root `P31R_R2_release_v2.0.8-R2/`), so extract or clone close to the drive root, or run `git config core.longpaths true`.
+On Windows, extracting the zip or cloning the repository into a deep folder can fail once a full path exceeds the default Windows path limit (`MAX_PATH`). The longest paths inside this release are `P31R_R2_release_v2.0.9-R2/code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/01_acquire_and_localize_outcomes.py` and `P31R_R2_release_v2.0.9-R2/code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/31_candidate_susie_sensitivity.R` (for a clone, the repository folder name replaces the zip root `P31R_R2_release_v2.0.9-R2/`), so extract or clone close to the drive root, or run `git config core.longpaths true`.
 
 ## Licence tiers, third-party data and the TPMI switch
 
@@ -79,7 +79,7 @@ The provider list holds 35 providers, 14 named in the Declarations acknowledgeme
   Files: `a3_umod_q.tsv`, `egfr_mirage_classification.csv`.
 - `ledger/`: the public extract of the claims ledger (every number the shipped figure code prints; a row is masked, with its reason, when it holds a raw per-variant TPMI value or a ChEMBL-derived field or cites a source file withheld for another reason; a row that cites a file withheld only because it prints a TPMI line is not masked, because the derived TPMI values ship; evidence_status is defined below).
   Files: `claims_ledger_public.tsv`.
-- `literature/`: prior-art search results and the search log.
+- `literature/`: prior-art search results and the search log; the per-pair table (pairs81_priorart.tsv) compares each colocalization-supported pair with the three studies named in the pre-specification (Yuan S et al., Yi M et al. and Wang H et al.); rows marked NOT RUN needed a supplementary file or figure image that was not read; later work, such as Zan T et al., is discussed in the manuscript.
   Files: `pairs81_priorart.tsv`, `priorart_branches.tsv`, `priorart_literature_search_log.tsv`, `priorart_results.tsv`.
 - `proxy/`: the partial proxy record (the full cache is on the analysis machine).
   Files: `proxy_record.tsv`.
@@ -132,7 +132,7 @@ Table 3 of the manuscript prints the values; this list names the result rows tha
 | `*RAD23B*–T2D significance depends on the SE convention` | `workstreams/W1: S1.se` |
 | `**Pre-declared external outcome checks**` | `--` |
 | `Six checks, each classified on the resource's own p` | `external_outcomes/extchecks: C1.<pair>.p_wald1` |
-| `*RAD23B*–T2D in DIAMANTE: rounding of the printed estimates could move the Wald p across 0.05 [[L961]]` | `workstreams/W1: S1.rad23b.ext` |
+| `*RAD23B*–T2D in DIAMANTE: rounding of the published estimates could move the Wald p across 0.05 [[L961]]` | `workstreams/W1: S1.rad23b.ext` |
 | `DIAMANTE regional colocalizations (*PAM*–T2D supported at the default prior; *RAD23B*–T2D shared variant not resolved)` | `workstreams/W3: S3.RAD23B_T2D.pmafdrop, S3.PAM_T2D.pmafdrop; workstreams/BI: W3 rows 4, 6` |
 | `*PCSK9*–CAD regional colocalization: not a clean control` | `workstreams/W3: S3.PCSK9_CAD.betase; workstreams/BI: W3 rows 10, 11` |
 | `*TGFB1*–CAD conditional estimates differed by instrument` | `workstreams/W2: S2.het, S2.p489.het` |
@@ -238,8 +238,14 @@ Files whose provider terms are unread, and files under source hold, are kept out
 - `code/paper3_deposit_request_v4/scripts/R/00_config.R`
 - `code/paper3_deposit_request_v4/scripts/R/_phase1_set.R`
 - `code/paper3_deposit_request_v4/scripts/R/coloc.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/21_coloc_split.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/22_coloc_chunk_worker.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/23_merge_parallel_coloc.R`
 - `code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/_local_outcome_extract.R`
 - `code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/01_mr_screen.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/04_coloc.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/05_coloc_egfr.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/06_combine_coloc.R`
 - `code/R1_stage1/S1R1_R2_01_rad23b/w1_common.R`
 - `code/R1_stage1/S1R1_R2_01_rad23b/w1_compare_seen.R`
 - `code/R1_stage1/S1R1_R2_01_rad23b/w1_extract.R`
@@ -453,7 +459,10 @@ Files labelled `full run-time hash match`:
 
 - `code/paper3_deposit_request_v4/scripts/R/00_config.R`
 - `code/paper3_deposit_request_v4/scripts/R/coloc.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/01_mr_screen.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/05_coloc_egfr.R`
 - `code/paper3_deposit_request_v5/scripts/R/strand_align.R`
+- `code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/09_phase1_harmonise_hg38.R`
 - `code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/15_susie_coloc.R`
 - `code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/16_susie_grid.R`
 - `code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/26_susie_coloc_egfr.R`
@@ -467,18 +476,22 @@ Files labelled `full run-time hash match`:
 
 Files labelled `partial launch-record match`:
 
+- `code/paper3_deposit_request_v4/scripts/R/_phase1_set.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/21_coloc_split.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/22_coloc_chunk_worker.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/23_merge_parallel_coloc.R`
+- `code/paper3_deposit_request_v5/scripts/R/_coloc_inputs_key.R`
 - `code/paper3_deposit_request_v5/scripts/scripts/_shared/decode/01_decode_replication_mr.R`
 - `code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/61_lead_snp_consequences.py`
 - `code/paper3_deposit_request_v5/scripts/scripts/paper3.1_ckm/phase3/34_coloc_robustness_table.R`
 
 Files labelled `timestamp evidence only`:
 
-- `code/paper3_deposit_request_v4/scripts/R/_phase1_set.R`
 - `code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/_local_outcome_extract.R`
-- `code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/01_mr_screen.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/04_coloc.R`
+- `code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/06_combine_coloc.R`
 - `code/paper3_ckd_rerun_v3/scripts_sent/01_renal_triad_mr.R`
 - `code/paper3_ckd_rerun_v3/scripts_sent/02_renal_coloc_concordance.R`
-- `code/paper3_deposit_request_v5/scripts/R/_coloc_inputs_key.R`
 - `code/paper3_deposit_request_v5/scripts/R/_ld_namespace.R`
 - `code/paper3_deposit_request_v5/scripts/R/_outcome_prevalence.R`
 - `code/paper3_deposit_request_v5/scripts/R/_prior_bands.R`
@@ -488,7 +501,6 @@ Files labelled `timestamp evidence only`:
 - `code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/03_eas_outcome_wald.R`
 - `code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/04_eas_pqtl_transferability.R`
 - `code/paper3_deposit_request_v5/scripts/scripts/_shared/eas_axis/05_assign_eas_state.R`
-- `code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/09_phase1_harmonise_hg38.R`
 - `code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/49_susie_grid_corrected.R`
 - `code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/50_phase2_sensitivity_offline.R`
 - `code/paper3_deposit_request_v5/scripts/scripts/_shared/localize/50c_sens5e8_egfr_offline.R`

@@ -1,7 +1,7 @@
 # Paper 3.1 rewrite (R2) -- Figure 2: evidence dimensions and external checks (plan FIGURE_MESSAGES_R2 v3, section 2; decision S2-D24).
 #   a  evidence map of the 81 colocalization-supported pairs: conservative-prior PP.H4 (x) by exposure-side corroboration (rows);
-#      fill = evidence tier; notes: 16 core-complete = 3 + 11 + 2; the LD-admissibility mark (reference-LD fit inadmissible, tier
-#      not rebuilt) on TGFB1-CAD and ARG1-T2D; 79 of 81 pairs not assessed; 35 of the 45 Supported pairs have no evaluable arm
+#      fill = evidence tier; notes: 16 core-complete = 3 + 11 + 2; the LD-admissibility mark (reference-LD fit inadmissible)
+#      on TGFB1-CAD and ARG1-T2D; 79 of 81 pairs not assessed; 35 of the 45 Supported pairs have no evaluable arm
 #   b  the six pairs selected in advance, as a forest with columns: discovery and external estimates (95% CI, log-odds per SD of
 #      protein), the resource's own p, the regional colocalization PP.H4 at the default and conservative priors ("external regional
 #      check not run" for ARG1-T2D and FGFR4-T2D only), the corroboration-rule verdict with its reason, and a SCOPED literature status
@@ -53,16 +53,16 @@ reg_ticks <- function(labels, axis, transform, what) {
   for (t in labels) .reg_add("literals", list(text = t, why = paste0("axis_tick: ", what), axis = axis, transform = transform, anchor = "^(?:[−+-]?[0-9.,]+\\s)*{}(?:\\s[−+-]?[0-9.,]+)*$"))
   labels
 }
-# p values (S2-D26): the whole p string is set at the panel's 7 pt, and its exponent at exactly 7 pt, raised. The base '10' of a power is the one 9-pt span:
-# the figure gate reads an exponent only as a raised span smaller than 0.85 x the span before it (7 < 0.85 x 9), so a 7-pt exponent after a 7-pt '10' is
-# read as a separate number and fails G7, and the gate rejects e-notation (G7f). ggtext's plain <sup> would give 5.6 pt, below the 7-pt floor.
+# p values (S2-D26; M2 of the final reviews, USER 2026-11-12): the whole p string is set at the panel's 7 pt, '10' included, and its exponent at
+# exactly 7 pt, raised. ggtext's plain <sup> would give 5.6 pt, below the 7-pt floor, so the exponent's span sets 7 pt. The figure gate reads a
+# same-size raised span after '10' as an exponent (P31R_figgate._script) and rejects e-notation (G7f).
 plain_md <- function(x) gsub("<[^>]+>", "", gsub("\\*", "", x))
 fmt_p <- function(p) {
   if (p >= 0.001) { s <- formatC(signif(p, 2), format = "fg", digits = 2); return(list(md = s, txt = s)) }
   e <- floor(log10(p)); m <- p / 10^e
   if (round(m, 1) >= 10) { m <- m / 10; e <- e + 1 }
   ms <- formatC(m, format = "f", digits = 1); es <- sub("^-", "−", as.character(e))
-  list(md = sprintf("%s × <span style='font-size:9pt'>10</span><sup><span style='font-size:7pt'>%s</span></sup>", ms, es), txt = sprintf("%s × 10%s", ms, es))
+  list(md = sprintf("%s × 10<sup><span style='font-size:7pt'>%s</span></sup>", ms, es), txt = sprintf("%s × 10%s", ms, es))
 }
 P <- function(id, idx = NULL) { f <- fmt_p(p31r_ledger(id, idx)); reg_led(f$txt, id, idx); f }
 num <- function(id, idx = NULL) as.numeric(p31r_ledger(id, idx))
@@ -344,8 +344,8 @@ NOTE_EV <- paste(c(
          L("L962", c("core_complete", "flagged"), anchor = "\\+ {} Flagged"), " Flagged.")), collapse = "\n")
 # the LD-admissibility note is a separate block inside ONE row band
 NOTE_LD <- paste(c(
-  "‡ Reference-LD fit inadmissible;",
-  paste0("tier not rebuilt. ", L("L964", "not_assessed", anchor = "{} of 81"), " of ", L("L010", anchor = "of {} pairs"), " pairs"),
+  "Pairs marked ‡: reference-LD fit",
+  paste0("inadmissible. ", L("L964", "not_assessed", anchor = "{} of 81"), " of ", L("L010", anchor = "of {} pairs"), " pairs"),
   "not assessed for admissibility."), collapse = "\n")
 DEF_OPP <- "none had the discovery sign"
 DEF_COH <- "one of the two had the discovery sign"
@@ -360,14 +360,16 @@ stopifnot(MIN_X > 0.30, max(vapply(strsplit(c(NOTE_EV, NOTE_LD), "\n"), function
 stopifnot(max(a[crossplatform_class == "discordant"]$x) < 0.62, min(a[crossplatform_class == "conflicting"]$x) > 0.62,
           min(a[crossplatform_class %in% c("no usable variant", "assay discordant (within platform)")]$x) > 0.77,
           wmm(DEF_OPP) < 0.36 * 118, wmm(DEF_COH) < 0.60 * 118)
-ne_row <- ytab[cls == "not evaluable (weak instrument)"]; na_row <- ytab[cls == "not assayed (panel gap)"]
+ne_row <- ytab[cls == "not evaluable (weak instrument)"]
 op_row <- ytab[cls == "discordant"]; co_row <- ytab[cls == "conflicting"]
 nu_row <- ytab[cls == "no usable variant"]; as_row <- ytab[cls == "assay discordant (within platform)"]
-CCND2_Y <- a[gene == "CCND2"]$y[1]
 conc_row <- ytab[cls == "concordant"]
+# S10h67 (P5 F2; review row S9): the LD-admissibility note sits in the weak-instrument band, the band of TGFB1-CAD‡, clear of the
+# 'CCND2: 3 pairs' label and of the 'Not assayed' row; its left strip is free (no point left of 0.33; the note ends before 0.30)
+stopifnot(min(a[crossplatform_class == "not evaluable (weak instrument)"]$x) > 0.33)
 note_df <- data.table(grpf = factor(GRP_LAB[c("ev", "ne", "ne")], levels = GRP_LAB), x = 0.012, txt = c(NOTE_EV, NOTE_LD, DEF_NE),
-                      y = c(top_ev - 4.9, CCND2_Y - 0.9, (as_row$ylo + as_row$yhi) / 2), vj = c(1, 1, 0.5),
-                      band_lo = c(conc_row$ylo, na_row$ylo, as_row$ylo), band_hi = c(conc_row$yhi, na_row$yhi, as_row$yhi))
+                      y = c(top_ev - 4.9, (ne_row$ylo + ne_row$yhi) / 2, (as_row$ylo + as_row$yhi) / 2), vj = c(1, 0.5, 0.5),
+                      band_lo = c(conc_row$ylo, ne_row$ylo, as_row$ylo), band_hi = c(conc_row$yhi, ne_row$yhi, as_row$yhi))
 # every note lies wholly inside ONE row band (lane units; one 7-pt line, box padding included, is 1.3 lanes at this panel height)
 LPL <- 1.3
 note_df[, n := vapply(strsplit(txt, "\n", fixed = TRUE), length, 0L)]

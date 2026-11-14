@@ -1,8 +1,8 @@
 path	source_md5	shipped_md5	rules
 code/R2_rewrite/figures/scripts/P31R_Fig1.R	536fa97b44508673694f549506be418d	536fa97b44508673694f549506be418d	none (byte-identical)
-code/R2_rewrite/figures/scripts/P31R_Fig2.R	887771a9644b808260bab8329e02e1e6	887771a9644b808260bab8329e02e1e6	none (byte-identical)
+code/R2_rewrite/figures/scripts/P31R_Fig2.R	879c0dd17fc787225b3f15e1f2cb27bb	879c0dd17fc787225b3f15e1f2cb27bb	none (byte-identical)
 code/R2_rewrite/figures/scripts/P31R_Fig3.R	e7aa485fc474b25e72a5af8d6a0c7f77	e7aa485fc474b25e72a5af8d6a0c7f77	none (byte-identical)
-code/R2_rewrite/figures/scripts/P31R_Fig4.R	322f8aa144a3f77315574deee350aafe	ce14d9950e20ec996058ac3dadbce594	P1 ext x1; P1 v3 x2; P6 comment x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_Fig4.R	0c3912f145a3040b146ea42422324949	a73c7d917800184822fcd1fb73870967	P1 ext x1; P1 v3 x2; P6 comment x1; P7 prologue x1
 code/R2_rewrite/figures/scripts/P31R_Fig5.R	cf97daad0ba0d9a43bfe641ef14e7263	7dd77ec01666e2ee0f44fa550a1e9cad	P1 v3 x1; P6 comment x1; P7 prologue x1
 code/R2_rewrite/figures/scripts/P31R_FigS1.R	2aa9bff7d72343b3a554c2bfb2d49153	1e6c1ff9c593b9f593c6e783fc14d951	P1 v3 x2; P6 comment x1; P7 prologue x1
 code/R2_rewrite/figures/scripts/P31R_FigS2.R	d6b7c8f5649c9ab73374c38556ac7276	ca5d1883d5927a2388fe2ec9ae2522f2	P1 v3 x3; P6 comment x1; P7 prologue x1
@@ -17,23 +17,29 @@ code/v3.2/scripts/theme_publication_ckm.R	4edd95224fd4eca32f67f6d6db4172fe	4edd9
 code/v3.2/scripts/ckm_palette.R	2e31dc401ab2158fd949529df8aaa1ee	2e31dc401ab2158fd949529df8aaa1ee	none (byte-identical)
 code/R2_rewrite/figures/af3/P31R_af3_assemble.py	d29c43814ae0c24eb1091672fb2c1044	b71d49efcd4739c26ff6a04079291932	P2 fonts x1; P7 prologue x1
 code/R2_rewrite/figures/af3/build_legend_AF3_R2.py	070ce364a4988f687b09b92ca6ddd162	070ce364a4988f687b09b92ca6ddd162	none (byte-identical)
-code/R2_rewrite/figures/scripts/P31R_figgate.py	9c627cdf0199cb5e7c56abad64e51319	4d722c6fa1af59c90bdb36124490a2fc	P2 fonts x1; P7 prologue x1
+code/R2_rewrite/figures/scripts/P31R_figgate.py	b284519858e013a63a12f39e0b440d56	6bebda972162e98dc0c6ab73b820b568	P2 fonts x1; P7 prologue x1
 code/R2_rewrite/scripts/P31R_gate.py	1190097d199a1cbb732b73c64ad64d0f	1190097d199a1cbb732b73c64ad64d0f	none (byte-identical)
 code/R2_rewrite/scripts/P31R_tablegate.py	718cac6b298108978ab6bf1c63a16358	718cac6b298108978ab6bf1c63a16358	none (byte-identical)
 code/R2_rewrite/scripts/P31R_af1_devstage.py	29f324c517e215ec609c71c9ba88ff9f	29f324c517e215ec609c71c9ba88ff9f	none (byte-identical)
-code/R2_rewrite/scripts/P31R_build_af1.py	a9dcb9e10d34b3627c7c4ea234912f58	a9dcb9e10d34b3627c7c4ea234912f58	none (byte-identical)
+code/R2_rewrite/scripts/P31R_build_af1.py	75a7e42b850add7b1adda46e5e073637	75a7e42b850add7b1adda46e5e073637	none (byte-identical)
 code/R2_rewrite/figures/render_all_units.py	098e11eea92a841898df01d5484d4fd6	098e11eea92a841898df01d5484d4fd6	none (byte-identical)
 code/R2_rewrite/release/P31R_build_release.py	9d4745767b16720536794e40b8595df0	9d4745767b16720536794e40b8595df0	none (byte-identical)
 code/R2_rewrite/release/rel_screen.py	38b4d5370c86304ebf101a7386c4d2b6	38b4d5370c86304ebf101a7386c4d2b6	none (byte-identical)
 code/R2_rewrite/release/rel_tables.py	ba4cb6d10bbbd4e5d91b5c5a60c94235	ba4cb6d10bbbd4e5d91b5c5a60c94235	none (byte-identical)
-code/R2_rewrite/release/rel_docs.py	1c97ebd3d8b13171901075701adaebb6	1c97ebd3d8b13171901075701adaebb6	none (byte-identical)
+code/R2_rewrite/release/rel_docs.py	7b60b6e6b5fab1fe2e4123ec555df127	7b60b6e6b5fab1fe2e4123ec555df127	none (byte-identical)
 code/R2_rewrite/release/rel_licence.py	4b259a287c69fc9075675b279de0a18d	4b259a287c69fc9075675b279de0a18d	none (byte-identical)
 code/R2_rewrite/release/P31R_releasegate.py	fd99b49fe912d07dbefa12a1b050876e	a370b6523b467232929f771e12e799dd	P6 comment x1
 code/paper3_deposit_request_v4/scripts/R/00_config.R	cc58fcf6be207052f792315589853307	1b0f0e446559ba74de4993614568b0d0	P1 ext x8; P2 rscript x1; P7 prologue x1
 code/paper3_deposit_request_v4/scripts/R/_phase1_set.R	ee452b37cecb143d6e92e1fbe68f8cb8	d44a83a41bcc8b90b50144e68cfe1600	P1 ext x2; P7 prologue x1
 code/paper3_deposit_request_v4/scripts/R/coloc.R	5b9c838962b9e2a9afedc45f0cf7a10d	4c631207c2c9cc51ddc817b43fe0a55d	P1 ext x1; P6 comment x1; P7 prologue x1
+code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/21_coloc_split.R	68376315969c771918b2e0ea5bbec7a5	b61d9ef45291749c7b516670dd4ed4f1	P1 ext x1; P7 prologue x1
+code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/22_coloc_chunk_worker.R	370263d2d169202e05aa76fa1a322f3e	fe98212179090b06a5aad784305681cc	P1 ext x7; P7 prologue x1
+code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/23_merge_parallel_coloc.R	643e5ffd9ae0d12ba9cd04240ed8597a	2cbe1d53c351ff8bd0bc28c3f4b70e0e	P1 ext x1; P7 prologue x1
 code/paper3_deposit_request_v4/scripts/scripts/_shared/localize/_local_outcome_extract.R	42975c900ef4c770609c30dec1f54fe6	c4b5c48264ca2c6eae544767b9304ec4	P1 ext x1; P7 prologue x1
 code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/01_mr_screen.R	6c70f3195107279a9552a10fd72bdf19	4e40e4fd2064e8287dbb512b968163ae	P1 ext x4; P7 prologue x1
+code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/04_coloc.R	cc7ed90960a47bdba671748241ded065	cd6ae03a00f69a1bf6e774a9660c5925	P1 ext x5; P7 prologue x1
+code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/05_coloc_egfr.R	5dcf5c7fbb4829ad20e67c20ac6f97e5	52cffa9e3570a3a53c26aad2fe04d9cf	P1 ext x4; P7 prologue x1
+code/paper3_deposit_request_v4/scripts/scripts/paper3.1_ckm/cascade/06_combine_coloc.R	ba6b44b6c6df25fb30e77610660a7d04	0be29e1e942fa7eaa8d73089779a3c51	P1 ext x1; P7 prologue x1
 code/R1_stage1/S1R1_R2_01_rad23b/w1_common.R	f9b7e8a623bf092fa0164e54e0f0b487	bbf5a6954d2902940291ae8cde142d83	P1 v3 x11; P2 rscript x1; P7 prologue x1
 code/R1_stage1/S1R1_R2_01_rad23b/w1_compare_seen.R	ee96c2fcb12589ef9979281b52b252a6	74fb6202599828ba1425d97f03555082	P1 v3 x4; P7 prologue x1; S special edit x1
 code/R1_stage1/S1R1_R2_01_rad23b/w1_extract.R	2012f1253eff9f585278e5dd5b6a25ae	34e39214a1f1aadf524fbb10a57385dc	P1 v3 x1; P7 prologue x1

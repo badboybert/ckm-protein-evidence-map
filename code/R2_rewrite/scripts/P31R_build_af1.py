@@ -395,7 +395,7 @@ S1MAP = {
     ("6", "e"): ([loc(M, "Screen and multiple testing", 1, "Benjamini–Hochberg")], "reported", "--"),
     ("7", ""): ([loc(M, "Colocalization", 1, "coloc.abf"), loc(M, "Colocalization", 2, "colocalization under the sum of single effects (SuSiE) model"),
                  loc(M, "Directionality, intermediate traits and annotation", 1, "The Steiger test"),
-                 loc(M, "Exposure-side corroboration", 1, "deCODE"), loc("Discussion", "", 10, "one cis instrument per pair")], "partly reported",
+                 loc(M, "Exposure-side corroboration", 1, "deCODE"), loc("Discussion", "", 11, "one cis instrument per pair")], "partly reported",
                 "Colocalization, the Steiger test and exposure-side corroboration address relevance and confounding by linkage. With one cis instrument per pair, "
                 "pleiotropy-robust estimators were unavailable, so the exclusion restriction is not assessed directly."),
     ("8", ""): ([loc(M, "Instruments and harmonization", 1, "the analyses without proxies and a genome-wide-threshold sensitivity"),
@@ -450,27 +450,27 @@ S1MAP = {
     ("13", "c"): ([loc(M, "Directionality, intermediate traits and annotation", 1, "The Steiger test"),
                    smloc("S-R10", "Direction and instrument strength"), "Additional file 1: Table S3"], "reported",
                   "The Steiger result is reported in Additional file 2 and, per pair, in Table S3; the main-text Results do not repeat it."),
-    ("13", "d"): ([loc("Discussion", "", 3, "This direction is as expected if loss of PAM function raises risk"),
-                   loc("Discussion", "", 6, "Mouse models suggest that TGF-β signaling protects against atherosclerosis")], "partly reported",
+    ("13", "d"): ([loc("Discussion", "", 4, "This direction is as expected if loss of PAM function raises risk"),
+                   loc("Discussion", "", 7, "Mouse models suggest that TGF-β signaling protects against atherosclerosis")], "partly reported",
                   "Direction is compared with experimental and earlier genetic reports for selected pairs (PAM, TGFB1); no systematic comparison with non-MR effect estimates is made."),
     ("13", "e"): (["--"], "not applicable", "Single instruments: leave-one-out analyses are not possible."),
-    ("14", ""): ([loc("Discussion", "", 1, "This study organizes the genetic evidence for"), loc("Discussion", "", 7, "Outside data corroborated"),
-                  loc("Discussion", "", 9, "The kidney and ancestry analyses show two limits")], "reported",
+    ("14", ""): ([loc("Discussion", "", 1, "This study organizes the genetic evidence for"), loc("Discussion", "", 8, "Outside data corroborated"),
+                  loc("Discussion", "", 10, "The kidney and ancestry analyses show two limits")], "reported",
                  "The Discussion restates the design and the corroborated pairs and where the kidney and ancestry analyses reach; the grades themselves are summarised "
                  "in the Results (map subsection) and Figure 1."),
-    ("15", ""): ([loc("Discussion", "", 10, "This study has several limitations")], "reported", "--"),
+    ("15", ""): ([loc("Discussion", "", 11, "This study has several limitations")], "reported", "--"),
     ("16", ""): (["see 16a to 16c"], "see subitems", "--"),
     ("16", "a"): ([loc("Discussion", "", 1, "It identifies which cis instrument supports each association"), loc("Discussion", "", 2, "cover several kinds of biology"),
-                   loc("Discussion", "", 11, "would not by themselves establish mediation")], "reported", "--"),
-    ("16", "b"): ([loc("Discussion", "", 3, "PAM amidates the C-terminus of many peptide hormones"), loc("Discussion", "", 2, "the dipeptidase DPEP1"),
-                   loc("Discussion", "", 4, "ARG1 hydrolyzes arginine to urea and ornithine"),
-                   loc("Discussion", "", 2, "a fibroblast growth factor receptor involved in bile acid and lipid metabolism")], "partly reported",
+                   loc("Discussion", "", 12, "would not by themselves establish mediation")], "reported", "--"),
+    ("16", "b"): ([loc("Discussion", "", 4, "PAM amidates the C-terminus of many peptide hormones"), loc("Discussion", "", 2, "the dipeptidase DPEP1"),
+                   loc("Discussion", "", 5, "ARG1 hydrolyzes arginine to urea and ornithine"),
+                   loc("Discussion", "", 3, "a fibroblast growth factor receptor involved in bile acid and lipid metabolism")], "partly reported",
                   "Mechanisms are discussed; gene-environment equivalence is not discussed as such."),
     ("16", "c"): ([loc("Discussion", "", 1, "point to the molecular phenotype and disease outcome to test next"), loc("Conclusions", "", 1, "The map helps researchers prioritize protein–outcome pairs")],
                   "partly reported", "Clinical relevance is addressed through research follow-up: the map prioritizes protein–outcome pairs for follow-up and does not by itself identify a protein-mediated mechanism. "
                   "Effect sizes of possible interventions are not discussed."),
-    ("17", ""): ([loc("Discussion", "", 9, "direction transferred more widely than significance"),
-                  loc("Discussion", "", 10, "which may not match Finnish or mixed-ancestry outcome data")], "partly reported",
+    ("17", ""): ([loc("Discussion", "", 10, "direction transferred more widely than significance"),
+                  loc("Discussion", "", 11, "which may not match Finnish or mixed-ancestry outcome data")], "partly reported",
                  "Generalisability across ancestries is discussed; across exposure periods and levels it is not."),
     ("18", ""): ([loc("Declarations", "Funding", 1, "This work was supported")], "reported", "Funding and the funders' role are stated in the Declarations."),
     ("19", ""): ([loc("Declarations", "Availability of data and materials", 1, "published or publicly released genetic-association summary statistics"),
@@ -968,7 +968,7 @@ sheet("S5", "Table S5. External outcome checks.",
       ("The %s pairs of the original external check, with signal B of the arginase-1 analysis, and the post hoc check of all %d colocalization-supported T2D "
        "and CAD pairs, which repeats the European pairs of the original check. Each check used the discovery instrument without proxies; estimates "
        "are log-odds per SD of protein. p is each resource's own p value (for TPMI, SAIGE's score-test p), with the Wald-ratio p from beta and SE "
-       "beside it; the change of p source was made after the checks were run, and the resource p values and the first-order Wald p values gave the same concordance classifications. For RAD23B–T2D, rounding of the printed DIAMANTE estimates could move the Wald p value across the concordance threshold (main text, Table 3). Concordant: discovery sign with p < %g; "
+       "beside it; the change of p source was made after the checks were run, and the resource p values and the first-order Wald p values gave the same concordance classifications. For RAD23B–T2D, rounding of the published DIAMANTE estimates could move the Wald p value across the concordance threshold (main text, Table 3). Concordant: discovery sign with p < %g; "
        "directionally concordant: discovery sign with p ≥ %g; discordant: opposite sign with p < %g; inconclusive: otherwise. Bonferroni for the "
        "original external checks: p < %s. Heterogeneity p compares the external with the discovery estimate (z-test). Frequencies are those of the allele in the column Effect allele, discovery; "
        "the Wald ratios do not depend on which allele is used. The discovery frequency is that of the discovery sample (UK Biobank Pharma Proteomics Project, or the China Kadoorie Biobank for FGFR4). For arginase-1 signal B it comes from the European reference panel, because the exposure-sample frequency was unavailable. The European resources "

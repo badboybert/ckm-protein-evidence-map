@@ -58,7 +58,7 @@ PROV_TABLE = [      # S2-D37 D4: the three labels and what each does not establi
     ("timestamp evidence only", "the file's modification time precedes the outputs of the run, and no run recorded a hash of it (a candidate historical version)", "a demonstrated match to the executed version"),
 ]
 SELF_FILES = ("RELEASE_MANIFEST.tsv", "README.md", "REPRODUCE.md", "LICENSE", "CITATION.cff", ".gitattributes")
-VERSION = "v2.0.8-R2"   # Stage 7 A2.6 (USER 2026-10-23); v2.0.0-R2 bumped to v2.0.1-R2 at A2.9c (USER 2026-10-25), then to v2.0.2-R2 at Stage 8 step 4 (USER-approved plan 2026-10-26), then to v2.0.3-R2 at Stage 9 (USER-approved 2026-10-27: the release content changed again), then to v2.0.4-R2 at Stage 10 step 1 (USER 2026-10-28: the shipped Additional file 1 builder changed), then to v2.0.5-R2 at G5 (2026-11-01: the repository URL and the Zenodo concept DOI inserted; the AF1, gate, ledger-mask and tier-rule minors of the step 5f list, then to v2.0.6-R2 at G5b (USER 2026-11-06: the shipped Additional file 3 builder's text-layer fix, the Figure 4 and 5 label wording and the Additional file 1 Status legend), then to v2.0.7-R2 at G5b-9 (USER 2026-11-09: the R3 pass changed shipped figure scripts, source-data labels and the Table 2 cards), then to v2.0.8-R2 at G5b-10 (USER 2026-11-11: the pre-submission check changed shipped figure scripts and the graphical abstract script))
+VERSION = "v2.0.9-R2"   # the release version; it changes whenever the shipped content changes
 # LICENSE and CITATION.cff text lives in release/templates/, outside the shipped code: release gate R15 reads shipped scripts for licence and
 # copyright notices, and the authors' own licence text must not sit in a script. {VERSION} is filled in here and asserted.
 # G5 (2026-11-01): the deposit's identifiers. Written by review_R2/s10h23_make_pairs.py from the Zenodo API record (review_R2/zenodo_record_v2.0.4-R2/), never
@@ -94,7 +94,7 @@ FOLDERS = {
     "finemapping": "stored SuSiE grid results and the candidate edge audit",
     "ledger": "the public extract of the claims ledger (every number the shipped figure code prints; a row is masked, with its reason, when it holds a raw per-variant TPMI value or a ChEMBL-derived field or cites a source file withheld for another reason; a row that cites a file withheld only because it prints a TPMI line is not masked, because the derived TPMI values ship; evidence_status is defined below)",
     "kidney": "renal classification and the UMOD quantity table",
-    "literature": "prior-art search results and the search log",
+    "literature": "prior-art search results and the search log; the per-pair table (pairs81_priorart.tsv) compares each colocalization-supported pair with the three studies named in the pre-specification (Yuan S et al., Yi M et al. and Wang H et al.); rows marked NOT RUN needed a supplementary file or figure image that was not read; later work, such as Zan T et al., is discussed in the manuscript",
     "metabolite": "metabolite-locus outputs",
     "prep_stamps": "figure input preparation stamps",
     "proxy": "the partial proxy record (the full cache is on the analysis machine)",
@@ -614,9 +614,12 @@ def _reproduce(v3, out, led, code, tables):
     renal = [r for r in code if r["path"].endswith("paper3_ckd_rerun_v3/scripts_sent/01_renal_triad_mr.R")]
     _req(len(renal) == 1 and renal[0]["ship"] == "1" and renal[0]["role"] == "reference_script" and renal[0]["provenance_label"], "CODE_INCLUDE: 01_renal_triad_mr.R is not a single shipped, labelled reference_script row")
     _req(len(v4_ship) + len(v4_not) == len(v4) and len(v4) + len(renal) == led.value("L664")[0], "the v4 rows of CODE_INCLUDE plus 01_renal_triad_mr.R differ from the files of L664")
+    v4_reconf = [r for r in v4_ship if r["note"].startswith("deposit v4 copy; v5 REPORT A2 ")]      # the shipped rows are of two kinds
+    v4_coloc = [r for r in v4_ship if r["note"].startswith("deposit v4 copy; colocalization ")]
+    _req(len(v4_reconf) + len(v4_coloc) == len(v4_ship) and len(v4_coloc) > 0, "CODE_INCLUDE: a shipped deposit_v4_script row is neither one the v5 delivery re-confirmed nor one of the primary colocalization scripts")
     a("- Deposit v4 delivered %s. `release_records/CODE_INCLUDE.tsv` accounts for those files as follows (the counts are computed from that file when this document is built): `%d` rows of role `deposit_v4_script`, "
-      "of which `%d` ship (the v4 scripts that the v5 delivery re-confirmed against the analysis machine) and `%d` do not (ship = 0, each with a reason, pending a decision); and `%s`, which ships as reference code under its "
-      "`paper3_ckd_rerun_v3` path without a v5 re-confirmation, with the label `%s`." % (P("L664"), len(v4), len(v4_ship), len(v4_not), renal[0]["path"].split("/")[-1], renal[0]["provenance_label"]))
+      "of which `%d` ship (`%d` that the v5 delivery re-confirmed against the analysis machine, and `%d` R scripts of the primary colocalization run that it did not re-confirm, each with the provenance label of its evidence) and `%d` do not (ship = 0, each with a reason, pending a decision); and `%s`, which ships as reference code under its "
+      "`paper3_ckd_rerun_v3` path without a v5 re-confirmation, with the label `%s`." % (P("L664"), len(v4), len(v4_ship), len(v4_reconf), len(v4_coloc), len(v4_not), renal[0]["path"].split("/")[-1], renal[0]["provenance_label"]))
     a("- The v5 delivery (Part A of the request that asked for these scripts, `REQUEST_PROMPT_v5.md`, which is not shipped) supplied the SuSiE, cascade, candidate-chain and East Asian axis scripts. They are in the code bundle with the provenance labels of the README; the labels say how strongly each file is tied to the run that wrote the results, and what they do not establish.")
     a("- `l3fm__conditional.py`, the conditioning engine named in Supplementary Sections S-M6 and S-M7, is not in deposit v4. The copy in the project (`V4_local/builders/`) is in the code bundle with its helpers; that it is the version that produced the results is unverified.")
     a("- The Stage 1 workstream scripts and the ledger builder with its extension modules are in the code bundle, so that each result can be traced to its script. The ledger builder reads the whole project tree and is not rerunnable from this release.")

@@ -157,10 +157,17 @@ def extract(pdf):
 
 def _script(sp, prev):
     """'^' for a superscript, '_' for a subscript: a short numeric span smaller than its neighbour (< 0.85x) and shifted
-    by at least 0.15 em from the neighbour's baseline (raised = superscript, lowered = subscript)."""
-    if prev is None or not re.fullmatch(r"\s*[−\-+]?\d{1,3}\s*", sp["text"]) or sp["size"] >= 0.85 * prev["size"]:
+    by at least 0.15 em from the neighbour's baseline (raised = superscript, lowered = subscript). An exponent at the SAME
+    size as its base (M2 of the final reviews, USER 2026-11-12: the whole p label at 7 pt) has no size cue, so it is a
+    superscript only when the span before it ends in a '10', it starts within 0.3 em of that span and it is raised by at
+    least 0.25 em (ggtext raises it 0.36 em in the R2 Figures 2 and 4); it is never a subscript."""
+    if prev is None or not re.fullmatch(r"\s*[−\-+]?\d{1,3}\s*", sp["text"]):
         return ""
     shift = prev["bbox"][3] - sp["bbox"][3]
+    if sp["size"] >= 0.85 * prev["size"]:
+        base = abs(sp["size"] - prev["size"]) <= 0.3 and re.search(r"(?:^|[\s×])10\s*$", prev["text"])
+        near = sp["bbox"][0] - prev["bbox"][2] <= 0.3 * prev["size"]
+        return "^" if base and near and shift >= 0.25 * prev["size"] else ""
     if shift >= 0.15 * prev["size"]:
         return "^"
     if -shift >= 0.15 * prev["size"] or sp["bbox"][1] > prev["bbox"][1] + 0.25 * prev["size"]:
@@ -1687,6 +1694,15 @@ def selftest():
         ("G7 power", g7_numbers(ex(lines=T("p < 10^−6")), {"ledger": [{"text": "10⁻⁶", "id": "L230"}]}, L), None),
         ("G7 power sign", only(T("p < 10^6"), {"ledger": [{"text": "10⁶", "id": "L230"}]}, "does not match"), "G7"),
         ("G7 small same line", only([small_same], {}, "'12'"), "G7"),
+        # M2 (final reviews 2026-11-12): an exponent at the SAME size as its '10' (ggtext: raised 0.36 em, gap ~0); each defect case
+        # breaks ONE condition of _script's same-size branch (raise, raise >= 0.25 em, within 0.3 em, a '10' base, the same size)
+        ("G7 sci same size", g7_numbers(ex(lines=[line(sp("p = 4.7 × 10", 7.0, bbox=(10, 10, 60, 20)), sp("−9", 7.0, bbox=(60.01, 7.5, 66, 17.5)))]), {"ledger": [{"text": "4.7 × 10⁻⁹", "id": "L050", "idx": 2}]}, L), None),
+        ("G7 same size unraised", only([line(sp("p = 4.7 × 10", 7.0, bbox=(10, 10, 60, 20)), sp("−9", 7.0, bbox=(60.01, 10, 66, 20)))], {"ledger": [{"text": "4.7 × 10⁻⁹", "id": "L050", "idx": 2}]}, "not printed"), "G7"),
+        ("G7 same size low raise", only([line(sp("p = 4.7 × 10", 7.0, bbox=(10, 10, 60, 20)), sp("−9", 7.0, bbox=(60.01, 9.0, 66, 19.0)))], {"ledger": [{"text": "4.7 × 10⁻⁹", "id": "L050", "idx": 2}]}, "not printed"), "G7"),
+        ("G7 same size far", only([line(sp("p = 4.7 × 10", 7.0, bbox=(10, 10, 60, 20)), sp("−9", 7.0, bbox=(63.0, 7.5, 69, 17.5)))], {"ledger": [{"text": "4.7 × 10⁻⁹", "id": "L050", "idx": 2}]}, "not printed"), "G7"),
+        ("G7 same size no base", only([line(sp("n = 47", 7.0, bbox=(10, 10, 60, 20)), sp("9", 7.0, bbox=(60.01, 7.5, 66, 17.5)))],
+                                        {"literals": [{"text": "47", "why": "other: t", "not_ledger": "t"}]}, "not declared"), "G7"),
+        ("G7 larger after 10", only([line(sp("p = 4.7 × 10", 7.0, bbox=(10, 10, 60, 20)), sp("−9", 9.0, bbox=(60.01, 7.5, 68, 17.5)))], {"ledger": [{"text": "4.7 × 10⁻⁹", "id": "L050", "idx": 2}]}, "not printed"), "G7"),
         ("G7 subscript ignored", g7_numbers(ex(lines=[sub]), {}, L), None),
         ("G7 extra digit", only(T("14,5210 tests"), {"ledger": [{"text": "14,521", "id": "L004"}]}, "cannot read"), "G7"),
         ("G7 derived ok", g7_numbers(ex(lines=T("69%")), {"derived": [{"text": "69%", "num": ["L225", 1], "den": ["L225", 2], "pct": True}]}, L), None),
